@@ -1,0 +1,13 @@
+# Cobertura y recorridos
+
+La relación de 936 municipios procede de la [relación administrativa del INE de 1 de enero de 2026](https://ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177031&idp=1254734710990&menu=ultiDatos), distribuida en [Code for Spain](https://github.com/codeforspain/ds-organizacion-administrativa/blob/master/data/municipios.csv). El código INE es la clave de unión. Se mantiene la denominación bilingüe y se antepone el artículo en las denominaciones castellanas invertidas.
+
+La cabecera municipal y las coordenadas de referencia del municipio proceden de la [información geográfica municipal del IGN](https://www.ign.es/resources/ane/Informacion_Geografica_Destacada/IGN_INFOGEO_MUNICIPIOS.xlsx), edición de 20 de octubre de 2025. Atribución: CC BY 4.0 ign.es, 2025. Se usó la transcripción por código INE del fichero municipal del proyecto Antenas Rapid.
+
+Las distancias se han calculado con el perfil de conducción de OSRM sobre la red de [© colaboradores de OpenStreetMap](https://www.openstreetmap.org/copyright), bajo ODbL. Se toma como origen el punto IGN de Bilbao (43.264219, −2.923459), y como destino el [punto de referencia aproximado del municipio](https://www.ign.es/resources/ane/Informacion_Geografica_Destacada/IGN_INFOGEO_MUNICIPIOS.html), ajustado por el motor a una vía transitable. Se conserva la distancia del trayecto de ida redondeada al kilómetro. En Bilbao el recorrido entre ambos puntos es cero.
+
+Las carreteras se seleccionan entre las referencias de las instrucciones de navegación del trayecto. Se retienen hasta cinco de las que más distancia acumulan, en orden de primera aparición. En recorridos urbanos sin referencias se utiliza la calle con mayor distancia recorrida cuando está disponible. Los datos son una referencia de cobertura y desplazamiento, sin información sobre tráfico en tiempo real. Una dirección concreta, obras o la elección de una alternativa sin peaje pueden cambiar el recorrido.
+
+La cobertura se cuenta por municipio administrativo (113 en Bizkaia, 51 en Álava, 88 en Gipuzkoa, 102 en Cantabria, 371 en Burgos y 211 en León). Las localidades y barrios pertenecientes a un mismo municipio comparten ficha.
+
+Los nombres de entidades singulares y núcleos de población de cada ficha proceden del [Nomenclátor del INE a 1 de enero de 2025](https://ine.es/nomen_files/nacional/es/Nacional_2025.zip). Se agrupan por el código municipal de cinco dígitos y se reúnen las denominaciones coincidentes dentro de cada municipio. Se excluyen las filas de diseminados y los totales municipales o de entidades colectivas. Los kilómetros, carreteras y punto de destino corresponden a la referencia del municipio; cada núcleo puede requerir un trayecto distinto.

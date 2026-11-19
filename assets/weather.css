@@ -1,0 +1,5 @@
+.weather-box { margin-block: 2rem; }
+.weather-box p { max-width: 66ch; }
+.weather-disclosure { margin-block: 1rem; }
+.weather-disclosure summary { padding: .8rem 1rem; border: 1px solid currentColor; border-radius: .35rem; width: fit-content; cursor: pointer; font-weight: 650; }
+.weather-output iframe { margin-top: 1rem; background: white; display: block; width: min(100%, 36rem); height: 25rem; border: 0; }
