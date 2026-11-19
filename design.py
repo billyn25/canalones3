@@ -8,12 +8,9 @@ def home():
     area_links = "".join(
         f'<li><a href="/zonas/{slug}/">{name}</a></li>' for name, slug in provinces
     )
-    return '''<section class="home-hero"><div class="wrap hero-grid">
-<div class="hero-copy">
-<h1>Limpieza de canalones <em>y tejados.</em></h1>
-<p class="hero-description">Reparamos goteras y limpiamos bajantes en viviendas y comunidades. Salimos desde Bilbao.</p>
-<div class="actions"><a class="text-link" href="/zonas/">Consultar mi municipio</a></div></div>
-<figure class="hero-figure"><a class="plate obra-portada" href="/zonas/bizkaia/ugao-miraballes/#trabajo"><img fetchpriority="high" src="/assets/obras/ugao-vista-faldon-small.webp" alt="Faldón de teja de la cubierta que limpiamos en Ugao-Miraballes."></a><figcaption><span>Ugao-Miraballes</span> Limpieza integral de cubierta y canalones</figcaption></figure>
+    return '''<section class="portada-obra"><div class="wrap escena">
+<a class="escena-foto" href="/zonas/bizkaia/lekeitio/#trabajo"><img src="/assets/obras/lekeitio-borde-tejado.webp" alt="Borde de la cubierta y alero en el trabajo de limpieza de Lekeitio" fetchpriority="high"><span>Lekeitio · Ver intervención</span></a>
+<div class="escena-texto"><h1>Limpieza de canalones y tejados</h1><p>Goteras, bajantes y reparaciones de cubierta para viviendas y comunidades. Servicio desde Bilbao.</p><a href="/zonas/">Buscar mi localidad</a></div>
 </div></section>
 <section class="wrap home-section"><div class="section-head"><div><p class="eyebrow">Servicios</p><h2>¿Dónde está el problema?</h2></div><a class="text-link" href="/servicios/">Ver todos los servicios</a></div>
 <div class="service-strip">

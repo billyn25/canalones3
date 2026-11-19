@@ -20,6 +20,6 @@ def galeria(slug):
 def destacados():
     tarjetas=''
     for slug,(lugar,titulo,texto,fotos) in CASOS.items():
-        nombre,pie=fotos[0]
-        tarjetas+=f'<a class="obra-tarjeta" href="/zonas/bizkaia/{slug}/#trabajo"><img loading="lazy" src="/assets/obras/{nombre}-small.webp" alt="{pie}"><strong>{lugar}</strong><span>{titulo}</span></a>'
-    return '<section class="wrap home-section"><h2>Trabajos de limpieza en Bizkaia</h2><div class="fotos-obra">'+tarjetas+'</div></section>'
+        nombre,pie=fotos[1]
+        tarjetas+=f'<a class="obra-tarjeta" href="/zonas/bizkaia/{slug}/#trabajo"><img loading="lazy" src="/assets/obras/{nombre}-small.webp" alt="{pie}"><div><small>{lugar}</small><strong>{titulo}</strong><span>Ver el trabajo</span></div></a>'
+    return '<section class="wrap archivo-obras"><h2>Trabajos en Bizkaia</h2><div class="fotos-obra">'+tarjetas+'</div></section>'
