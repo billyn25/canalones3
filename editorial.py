@@ -117,3 +117,28 @@ GUIAS['que-incluir-limpieza-cubierta-comunidad'] = {
 <dt><strong>Retirada y salida</strong></dt><dd>Acuerda quién recoge los restos y si se comprobará la evacuación en una salida accesible. Una foto de las hojas recogidas acredita esa retirada; la comprobación de la bajante merece su propia anotación.</dd>
 <dt><strong>Defectos encontrados</strong></dt><dd>Si aparece una junta abierta o un soporte vencido, pide que se identifique el punto y se indique por separado el coste de repararlo. Así la junta puede autorizar una actuación concreta.</dd></dl></section>'''
 }
+
+# Asociar cada síntoma a una fotografía y al servicio o trabajo correspondiente.
+def orientacion_limpieza():
+    opciones = [
+        ('El agua cae por el borde cuando llueve', 'leon-salida-canalon', 'Salida del canalón en un trabajo de León.',
+         'Indica si rebosa junto a la bajante o a lo largo de toda la fachada. Esa diferencia ayuda a decidir qué tramo del canalón y qué salida interesa revisar.',
+         '/trabajos/canalon-y-tejado-en-leon/', 'Ver el recorrido del agua en León'),
+        ('Se acumulan hojas sobre la cubierta', 'ugao-restos-hojas', 'Restos recogidos en Ugao-Miraballes.',
+         'Conviene acordar si la limpieza incluye el faldón, las limahoyas, el canalón y la retirada de residuos. En Ugao-Miraballes se trabajó tanto en la cubierta como en los canalones.',
+         '/zonas/bizkaia/ugao-miraballes/#trabajo', 'Ver la limpieza integral de Ugao-Miraballes'),
+        ('Hay una mancha dentro de la vivienda', None, None,
+         'Anota en qué habitación aparece, qué hay justo encima y si crece mientras llueve o unas horas después. Con esos datos se puede orientar la revisión hacia la cubierta, un encuentro o la evacuación.',
+         '/guias/documentar-una-gotera/', 'Cómo documentar una gotera'),
+    ]
+    bloques=[]
+    for sintoma,imagen,pie,detalle,url,enlace in opciones:
+        figura=(f'<figure><img loading="lazy" src="/assets/obras/{imagen}-small.webp" alt="{pie}"><figcaption>{pie}</figcaption></figure>' if imagen else '')
+        bloques.append(f'<details><summary>{sintoma}</summary><div>{figura}<p>{detalle}</p><a href="{url}">{enlace}</a></div></details>')
+    return '<section class="orientacion"><h2>¿Qué has observado?</h2>'+''.join(bloques)+'</section>'
+
+SERVICIOS['limpieza-de-tejados']['body'] = orientacion_limpieza() + SERVICIOS['limpieza-de-tejados']['body'] + '''
+<section><h2>Cómo se mide el trabajo para el presupuesto</h2>
+<dl><dt><strong>Superficie del tejado</strong></dt><dd>La cubierta se valora por los paños que hay que limpiar. Si solo hay acumulación en un encuentro, señala ese punto en una foto general.</dd>
+<dt><strong>Longitud del canalón</strong></dt><dd>Indica qué fachadas recorre y cuántas bajantes reciben el agua. Así se puede separar la limpieza del tramo horizontal de una posible obstrucción en el tubo.</dd>
+<dt><strong>Acceso y desplazamiento</strong></dt><dd>La altura, un patio interior o una calle estrecha pueden cambiar los medios necesarios. Con el pueblo y la ubicación del inmueble se concreta la ruta desde Bilbao.</dd></dl></section>'''
