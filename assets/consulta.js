@@ -21,6 +21,10 @@
     if (form.dataset.phone) {
       share.href = 'https://wa.me/' + form.dataset.phone + '?text=' + encodeURIComponent(output.value);
       share.hidden = false;
+      if (event.submitter?.value !== 'resumen') {
+        location.assign(share.href);
+        return;
+      }
     }
     status.textContent = '';
     result.hidden = false;
