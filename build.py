@@ -5,6 +5,7 @@ from urllib.parse import urlencode
 from collections import defaultdict
 from xml.etree import ElementTree as ET
 from provincias import TEXTOS
+from obras import CASOS, destacados, galeria
 from design import home
 from editorial import SERVICIOS, GUIAS
 from consulta import form
@@ -45,7 +46,7 @@ def page(path,title,desc,body,parents=(),extra=''):
     target.write_text(f'''<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)} · Alero Norte</title><meta name="description" content="{escape(desc,quote=True)}">{canonical}{schema}<link rel="icon" href="/assets/simbolo.svg"><link rel="stylesheet" href="/assets/style.css"><link rel="stylesheet" href="/assets/interiores.css">{extra}</head><body><a class="skip" href="#principal">Saltar al contenido</a><header class="site-header"><div class="wrap mast"><a class="brand" href="/">Alero Norte</a><nav aria-label="Principal"><a href="/servicios/">Servicios</a><a href="/zonas/">Zonas</a><a href="/guias/">Guías</a></nav><a class="button header-cta" href="/preparar-consulta/">Preparar consulta</a></div></header><main id="principal">{main}</main><footer class="site-footer"><div class="wrap"><strong>Alero Norte</strong><p>Canalones, tejados y goteras · Desplazamientos desde Bilbao</p><nav>{link('/zonas/','Consultar cobertura')} · {link('/preparar-consulta/','Preparar consulta')}</nav></div></footer></body></html>''')
 out.mkdir(exist_ok=True)
 shutil.copytree(root/'assets',out/'assets',dirs_exist_ok=True)
-page('/','Limpieza de canalones y tejados desde Bilbao','Limpieza de canalones y tejados, reparación de goteras y bajantes. Consulta los servicios, el desplazamiento desde Bilbao y la previsión de tu municipio.',home())
+page('/','Limpieza de canalones y tejados desde Bilbao','Limpieza de canalones y tejados, reparación de goteras y bajantes. Consulta los servicios, el desplazamiento desde Bilbao y la previsión de tu municipio.',home().replace('<section class="coverage-band"', destacados()+'<section class="coverage-band"'))
 for group,title,desc,data in [('servicios','Servicios de canalones y tejados','Elige la intervención según lo que ocurre en tu cubierta.',SERVICIOS),('guias','Guías para viviendas y comunidades','Orientación para describir una incidencia, organizar el mantenimiento y comparar el alcance de una reparación.',GUIAS)]:
     path='/'+group+'/'
     page(path,title,desc,cards((path+k+'/',v['title'],v['intro']) for k,v in data.items()))
@@ -64,13 +65,15 @@ def filt(): return '<label class="filter" hidden>Buscar municipio <input type="s
 page('/zonas/','Municipios atendidos desde Bilbao','Busca tu localidad para consultar el desplazamiento y la previsión antes de organizar una visita.',filt()+''.join('<section><h2>'+link('/zonas/'+k+'/',v)+'</h2>'+listing(groups[k])+'</section>' for k,v in provs.items()))
 for k,title in provs.items():
     parent='/zonas/'+k+'/'
-    page(parent,'Limpieza de canalones y tejados en '+title,'Directorio de los '+str(len(groups[k]))+' municipios de '+title+' con desplazamiento desde Bilbao.',"<h2>"+TEXTOS[k][0]+"</h2><p>"+TEXTOS[k][1]+"</p>"+filt()+listing(groups[k]),[('/zonas/','Zonas')])
+    page(parent,'Limpieza de canalones y tejados en '+title,'Directorio de los '+str(len(groups[k]))+' municipios de '+title+' con desplazamiento desde Bilbao.',(destacados() if k=='bizkaia' else '')+"<h2>"+TEXTOS[k][0]+"</h2><p>"+TEXTOS[k][1]+"</p>"+filt()+listing(groups[k]),[('/zonas/','Zonas')])
     for r in groups[k]:
         n=r['nombre']; dest=str(r['lat'])+','+str(r['lon'])
         maps='https://www.google.com/maps/dir/?'+urlencode(dict(api=1,origin='43.264219,-2.923459',destination=dest,travelmode='driving'))
         roads=' · '.join(r['carreteras'])
         near=sorted((a for a in groups[k] if a!=r),key=lambda a:(a['lat']-r['lat'])**2+((a['lon']-r['lon'])*math.cos(math.radians(r['lat'])))**2)[:4]
         body='<section><h2>Desplazamiento desde Bilbao</h2>'+('<p>'+escape(str(r['km'])+' km '+{'osrm':'aprox. por carretera hasta el punto de referencia municipal','local':'· origen del desplazamiento','geodesica':'en línea recta'}.get(r['metodo'],r['metodo']))+'</p>' if r['km'] is not None else '')+('<p>Vías principales: '+escape(roads)+'</p>' if roads else '')+'<p>'+link(maps,'Ver itinerario por carretera hasta '+n)+'</p></section>'+widget(r)+'<section><h2>¿Qué ocurre en el inmueble?</h2>'+cards([('/servicios/limpieza-de-canalones/','El agua rebosa por el alero','Limpieza del canalón y revisión de la salida a la bajante.'),('/servicios/reparacion-de-goteras/','Hay una mancha interior','Localización de la entrada de agua y revisión de encuentros.'),('/servicios/limpieza-de-tejados/','Se acumulan restos en el tejado','Revisión de faldones, limahoyas y puntos de evacuación.')])+'</section><h2>Municipios próximos</h2>'+proximity(r,near)
+        if k=='bizkaia' and slug(n) in CASOS:
+            body='<div id="trabajo">'+galeria(slug(n))+'</div>'+body
         if r.get('nucleos'):
             body+='<section><h2>Localidades del municipio</h2><p>Indica la localidad al preparar la visita. El kilometraje de referencia puede variar hasta el inmueble.</p><ul class="municipios">'+''.join('<li>'+escape(v)+'</li>' for v in r['nucleos'])+'</ul></section>'
         cab=r.get('cabecera') if r.get('cabecera')!=n else None
