@@ -47,7 +47,7 @@ def page(path,title,desc,body,parents=(),extra=''):
     canonical=f'<link rel="canonical" href="{escape(base+path)}">' if base else ''
     mensaje = 'Hola, quería consultar por un trabajo de canalones o tejado.'
     if path.count('/') == 4 and path.startswith('/zonas/'):
-        municipio = title.removeprefix('Limpieza de canalones y tejados en ')
+        municipio = title.removeprefix('Limpieza de canalones en ')
         mensaje = f'Hola, quería consultar por un trabajo de canalones o tejado en {municipio}.'
     whatsapp = 'https://wa.me/'+TELEFONO+'?'+urlencode({'text':mensaje})
     target.write_text(f'''<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)} · Alero Norte</title><meta name="description" content="{escape(desc,quote=True)}">{canonical}{schema}<link rel="icon" href="/assets/simbolo.svg"><link rel="stylesheet" href="/assets/style.css"><link rel="stylesheet" href="/assets/interiores.css">{extra}</head><body><a class="skip" href="#principal">Saltar al contenido</a><header class="site-header"><div class="wrap mast"><a class="brand" href="/">Alero Norte</a><nav aria-label="Principal"><a href="/servicios/">Servicios</a><a href="/zonas/">Zonas</a><a href="/guias/">Guías</a></nav><div class="contactos"><a class="button" href="tel:+{TELEFONO}" aria-label="Llamar al {TELEFONO_VISIBLE}">Llamar</a><a class="button wa" href="{escape(whatsapp)}">WhatsApp</a></div></div></header><main id="principal">{main}</main>{pie(whatsapp,SERVICIOS,provs)}</body></html>''')
@@ -79,7 +79,13 @@ for k,title in provs.items():
         roads=' · '.join(r['carreteras'])
         near=sorted((a for a in groups[k] if a!=r),key=lambda a:(a['lat']-r['lat'])**2+((a['lon']-r['lon'])*math.cos(math.radians(r['lat'])))**2)[:4]
         desplazamiento='<section><h2>Desplazamiento desde Bilbao</h2>'+('<p>'+escape(str(r['km'])+' km '+{'osrm':'aprox. por carretera hasta el punto de referencia municipal','local':'· origen del desplazamiento','geodesica':'en línea recta'}.get(r['metodo'],r['metodo']))+'</p>' if r['km'] is not None else '')+('<p>Vías principales: '+escape(roads)+'</p>' if roads else '')+'<p>'+link(maps,'Ver itinerario por carretera hasta '+n)+'</p></section>'
-        body=desplazamiento+widget(r)+'<h2>Municipios próximos</h2>'+proximity(r,near)
+        enlaces_locales=[
+            ('Limpieza de tejados en '+n, 'Consultar la limpieza de faldones y limahoyas', '/servicios/limpieza-de-tejados/'),
+            ('Arreglo de goteras en '+n, 'Ver cómo se localiza y repara una filtración', '/servicios/reparacion-de-goteras/'),
+            ('Reparación de canalones y bajantes en '+n, 'Consultar reparaciones de juntas, soportes y tramos', '/servicios/reparacion-de-canalones-y-bajantes/'),
+        ]
+        servicios_locales='<div class="servicios-locales">'+''.join('<section><h2>'+escape(encabezado)+'</h2><p>'+link(url,etiqueta)+'</p></section>' for encabezado,etiqueta,url in enlaces_locales)+'</div>'
+        body=servicios_locales+desplazamiento+widget(r)+'<h2>Municipios próximos</h2>'+proximity(r,near)
         if k=='bizkaia' and slug(n) in CASOS:
             body='<div id="trabajo">'+galeria(slug(n))+'</div>'+body
         if r.get('nucleos'):
@@ -91,7 +97,7 @@ for k,title in provs.items():
         body+='<p>'+link('/preparar-consulta/?'+urlencode({'municipio':n+', '+title}),'Preparar una consulta para '+n)+'</p>'
         caso=CASOS.get(slug(n)) if k=='bizkaia' else None
         descripcion=(caso[1]+' en '+n+'. Fotografías del trabajo y contacto para una visita.') if caso else ('Servicio desde Bilbao hasta '+n+' ('+title+'). '+str(r['km'])+' km de referencia. Consulta el itinerario, las localidades atendidas y la previsión.')
-        page(r['path'],'Limpieza de canalones y tejados en '+n,descripcion,body,[('/zonas/','Zonas'),(parent,title)],'<link rel="stylesheet" href="/assets/weather.css"><script defer src="/assets/weather.js"></script>')
+        page(r['path'],'Limpieza de canalones en '+n,descripcion,body,[('/zonas/','Zonas'),(parent,title)],'<link rel="stylesheet" href="/assets/weather.css"><script defer src="/assets/weather.js"></script>')
 if base:
     tree=ET.Element('urlset',xmlns='http://www.sitemaps.org/schemas/sitemap/0.9')
     for p in paths: ET.SubElement(ET.SubElement(tree,'url'),'loc').text=base+p
