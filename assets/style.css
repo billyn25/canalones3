@@ -10,7 +10,7 @@ h2{font-size:clamp(2rem,3.55vw,3.45rem);text-wrap:balance}
 h3{font-size:clamp(1.52rem,2.3vw,2.12rem)}
 .site-header{border-bottom:1px solid var(--line);background:var(--paper)}.mast{display:flex;align-items:center;gap:clamp(1rem,3vw,3.6rem);min-height:5.25rem}
 .brand{display:inline-flex;align-items:center;gap:.65rem;margin-right:auto;font:700 clamp(1.55rem,2.45vw,2.1rem)/1 var(--serif);white-space:nowrap;letter-spacing:-.06em;text-decoration:none}
-.brand::before{content:"";width:2.4rem;height:2.4rem;background:url('/assets/simbolo.svg') center/contain no-repeat}
+.brand::before{content:"";width:2.4rem;height:2.4rem;background:url('/assets/simbolo.svg?v=alero-2') center/contain no-repeat}
 .mast nav{display:flex;gap:clamp(1rem,2.5vw,2.6rem)}.mast nav a{padding:.6rem 0;text-decoration:none;font-size:.96rem;font-weight:600}.mast nav a:hover,.text-link:hover,.area-links a:hover,.site-footer a:hover{text-decoration:underline;text-underline-offset:.27em}
 .button{display:inline-flex;justify-content:center;align-items:center;min-height:3.05rem;padding:.67rem 1.17rem;border:1px solid var(--clay);border-radius:.3rem;background:var(--clay);color:#fffaf0;font:650 1rem/1.25 var(--sans);text-decoration:none;cursor:pointer}.button:hover{background:#86321e;border-color:#86321e}.mast .button{min-height:2.65rem;font-size:.94rem;padding:.55rem 1rem}
 .text-link,.service-link{color:var(--ink);font-weight:650;text-decoration:underline;text-underline-offset:.27em}.text-link:hover,.service-item:hover .service-link{color:var(--clay)}

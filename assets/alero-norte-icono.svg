@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <title>Alero Norte</title>
+  <path fill="#542436" d="M4 0h24a4 4 0 0 1 4 4v19l-9 9H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4Z"/>
+  <path fill="#fff8ea" fill-rule="evenodd" d="M4 24 14 5h4l7 14h-5l-1-3h-7l-4 8Zm10-12h3l-1.5-3Z"/>
+  <path fill="#efad89" d="M13 20h12v-2h4v4l-2 2h-5l-4 5h-5l4-5h-6Z"/>
+</svg>

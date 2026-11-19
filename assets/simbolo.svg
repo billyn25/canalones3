@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><rect width="48" height="48" rx="9" fill="#a74023"/><g fill="none" stroke="#fff9ed" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="round"><path d="m8 28 17-16 14 13M14 33l12-11 8 7h5v7"/><path d="M26 34h4"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="nombre">
+  <title id="nombre">Alero Norte</title>
+  <path fill="#542436" d="M12 3h40a9 9 0 0 1 9 9v34L46 61H12a9 9 0 0 1-9-9V12a9 9 0 0 1 9-9Z"/>
+  <path fill="#fff8ea" fill-rule="evenodd" d="m12 46 18-33h7l14 26h-9l-3-6H26l-7 13Zm17-19h7l-3.5-7Z"/>
+  <path fill="#efad89" d="M26 40h23v-4h7v6a5 5 0 0 1-5 5h-8l-6 8h-8l6-8H22Z"/>
+</svg>
