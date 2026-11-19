@@ -1,13 +1,30 @@
 """Landing page for Alero Norte."""
 
-def home():
+from html import escape
+
+def home(rows):
     provinces = [
         ("Bizkaia", "bizkaia"), ("Álava", "alava"), ("Gipuzkoa", "gipuzkoa"),
         ("Cantabria", "cantabria"), ("Burgos", "burgos"), ("León", "leon"),
     ]
-    area_links = "".join(
-        f'<li><a href="/zonas/{slug}/">{name}</a></li>' for name, slug in provinces
-    )
+    selecciones = {
+        "bizkaia": ("48020","48013","48044","48057","48065"),
+        "alava": ("01059","01036","01002","01051"),
+        "gipuzkoa": ("20069","20045","20030","20079","20029"),
+        "cantabria": ("39075","39087","39020","39059"),
+        "burgos": ("09059","09219","09018","09410"),
+        "leon": ("24089","24115","24008","24021"),
+    }
+    por_codigo = {r["ine"]:r for r in rows}
+    bloques=[]
+    for name,slug in provinces:
+        enlaces=[]
+        for codigo in selecciones[slug]:
+            r=por_codigo[codigo]
+            assert r['provincia']==slug
+            enlaces.append(f'<li><a href="{r["path"]}">{escape(r["nombre"])}</a></li>')
+        bloques.append(f'<section><h3><a href="/zonas/{slug}/">{name}</a></h3><ul>{"".join(enlaces)}</ul></section>')
+    area_links="".join(bloques)
     return '''<section class="portada-obra"><div class="wrap escena">
 <a class="escena-foto" href="/zonas/bizkaia/lekeitio/#trabajo"><img src="/assets/obras/lekeitio-borde-tejado.webp" alt="Borde de la cubierta y alero en el trabajo de limpieza de Lekeitio" fetchpriority="high"><span>Lekeitio · Ver intervención</span></a>
 <div class="escena-texto"><h1>Limpieza de canalones y tejados</h1><p>Goteras, bajantes y reparaciones de cubierta para viviendas y comunidades. Servicio desde Bilbao.</p><a href="/zonas/">Buscar mi localidad</a></div>
@@ -18,5 +35,5 @@ def home():
 <a class="service-item" href="/servicios/limpieza-de-tejados/"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="m4 32 17-23h17L22 32zm18 0h21L28 10M8 26h17M13 20h15M17 15h14M9 36h32"/></svg></span><h3>Tejados y limahoyas</h3><p>Las hojas se reúnen donde confluyen dos faldones. La limpieza debe atender también la salida hacia el alero.</p><span class="service-link">Limpieza de tejados</span></a>
 <a class="service-item" href="/servicios/reparacion-de-goteras/"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="m4 26 16-17 18 16M9 27l11-11 12 11m6 0s-6 8-6 11a6 6 0 0 0 12 0c0-3-6-11-6-11zM15 30v8h9"/></svg></span><h3>Goteras y filtraciones</h3><p>Una mancha puede aparecer lejos de la entrada de agua. Importan su posición y las condiciones en que vuelve.</p><span class="service-link">Reparación de goteras</span></a>
 </div></section>
-<section class="coverage-band"><div class="wrap coverage-layout"><div><p class="eyebrow">Desplazamientos desde Bilbao</p><h2>Encuentra tu municipio.</h2><p>Consulta la cobertura por provincia y prepara la visita a tu vivienda, caserío o comunidad.</p></div><ul class="area-links">''' + area_links + '''</ul></div></section>
+<section class="coverage-band"><div class="wrap coverage-layout"><div><p class="eyebrow">Desplazamientos desde Bilbao</p><h2>Encuentra tu municipio.</h2><p>Consulta la cobertura por provincia y prepara la visita a tu vivienda, caserío o comunidad.</p></div><div class="pueblos-portada">''' + area_links + '''</div></div></section>
 <section class="wrap home-section guide-teaser"><div><p class="eyebrow">Antes de una visita</p><h2>¿Qué ocurre cuando llueve?</h2></div><div><p>Anota si el agua rebosa durante el chaparrón, si sigue goteando después o si la humedad aparece con viento de una dirección concreta. Una foto tomada desde el suelo ayuda a situar el punto.</p><a class="text-link" href="/guias/">Leer las guías de mantenimiento</a></div></section>'''
