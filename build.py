@@ -8,6 +8,7 @@ from provincias import TEXTOS
 from obras import CASOS, destacados, galeria
 from design import home
 from editorial import SERVICIOS, GUIAS
+from contacto import TELEFONO, TELEFONO_VISIBLE
 from consulta import form
 from weather import widget
 
@@ -43,7 +44,12 @@ def page(path,title,desc,body,parents=(),extra=''):
         structured=json.dumps({'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':items},ensure_ascii=False).replace('<','\\u003c')
         schema='<script type="application/ld+json">'+structured+'</script>'
     canonical=f'<link rel="canonical" href="{escape(base+path)}">' if base else ''
-    target.write_text(f'''<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)} · Alero Norte</title><meta name="description" content="{escape(desc,quote=True)}">{canonical}{schema}<link rel="icon" href="/assets/simbolo.svg"><link rel="stylesheet" href="/assets/style.css"><link rel="stylesheet" href="/assets/interiores.css">{extra}</head><body><a class="skip" href="#principal">Saltar al contenido</a><header class="site-header"><div class="wrap mast"><a class="brand" href="/">Alero Norte</a><nav aria-label="Principal"><a href="/servicios/">Servicios</a><a href="/zonas/">Zonas</a><a href="/guias/">Guías</a></nav><a class="button header-cta" href="/preparar-consulta/">Preparar consulta</a></div></header><main id="principal">{main}</main><footer class="site-footer"><div class="wrap"><strong>Alero Norte</strong><p>Canalones, tejados y goteras · Desplazamientos desde Bilbao</p><nav>{link('/zonas/','Consultar cobertura')} · {link('/preparar-consulta/','Preparar consulta')}</nav></div></footer></body></html>''')
+    mensaje = 'Hola, quería consultar por un trabajo de canalones o tejado.'
+    if path.count('/') == 4 and path.startswith('/zonas/'):
+        municipio = title.removeprefix('Limpieza de canalones y tejados en ')
+        mensaje = f'Hola, quería consultar por un trabajo de canalones o tejado en {municipio}.'
+    whatsapp = 'https://wa.me/'+TELEFONO+'?'+urlencode({'text':mensaje})
+    target.write_text(f'''<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)} · Alero Norte</title><meta name="description" content="{escape(desc,quote=True)}">{canonical}{schema}<link rel="icon" href="/assets/simbolo.svg"><link rel="stylesheet" href="/assets/style.css"><link rel="stylesheet" href="/assets/interiores.css">{extra}</head><body><a class="skip" href="#principal">Saltar al contenido</a><header class="site-header"><div class="wrap mast"><a class="brand" href="/">Alero Norte</a><nav aria-label="Principal"><a href="/servicios/">Servicios</a><a href="/zonas/">Zonas</a><a href="/guias/">Guías</a></nav><div class="contactos"><a class="button" href="tel:+{TELEFONO}" aria-label="Llamar al {TELEFONO_VISIBLE}">Llamar</a><a class="button wa" href="{escape(whatsapp)}">WhatsApp</a></div></div></header><main id="principal">{main}</main><footer class="site-footer"><div class="wrap"><strong>Alero Norte</strong><p><a href="tel:+{TELEFONO}">{TELEFONO_VISIBLE}</a> · <a href="{escape(whatsapp)}">WhatsApp</a></p><p>Canalones, tejados y goteras · Desplazamientos desde Bilbao</p><nav>{link('/zonas/','Consultar cobertura')} · {link('/preparar-consulta/','Preparar consulta')}</nav></div></footer></body></html>''')
 out.mkdir(exist_ok=True)
 shutil.copytree(root/'assets',out/'assets',dirs_exist_ok=True)
 page('/','Limpieza de canalones y tejados desde Bilbao','Limpieza de canalones y tejados, reparación de goteras y bajantes. Consulta los servicios, el desplazamiento desde Bilbao y la previsión de tu municipio.',home().replace('<section class="coverage-band"', destacados()+'<section class="coverage-band"'))

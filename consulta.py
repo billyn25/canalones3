@@ -1,11 +1,12 @@
 """Consulta local para preparar una visita de cubiertas."""
+from contacto import TELEFONO
 import os
 import re
 from html import escape
 
 
 def form():
-    phone = re.sub(r'[\s()+-]', '', os.getenv('WHATSAPP_NUMBER', ''))
+    phone = re.sub(r'[\s()+-]', '', os.getenv('WHATSAPP_NUMBER', TELEFONO))
     if not re.fullmatch(r'[1-9]\d{8,14}', phone):
         phone = ''
     return f"""<section>
