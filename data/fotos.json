@@ -1,0 +1,177 @@
+[
+ {
+  "id": "teja-vegetacion",
+  "alt": "Acumulación de vegetación y residuos entre las piezas de una cubierta cerámica.",
+  "title": "Vegetación entre las tejas"
+ },
+ {
+  "id": "teja-fisurada",
+  "alt": "Detalle de una pieza cerámica con una fisura visible y residuos alrededor.",
+  "title": "Detalle de una teja fisurada"
+ },
+ {
+  "id": "cubierta-ceramica",
+  "alt": "Vista de una cubierta con tejas cerámicas y zonas en distinto estado de conservación.",
+  "title": "Revisión de cubierta cerámica"
+ },
+ {
+  "id": "cumbrera-comunidad",
+  "alt": "Piezas de cumbrera y unión entre dos faldones de una cubierta.",
+  "title": "Encuentro en la cumbrera"
+ },
+ {
+  "id": "remate-cumbrera",
+  "alt": "Detalle del remate de cumbrera de una cubierta de teja.",
+  "title": "Remate entre faldones"
+ },
+ {
+  "id": "cubierta-comunidad",
+  "alt": "Vista general de un tejado de comunidad fotografiado durante una revisión.",
+  "title": "Cubierta de una comunidad"
+ },
+ {
+  "id": "revision-alero",
+  "alt": "Revestimiento desprendido en la cara inferior de un alero.",
+  "title": "Estado de un alero"
+ },
+ {
+  "id": "residuos-encuentro",
+  "alt": "Musgo y pequeños residuos acumulados en el encuentro entre piezas de cubierta.",
+  "title": "Residuos en un encuentro"
+ },
+ {
+  "id": "canalon-alero",
+  "alt": "Vista de un canalón que recorre el alero de una cubierta de teja.",
+  "title": "Canalón junto al alero"
+ },
+ {
+  "id": "tejas-suciedad",
+  "alt": "Detalle de la superficie de tejas con suciedad y vegetación adherida.",
+  "title": "Suciedad adherida a la teja"
+ },
+ {
+  "id": "tejas-retiradas",
+  "alt": "Piezas cerámicas retiradas junto a la zona de intervención en el tejado.",
+  "title": "Tejas retiradas durante el trabajo"
+ },
+ {
+  "id": "mortero-cumbrera",
+  "alt": "Fisuras visibles en el mortero bajo las piezas de una cumbrera cerámica.",
+  "title": "Detalle del mortero de cumbrera"
+ },
+ {
+  "id": "cumbrera-soporte",
+  "alt": "Tejas y remates de cumbrera junto a un soporte de antena.",
+  "title": "Cumbrera y soporte sobre cubierta"
+ },
+ {
+  "id": "canalon-metalico",
+  "alt": "Recorrido de un canalón metálico junto a una cubierta de teja en un edificio.",
+  "title": "Canalón metálico junto al tejado"
+ },
+ {
+  "id": "fragmentos-teja",
+  "alt": "Piezas cerámicas rotas sobre un faldón de teja.",
+  "title": "Fragmentos de teja en la cubierta"
+ },
+ {
+  "id": "encuentro-pared",
+  "alt": "Estado de las tejas y del mortero en un encuentro próximo a una pared.",
+  "title": "Encuentro de cubierta con pared"
+ },
+ {
+  "id": "rastreles-lamina",
+  "alt": "Tejas levantadas que dejan a la vista los rastreles y la lámina bajo cubierta.",
+  "title": "Revisión bajo las tejas"
+ },
+ {
+  "id": "teja-rota-musgo",
+  "alt": "Pieza rota y acumulación de musgo en las juntas de una cubierta cerámica.",
+  "title": "Teja rota y musgo en las juntas"
+ },
+ {
+  "id": "borde-cubierta",
+  "alt": "Tramo con tejas levantadas en el borde del tejado durante un trabajo.",
+  "title": "Intervención en el borde de cubierta"
+ },
+ {
+  "id": "revision-canalon-red",
+  "alt": "Trabajador con arnés y red de protección junto a un canalón de cubierta.",
+  "title": "Trabajo junto al canalón"
+ },
+ {
+  "id": "humedad-techo",
+  "alt": "Manchas y desprendimientos del revestimiento en un techo interior.",
+  "title": "Humedad en un techo interior"
+ },
+ {
+  "id": "ugao-restos-hojas",
+  "alt": "Bolsas con hojas y restos vegetales retirados durante la limpieza de tejado y canalones en Ugao-Miraballes.",
+  "title": "Hojas y restos recogidos"
+ },
+ {
+  "id": "ugao-cubierta-teja",
+  "alt": "Vista de los faldones de teja y la cumbrera de la cubierta intervenida en Ugao-Miraballes.",
+  "title": "Vista de la cubierta"
+ },
+ {
+  "id": "ugao-detalle-cubierta",
+  "alt": "Detalle del encuentro y del borde de los faldones en la cubierta de Ugao-Miraballes.",
+  "title": "Detalle del borde de la cubierta"
+ },
+ {
+  "id": "ugao-cumbrera",
+  "alt": "Vista de la cumbrera y las tejas de ambos lados de la cubierta de Ugao-Miraballes.",
+  "title": "Detalle de la cumbrera"
+ },
+ {
+  "id": "ugao-chimenea",
+  "alt": "Tejas y remates alrededor de una chimenea de la cubierta de Ugao-Miraballes.",
+  "title": "Entorno de la chimenea"
+ },
+ {
+  "id": "ugao-vista-faldon",
+  "alt": "Vista del faldón de teja y del muro junto a la cubierta intervenida en Ugao-Miraballes.",
+  "title": "Vista general del faldón"
+ },
+ {
+  "id": "lekeitio-alero",
+  "alt": "Vista general del alero de teja y del revestimiento desprendido en Lekeitio.",
+  "title": "Vista del alero"
+ },
+ {
+  "id": "lekeitio-alero-chimenea",
+  "alt": "Vista del alero bajo el borde de teja, con una chimenea al fondo.",
+  "title": "Alero y chimenea"
+ },
+ {
+  "id": "lekeitio-revestimiento",
+  "alt": "Detalle de la zona donde falta parte del revestimiento bajo las tejas.",
+  "title": "Detalle del revestimiento"
+ },
+ {
+  "id": "lekeitio-canalon-lateral",
+  "alt": "Vista del tramo del canalón junto al borde de la cubierta.",
+  "title": "Canalón visto desde arriba"
+ },
+ {
+  "id": "lekeitio-borde-tejado",
+  "alt": "Vista longitudinal de las tejas que rematan el alero.",
+  "title": "Borde de la cubierta"
+ },
+ {
+  "id": "lekeitio-tramo-canalon",
+  "alt": "El canalón fotografiado a lo largo del borde del tejado.",
+  "title": "Recorrido del canalón"
+ },
+ {
+  "id": "leon-salida-canalon",
+  "alt": "Abertura circular con una pieza en cruz en el fondo del canalón del trabajo de León.",
+  "title": "Salida del canalón"
+ },
+ {
+  "id": "leon-canalon-lateral",
+  "alt": "Vista desde arriba de un tramo del canalón junto al borde de teja y el paso lateral.",
+  "title": "Recorrido lateral del canalón"
+ }
+]
