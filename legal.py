@@ -1,4 +1,4 @@
-DIRECCION = 'Alameda Doctor Areilza, 31, garaje, Abando, 48010 Bilbao, Vizcaya'
+DIRECCION = 'Alameda Doctor Areilza, 31, Abando, 48010 Bilbao, Vizcaya'
 ORIGEN_RUTA = 'Alameda Doctor Areilza, 31, 48010 Bilbao, España'
 PAGINAS = {
 'aviso-legal': ('Aviso legal','Identificación del titular de Alero Norte.',f'<h2>Titular y contacto</h2><p>David Corregidor. Teléfono: <a href="tel:+34670042626">670 042 626</a>.</p><p>Base de desplazamientos: {DIRECCION}.</p><h2>Servicios y cobertura</h2><p>Las páginas municipales describen la zona atendida desde Bilbao. Para concertar una visita se confirma la dirección del inmueble, la disponibilidad y, en su caso, el coste de desplazamiento. El alcance y el precio de la intervención se concretan en el presupuesto.</p>'),
