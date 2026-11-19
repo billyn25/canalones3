@@ -9,11 +9,11 @@ def home():
         f'<li><a href="/zonas/{slug}/">{name}</a></li>' for name, slug in provinces
     )
     return '''<section class="home-hero"><div class="wrap hero-grid">
-<div class="hero-copy"><p class="eyebrow"><span class="datum"></span> Cubiertas y evacuación de lluvia</p>
+<div class="hero-copy">
 <h1>Limpieza de canalones <em>y tejados.</em></h1>
-<p class="hero-description">Limpieza de bajantes, reparación de goteras y mantenimiento de cubiertas para viviendas y comunidades. Nos desplazamos desde Bilbao.</p>
-<div class="actions"><a class="button" href="/preparar-consulta/">Preparar mi consulta</a><a class="text-link" href="/zonas/">Consultar mi municipio</a></div></div>
-<figure class="hero-figure"><div class="plate"><img width="620" height="450" fetchpriority="high" src="/assets/detalle-alero.svg" alt="Dibujo en perspectiva del borde del tejado, con tejas, canalón y bajante."></div><figcaption><span>Detalle constructivo</span> Encuentro de cubierta y canalón</figcaption></figure>
+<p class="hero-description">Reparamos goteras y limpiamos bajantes en viviendas y comunidades. Salimos desde Bilbao.</p>
+<div class="actions"><a class="text-link" href="/zonas/">Consultar mi municipio</a></div></div>
+<figure class="hero-figure"><a class="plate obra-portada" href="/zonas/bizkaia/ugao-miraballes/#trabajo"><img fetchpriority="high" src="/assets/obras/ugao-vista-faldon-small.webp" alt="Faldón de teja de la cubierta que limpiamos en Ugao-Miraballes."></a><figcaption><span>Ugao-Miraballes</span> Limpieza integral de cubierta y canalones</figcaption></figure>
 </div></section>
 <section class="wrap home-section"><div class="section-head"><div><p class="eyebrow">Servicios</p><h2>¿Dónde está el problema?</h2></div><a class="text-link" href="/servicios/">Ver todos los servicios</a></div>
 <div class="service-strip">
