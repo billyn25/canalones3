@@ -66,18 +66,24 @@ def proximity(origin,items):
         lat1,lat2=map(math.radians,[origin['lat'],other['lat']])
         dl=math.radians(other['lon']-origin['lon'])
         h=math.sin((lat2-lat1)/2)**2+math.cos(lat1)*math.cos(lat2)*math.sin(dl/2)**2
-        return round(12742*math.asin(math.sqrt(h)))
-    return '<p>Distancias aproximadas en línea recta entre puntos de referencia municipales.</p><ul>'+''.join('<li>'+link(a['path'],a['nombre'])+' · '+str(separation(a))+' km</li>' for a in items)+'</ul>'
+        return 12742*math.asin(math.sqrt(h))
+    cercanos=sorted(((separation(a),a) for a in items if a!=origin),key=lambda par:par[0])[:4]
+    return '<p>Distancias aproximadas en línea recta desde '+escape(origin['nombre'])+'.</p><ul>'+''.join('<li>'+link(a['path'],a['nombre'])+' · <strong>'+format(km,'.1f').replace('.',',')+' km</strong></li>' for km,a in cercanos)+'</ul>'
 def filt(): return '<label class="filter" hidden>Buscar municipio <input type="search" placeholder="Escribe el nombre del pueblo"></label><p id="resultados" role="status"></p><script src="/assets/filter.js" defer></script>'
-page('/zonas/','Municipios atendidos desde Bilbao','Busca tu localidad para consultar el desplazamiento y la previsión antes de organizar una visita.',filt()+''.join('<section><h2>'+link('/zonas/'+k+'/',v)+'</h2>'+listing(groups[k])+'</section>' for k,v in provs.items()))
+def resumen_rutas(items, nombres):
+    elegidos=[r for r in items if r['ine'] in nombres]
+    elegidos.sort(key=lambda r:r['km'])
+    return '<section><h2>Trayectos desde Bilbao</h2><p>Kilómetros aproximados por carretera hasta la localidad de referencia. Para un caserío o una pedanía, indica también el núcleo al pedir la visita.</p><ul>'+''.join('<li>'+link(r['path'],r['nombre'])+' · <strong>'+str(r['km'])+' km</strong>'+(' por '+escape(' y '.join(r['carreteras'][:2])) if r['carreteras'] else '')+'</li>' for r in elegidos)+'</ul></section>'
+representantes={'48044','01059','20069','39075','09059','24089'}
+page('/creditos-cartograficos/','Créditos cartográficos','Fuentes de los datos de cobertura y desplazamiento.',link('https://www.ign.es/web/ign/portal/ane-datos-geograficos','IGN, 2025 · CC BY 4.0')+'<p>Rutas OSRM con datos de '+link('https://www.openstreetmap.org/copyright','© colaboradores de OpenStreetMap, ODbL')+'</p>')
+page('/zonas/','Municipios atendidos desde Bilbao','Busca tu localidad para consultar el desplazamiento y la previsión antes de organizar una visita.',resumen_rutas(rows,representantes)+filt()+''.join('<section><h2>'+link('/zonas/'+k+'/',v)+'</h2>'+listing(groups[k])+'</section>' for k,v in provs.items()))
 for k,title in provs.items():
     parent='/zonas/'+k+'/'
-    page(parent,'Limpieza de canalones y tejados en '+title,'Directorio de los '+str(len(groups[k]))+' municipios de '+title+' con desplazamiento desde Bilbao.',(destacados() if k=='bizkaia' else '')+"<h2>"+TEXTOS[k][0]+"</h2><p>"+TEXTOS[k][1]+"</p>"+filt()+listing(groups[k]),[('/zonas/','Zonas')])
+    page(parent,'Limpieza de canalones y tejados en '+title,'Directorio de los '+str(len(groups[k]))+' municipios de '+title+' con desplazamiento desde Bilbao.',(destacados() if k=='bizkaia' else '')+"<h2>"+TEXTOS[k][0]+"</h2><p>"+TEXTOS[k][1]+"</p>"+resumen_rutas(groups[k],{r["ine"] for r in sorted(groups[k],key=lambda r:r["km"])[::max(1,len(groups[k])//4)][:4]})+filt()+listing(groups[k]),[('/zonas/','Zonas')])
     for r in groups[k]:
         n=r['nombre']; dest=str(r['lat'])+','+str(r['lon'])
         maps='https://www.google.com/maps/dir/?'+urlencode(dict(api=1,origin='43.264219,-2.923459',destination=dest,travelmode='driving'))
         roads=' · '.join(r['carreteras'])
-        near=sorted((a for a in groups[k] if a!=r),key=lambda a:(a['lat']-r['lat'])**2+((a['lon']-r['lon'])*math.cos(math.radians(r['lat'])))**2)[:4]
         desplazamiento='<section><h2>Desplazamiento desde Bilbao</h2>'+('<p>'+escape(str(r['km'])+' km '+{'osrm':'aprox. por carretera hasta el punto de referencia municipal','local':'· origen del desplazamiento','geodesica':'en línea recta'}.get(r['metodo'],r['metodo']))+'</p>' if r['km'] is not None else '')+('<p>Vías principales: '+escape(roads)+'</p>' if roads else '')+'<p>'+link(maps,'Ver itinerario por carretera hasta '+n)+'</p></section>'
         enlaces_locales=[
             ('Limpieza de tejados en '+n, 'Consultar la limpieza de faldones y limahoyas', '/servicios/limpieza-de-tejados/'),
@@ -85,7 +91,7 @@ for k,title in provs.items():
             ('Reparación de canalones y bajantes en '+n, 'Consultar reparaciones de juntas, soportes y tramos', '/servicios/reparacion-de-canalones-y-bajantes/'),
         ]
         servicios_locales='<div class="servicios-locales">'+''.join('<section><h2>'+escape(encabezado)+'</h2><p>'+link(url,etiqueta)+'</p></section>' for encabezado,etiqueta,url in enlaces_locales)+'</div>'
-        body=servicios_locales+desplazamiento+widget(r)+'<h2>Municipios próximos</h2>'+proximity(r,near)
+        body=servicios_locales+desplazamiento+widget(r)+'<h2>Municipios próximos</h2>'+proximity(r,rows)
         if k=='bizkaia' and slug(n) in CASOS:
             body='<div id="trabajo">'+galeria(slug(n))+'</div>'+body
         if r.get('nucleos'):
@@ -93,7 +99,6 @@ for k,title in provs.items():
         cab=r.get('cabecera') if r.get('cabecera')!=n else None
         if cab:
             body=body.replace('<h2>Desplazamiento desde Bilbao</h2>','<h2>Desplazamiento desde Bilbao</h2><p>La capital municipal es '+escape(cab)+'. Si la vivienda está en otro núcleo de '+escape(n)+', indica el barrio o la pedanía para concretar el último tramo.</p>')
-        body+='<p><small>Capitales municipales y cartografía de referencia: '+link('https://www.ign.es/web/ign/portal/ane-datos-geograficos','IGN, 2025 · CC BY 4.0')+'. Rutas OSRM con datos de '+link('https://www.openstreetmap.org/copyright','© colaboradores de OpenStreetMap, ODbL')+'.</small></p>'
         body+='<p>'+link('/preparar-consulta/?'+urlencode({'municipio':n+', '+title}),'Preparar una consulta para '+n)+'</p>'
         caso=CASOS.get(slug(n)) if k=='bizkaia' else None
         descripcion=(caso[1]+' en '+n+'. Fotografías del trabajo y contacto para una visita.') if caso else ('Servicio desde Bilbao hasta '+n+' ('+title+'). '+str(r['km'])+' km de referencia. Consulta el itinerario, las localidades atendidas y la previsión.')

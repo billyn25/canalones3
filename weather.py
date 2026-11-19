@@ -1,6 +1,9 @@
 """AEMET municipal forecast, loaded only when requested."""
 import re
-import unicodedata
+import json
+from pathlib import Path
+
+AEMET=json.loads((Path(__file__).parent/"data/aemet.json").read_text())
 from html import escape
 
 
@@ -9,10 +12,10 @@ def widget(row):
     code = str(row["ine"]).zfill(5)
     if not re.fullmatch(r"\d{5}", code):
         raise ValueError("Código INE no válido")
-    ascii_name = unicodedata.normalize("NFKD", row["nombre"]).encode("ascii", "ignore").decode()
-    slug = re.sub(r"[^a-z0-9]+", "-", ascii_name.lower()).strip("-")
     base = "https://www.aemet.es/es/eltiempo/prediccion/municipios"
-    ident = f"{slug}-id{code}"
+    ident = AEMET.get(code)
+    if not ident:
+        return f'<section><h2>Previsión cerca de {name}</h2><p>AEMET ofrece como referencia cercana la <a href="{base}/{AEMET["48036"]}">previsión de Galdakao</a>.</p></section>'
     return f'''<section class="weather-box" aria-labelledby="prevision-local">
 <h2 id="prevision-local">El tiempo en {name}</h2>
 <p>Para acordar una visita, consulta la probabilidad de lluvia y el viento previstos. Una cubierta puede seguir mojada después de la lluvia. El equipo valorará el acceso y el estado del tejado antes de empezar.</p>
