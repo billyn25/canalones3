@@ -8,6 +8,7 @@ from provincias import TEXTOS
 from obras import CASOS, destacados, galeria, RUTA_LEON, TITULO_LEON, trabajo_leon, tarjeta_leon
 from design import home
 from editorial import SERVICIOS, GUIAS
+from legal import DIRECCION, ORIGEN_RUTA, PAGINAS
 from estructura import pie, proceso
 from contacto import TELEFONO, TELEFONO_VISIBLE
 from consulta import form
@@ -76,16 +77,18 @@ def resumen_rutas(items, nombres):
     elegidos.sort(key=lambda r:r['km'])
     return '<section><h2>Trayectos desde Bilbao</h2><p>Kilómetros aproximados por carretera hasta la localidad de referencia. Para un caserío o una pedanía, indica también el núcleo al pedir la visita.</p><ul>'+''.join('<li>'+link(r['path'],r['nombre'])+' · <strong>'+str(r['km'])+' km</strong>'+(' por '+escape(' y '.join(r['carreteras'][:2])) if r['carreteras'] else '')+'</li>' for r in elegidos)+'</ul></section>'
 representantes={'48044','01059','20069','39075','09059','24089'}
-page('/distancias/','Cómo se calculan las distancias','Las rutas desde Bilbao se calculan por carretera. Las distancias entre municipios cercanos se miden en línea recta.',link('https://www.ign.es/web/ign/portal/ane-datos-geograficos','IGN, 2025 · CC BY 4.0')+'<p>Rutas OSRM con datos de '+link('https://www.openstreetmap.org/copyright','© colaboradores de OpenStreetMap, ODbL')+'</p>')
-page('/zonas/','Municipios atendidos desde Bilbao','Busca tu localidad para consultar el desplazamiento y la previsión antes de organizar una visita.',resumen_rutas(rows,representantes)+filt()+''.join('<section><h2>'+link('/zonas/'+k+'/',v)+'</h2>'+listing(groups[k])+'</section>' for k,v in provs.items()))
+for ruta,(titulo,intro,texto) in PAGINAS.items():
+    page('/'+ruta+'/',titulo,intro,texto)
+page('/distancias/','Cómo se calculan las distancias','Los kilómetros publicados son una referencia por carretera desde Bilbao. El enlace de cada ficha calcula la ruta desde el garaje de Alameda Doctor Areilza, 31. Las distancias entre municipios cercanos se miden en línea recta.',link('https://www.ign.es/web/ign/portal/ane-datos-geograficos','IGN, 2025 · CC BY 4.0')+'<p>Rutas OSRM con datos de '+link('https://www.openstreetmap.org/copyright','© colaboradores de OpenStreetMap, ODbL')+'</p>')
+page('/zonas/','Municipios atendidos desde Bilbao','Busca tu localidad para consultar el desplazamiento y la previsión antes de organizar una visita.','<section><h2>Desplazamientos desde Bilbao</h2><p>Salimos del garaje de '+escape(DIRECCION)+'. Atendemos estas seis provincias por desplazamiento. Indica el pueblo y la dirección del inmueble para confirmar el recorrido y acordar la visita.</p></section>'+resumen_rutas(rows,representantes)+filt()+''.join('<section><h2>'+link('/zonas/'+k+'/',v)+'</h2>'+listing(groups[k])+'</section>' for k,v in provs.items()))
 for k,title in provs.items():
     parent='/zonas/'+k+'/'
     page(parent,'Limpieza de canalones y tejados en '+title,'Directorio de los '+str(len(groups[k]))+' municipios de '+title+' con desplazamiento desde Bilbao.',(destacados() if k=='bizkaia' else '<section class="archivo-obras"><h2>Trabajo en la provincia</h2><div class="fotos-obra">'+tarjeta_leon()+'</div></section>' if k=='leon' else '')+"<h2>"+TEXTOS[k][0]+"</h2><p>"+TEXTOS[k][1]+"</p>"+resumen_rutas(groups[k],{r["ine"] for r in sorted(groups[k],key=lambda r:r["km"])[::max(1,len(groups[k])//4)][:4]})+filt()+listing(groups[k]),[('/zonas/','Zonas')])
     for r in groups[k]:
         n=r['nombre']; dest=str(r['lat'])+','+str(r['lon'])
-        maps='https://www.google.com/maps/dir/?'+urlencode(dict(api=1,origin='43.264219,-2.923459',destination=dest,travelmode='driving'))
+        maps='https://www.google.com/maps/dir/?'+urlencode(dict(api=1,origin=ORIGEN_RUTA,destination=dest,travelmode='driving'))
         roads=' · '.join(r['carreteras'])
-        desplazamiento='<section><h2>Desplazamiento desde Bilbao</h2>'+('<p>'+escape(str(r['km'])+' km '+{'osrm':'aprox. por carretera hasta el punto de referencia municipal','local':'· origen del desplazamiento','geodesica':'en línea recta'}.get(r['metodo'],r['metodo']))+'</p>' if r['km'] is not None else '')+('<p>Vías principales: '+escape(roads)+'</p>' if roads else '')+'<p>'+link(maps,'Ver ruta')+' · '+link('/distancias/','Cómo se calculan los km')+'</p></section>'
+        desplazamiento='<section><h2>Desplazamiento desde Bilbao</h2>'+('<p>'+escape(str(r['km'])+' km '+{'osrm':'aprox. por carretera hasta el punto de referencia municipal','local':'· origen del desplazamiento','geodesica':'en línea recta'}.get(r['metodo'],r['metodo']))+'</p>' if r['km'] is not None else '')+('<p>Vías principales: '+escape(roads)+'</p>' if roads else '')+'<p>'+link(maps,'Ver ruta desde Alameda Doctor Areilza, 31')+' · '+link('/distancias/','Cómo se calculan los km')+'</p></section>'
         enlaces_locales=[
             ('Limpieza de tejados en '+n, 'Consultar la limpieza de faldones y limahoyas', '/servicios/limpieza-de-tejados/'),
             ('Arreglo de goteras en '+n, 'Ver cómo se localiza y repara una filtración', '/servicios/reparacion-de-goteras/'),
