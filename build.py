@@ -79,7 +79,7 @@ def filt(): return '<label class="filter" hidden>Buscar municipio <input type="s
 def resumen_rutas(items, nombres):
     elegidos=[r for r in items if r['ine'] in nombres]
     elegidos.sort(key=lambda r:r['km'])
-    filas=''.join('<tr><th scope="row">'+link(r['path'],r['nombre'])+'</th><td>'+str(r['km'])+' km</td><td>'+escape(' · '.join(r['carreteras']) or 'Recorrido local')+'</td></tr>' for r in elegidos)
+    filas=''.join('<tr><th scope="row">'+link(r['path'],r['nombre'])+'</th><td>'+str(r['km'])+' km</td><td>'+(' · '.join('<span class="via">'+escape(v)+'</span>' for v in r['carreteras']) or 'Recorrido local')+'</td></tr>' for r in elegidos)
     return '<section class="rutas-zona"><h2>Trayectos desde Bilbao</h2><table><caption>Distancias aproximadas por carretera</caption><thead><tr><th>Destino</th><th>Distancia</th><th>Vías principales</th></tr></thead><tbody>'+filas+'</tbody></table></section>'
 
 representantes={'48044','01059','20069','39075','09059','24089'}
