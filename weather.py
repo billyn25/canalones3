@@ -18,7 +18,7 @@ def widget(row):
         return f'<section><h2>Previsión cerca de {name}</h2><p>AEMET ofrece como referencia cercana la <a href="{base}/{AEMET["48036"]}">previsión de Galdakao</a>.</p></section>'
     return f'''<section class="weather-box" aria-labelledby="prevision-local">
 <h2 id="prevision-local">El tiempo en {name}</h2>
-<p>Para acordar una visita, consulta la probabilidad de lluvia y el viento previstos. Una cubierta puede seguir mojada después de la lluvia. El equipo valorará el acceso y el estado del tejado antes de empezar.</p>
+<p>Previsión de lluvia y viento.</p>
 <details hidden class="weather-disclosure" data-forecast="{base}/mostrarwidget/{ident}">
 <summary>Ver previsión de AEMET para {name}</summary>
 <div class="weather-output"></div>

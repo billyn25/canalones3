@@ -5,7 +5,7 @@ from urllib.parse import urlencode
 from collections import defaultdict
 from xml.etree import ElementTree as ET
 from provincias import TEXTOS
-from obras import CASOS, destacados, galeria
+from obras import CASOS, destacados, galeria, RUTA_LEON, TITULO_LEON, trabajo_leon, tarjeta_leon
 from design import home
 from editorial import SERVICIOS, GUIAS
 from estructura import pie, proceso
@@ -53,11 +53,12 @@ def page(path,title,desc,body,parents=(),extra=''):
     target.write_text(f'''<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)} · Alero Norte</title><meta name="description" content="{escape(desc,quote=True)}">{canonical}{schema}<link rel="icon" href="/assets/simbolo.svg"><link rel="stylesheet" href="/assets/style.css"><link rel="stylesheet" href="/assets/interiores.css">{extra}</head><body><a class="skip" href="#principal">Saltar al contenido</a><header class="site-header"><div class="wrap mast"><a class="brand" href="/">Alero Norte</a><nav aria-label="Principal"><a href="/servicios/">Servicios</a><a href="/zonas/">Zonas</a><a href="/guias/">Guías</a></nav><div class="contactos"><a class="button" href="tel:+{TELEFONO}" aria-label="Llamar al {TELEFONO_VISIBLE}">Llamar</a><a class="button wa" href="{escape(whatsapp)}">WhatsApp</a></div></div></header><main id="principal">{main}</main>{pie(whatsapp,SERVICIOS,provs)}</body></html>''')
 out.mkdir(exist_ok=True)
 shutil.copytree(root/'assets',out/'assets',dirs_exist_ok=True)
-page('/','Limpieza de canalones y tejados desde Bilbao','Limpieza de canalones y tejados, reparación de goteras y bajantes. Consulta los servicios, el desplazamiento desde Bilbao y la previsión de tu municipio.',(home()+proceso()).replace('<section class="coverage-band"', destacados()+'<section class="coverage-band"'))
+page('/','Limpieza de canalones y tejados desde Bilbao','Limpieza de canalones y tejados, reparación de goteras y bajantes. Consulta los servicios, el desplazamiento desde Bilbao y la previsión de tu municipio.',(home()+proceso()).replace('<section class="coverage-band"', destacados(incluir_leon=True)+'<section class="coverage-band"'))
 for group,title,desc,data in [('servicios','Servicios de canalones y tejados','Elige la intervención según lo que ocurre en tu cubierta.',SERVICIOS),('guias','Guías para viviendas y comunidades','Orientación para describir una incidencia, organizar el mantenimiento y comparar el alcance de una reparación.',GUIAS)]:
     path='/'+group+'/'
     page(path,title,desc,cards((path+k+'/',v['title'],v['intro']) for k,v in data.items()))
     for k,v in data.items(): page(path+k+'/',v['title'],v['intro'],v['body']+'<p>'+link('/preparar-consulta/','Preparar los datos para una consulta')+'</p>',[(path,title)])
+page(RUTA_LEON,TITULO_LEON,'Cuatro fotografías de un trabajo en la provincia de León: las tejas, el alero, el tramo lateral y la salida del canalón.',trabajo_leon(),[('/zonas/leon/','León')])
 page('/preparar-consulta/','Preparar una consulta','Anota dónde está el inmueble y qué ocurre cuando llueve.',form())
 def listing(items):
     return '<ul class="municipios">'+''.join(f'<li data-localidades="{escape(" | ".join(r.get("nucleos",[])),quote=True)}">{link(r["path"],r["nombre"])}</li>' for r in items)+'</ul>'
@@ -75,16 +76,16 @@ def resumen_rutas(items, nombres):
     elegidos.sort(key=lambda r:r['km'])
     return '<section><h2>Trayectos desde Bilbao</h2><p>Kilómetros aproximados por carretera hasta la localidad de referencia. Para un caserío o una pedanía, indica también el núcleo al pedir la visita.</p><ul>'+''.join('<li>'+link(r['path'],r['nombre'])+' · <strong>'+str(r['km'])+' km</strong>'+(' por '+escape(' y '.join(r['carreteras'][:2])) if r['carreteras'] else '')+'</li>' for r in elegidos)+'</ul></section>'
 representantes={'48044','01059','20069','39075','09059','24089'}
-page('/creditos-cartograficos/','Créditos cartográficos','Fuentes de los datos de cobertura y desplazamiento.',link('https://www.ign.es/web/ign/portal/ane-datos-geograficos','IGN, 2025 · CC BY 4.0')+'<p>Rutas OSRM con datos de '+link('https://www.openstreetmap.org/copyright','© colaboradores de OpenStreetMap, ODbL')+'</p>')
+page('/distancias/','Cómo se calculan las distancias','Las rutas desde Bilbao se calculan por carretera. Las distancias entre municipios cercanos se miden en línea recta.',link('https://www.ign.es/web/ign/portal/ane-datos-geograficos','IGN, 2025 · CC BY 4.0')+'<p>Rutas OSRM con datos de '+link('https://www.openstreetmap.org/copyright','© colaboradores de OpenStreetMap, ODbL')+'</p>')
 page('/zonas/','Municipios atendidos desde Bilbao','Busca tu localidad para consultar el desplazamiento y la previsión antes de organizar una visita.',resumen_rutas(rows,representantes)+filt()+''.join('<section><h2>'+link('/zonas/'+k+'/',v)+'</h2>'+listing(groups[k])+'</section>' for k,v in provs.items()))
 for k,title in provs.items():
     parent='/zonas/'+k+'/'
-    page(parent,'Limpieza de canalones y tejados en '+title,'Directorio de los '+str(len(groups[k]))+' municipios de '+title+' con desplazamiento desde Bilbao.',(destacados() if k=='bizkaia' else '')+"<h2>"+TEXTOS[k][0]+"</h2><p>"+TEXTOS[k][1]+"</p>"+resumen_rutas(groups[k],{r["ine"] for r in sorted(groups[k],key=lambda r:r["km"])[::max(1,len(groups[k])//4)][:4]})+filt()+listing(groups[k]),[('/zonas/','Zonas')])
+    page(parent,'Limpieza de canalones y tejados en '+title,'Directorio de los '+str(len(groups[k]))+' municipios de '+title+' con desplazamiento desde Bilbao.',(destacados() if k=='bizkaia' else '<section class="archivo-obras"><h2>Trabajo en la provincia</h2><div class="fotos-obra">'+tarjeta_leon()+'</div></section>' if k=='leon' else '')+"<h2>"+TEXTOS[k][0]+"</h2><p>"+TEXTOS[k][1]+"</p>"+resumen_rutas(groups[k],{r["ine"] for r in sorted(groups[k],key=lambda r:r["km"])[::max(1,len(groups[k])//4)][:4]})+filt()+listing(groups[k]),[('/zonas/','Zonas')])
     for r in groups[k]:
         n=r['nombre']; dest=str(r['lat'])+','+str(r['lon'])
         maps='https://www.google.com/maps/dir/?'+urlencode(dict(api=1,origin='43.264219,-2.923459',destination=dest,travelmode='driving'))
         roads=' · '.join(r['carreteras'])
-        desplazamiento='<section><h2>Desplazamiento desde Bilbao</h2>'+('<p>'+escape(str(r['km'])+' km '+{'osrm':'aprox. por carretera hasta el punto de referencia municipal','local':'· origen del desplazamiento','geodesica':'en línea recta'}.get(r['metodo'],r['metodo']))+'</p>' if r['km'] is not None else '')+('<p>Vías principales: '+escape(roads)+'</p>' if roads else '')+'<p>'+link(maps,'Ver itinerario por carretera hasta '+n)+'</p></section>'
+        desplazamiento='<section><h2>Desplazamiento desde Bilbao</h2>'+('<p>'+escape(str(r['km'])+' km '+{'osrm':'aprox. por carretera hasta el punto de referencia municipal','local':'· origen del desplazamiento','geodesica':'en línea recta'}.get(r['metodo'],r['metodo']))+'</p>' if r['km'] is not None else '')+('<p>Vías principales: '+escape(roads)+'</p>' if roads else '')+'<p>'+link(maps,'Ver ruta')+' · '+link('/distancias/','Cómo se calculan los km')+'</p></section>'
         enlaces_locales=[
             ('Limpieza de tejados en '+n, 'Consultar la limpieza de faldones y limahoyas', '/servicios/limpieza-de-tejados/'),
             ('Arreglo de goteras en '+n, 'Ver cómo se localiza y repara una filtración', '/servicios/reparacion-de-goteras/'),
@@ -95,7 +96,7 @@ for k,title in provs.items():
         if k=='bizkaia' and slug(n) in CASOS:
             body='<div id="trabajo">'+galeria(slug(n))+'</div>'+body
         if r.get('nucleos'):
-            body+='<section><h2>Localidades del municipio</h2><p>Indica la localidad al preparar la visita. El kilometraje de referencia puede variar hasta el inmueble.</p><ul class="municipios">'+''.join('<li>'+escape(v)+'</li>' for v in r['nucleos'])+'</ul></section>'
+            body+='<section><h2>Localidades del municipio</h2><p></p><ul class="municipios">'+''.join('<li>'+escape(v)+'</li>' for v in r['nucleos'])+'</ul></section>'
         cab=r.get('cabecera') if r.get('cabecera')!=n else None
         if cab:
             body=body.replace('<h2>Desplazamiento desde Bilbao</h2>','<h2>Desplazamiento desde Bilbao</h2><p>La capital municipal es '+escape(cab)+'. Si la vivienda está en otro núcleo de '+escape(n)+', indica el barrio o la pedanía para concretar el último tramo.</p>')
