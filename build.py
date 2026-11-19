@@ -70,12 +70,14 @@ def proximity(origin,items):
         h=math.sin((lat2-lat1)/2)**2+math.cos(lat1)*math.cos(lat2)*math.sin(dl/2)**2
         return 12742*math.asin(math.sqrt(h))
     cercanos=sorted(((separation(a),a) for a in items if a!=origin),key=lambda par:par[0])[:4]
-    return '<p>Distancias aproximadas en línea recta desde '+escape(origin['nombre'])+'.</p><ul>'+''.join('<li>'+link(a['path'],a['nombre'])+' · <strong>'+format(km,'.1f').replace('.',',')+' km</strong></li>' for km,a in cercanos)+'</ul>'
+    return '<p>Distancias aproximadas en línea recta desde '+escape(origin['nombre'])+'.</p><ul class="vecinos-km">'+''.join('<li>'+link(a['path'],a['nombre'])+'<strong>'+format(km,'.1f').replace('.',',')+' km</strong></li>' for km,a in cercanos)+'</ul>'
 def filt(): return '<label class="filter" hidden>Buscar municipio <input type="search" placeholder="Escribe el nombre del pueblo"></label><p id="resultados" role="status"></p><script src="/assets/filter.js" defer></script>'
 def resumen_rutas(items, nombres):
     elegidos=[r for r in items if r['ine'] in nombres]
     elegidos.sort(key=lambda r:r['km'])
-    return '<section><h2>Trayectos desde Bilbao</h2><p>Kilómetros aproximados por carretera hasta la localidad de referencia. Para un caserío o una pedanía, indica también el núcleo al pedir la visita.</p><ul>'+''.join('<li>'+link(r['path'],r['nombre'])+' · <strong>'+str(r['km'])+' km</strong>'+(' por '+escape(' y '.join(r['carreteras'][:2])) if r['carreteras'] else '')+'</li>' for r in elegidos)+'</ul></section>'
+    filas=''.join('<tr><th scope="row">'+link(r['path'],r['nombre'])+'</th><td>'+str(r['km'])+' km</td><td>'+escape(' · '.join(r['carreteras'][:2]) or 'Bilbao')+'</td></tr>' for r in elegidos)
+    return '<section class="rutas-zona"><h2>Trayectos desde Bilbao</h2><table><caption>Distancias aproximadas por carretera</caption><thead><tr><th>Destino</th><th>Distancia</th><th>Vías principales</th></tr></thead><tbody>'+filas+'</tbody></table></section>'
+
 representantes={'48044','01059','20069','39075','09059','24089'}
 for ruta,(titulo,intro,texto) in PAGINAS.items():
     page('/'+ruta+'/',titulo,intro,texto)
@@ -88,7 +90,7 @@ for k,title in provs.items():
         n=r['nombre']; dest=str(r['lat'])+','+str(r['lon'])
         maps='https://www.google.com/maps/dir/?'+urlencode(dict(api=1,origin=ORIGEN_RUTA,destination=dest,travelmode='driving'))
         roads=' · '.join(r['carreteras'])
-        desplazamiento='<section><h2>Desplazamiento desde Bilbao</h2>'+('<p>'+escape(str(r['km'])+' km '+{'osrm':'aprox. por carretera hasta el punto de referencia municipal','local':'· origen del desplazamiento','geodesica':'en línea recta'}.get(r['metodo'],r['metodo']))+'</p>' if r['km'] is not None else '')+('<p>Vías principales: '+escape(roads)+'</p>' if roads else '')+'<p>'+link(maps,'Ver ruta desde Alameda Doctor Areilza, 31')+' · '+link('/distancias/','Cómo se calculan los km')+'</p></section>'
+        desplazamiento='<section class="ruta-municipal"><h2>Desplazamiento desde Bilbao</h2>'+('<p>'+escape(str(r['km'])+' km '+{'osrm':'aprox. por carretera hasta el punto de referencia municipal','local':'· origen del desplazamiento','geodesica':'en línea recta'}.get(r['metodo'],r['metodo']))+'</p>' if r['km'] is not None else '')+('<p>Vías principales: '+escape(roads)+'</p>' if roads else '')+'<p>'+link(maps,'Ver ruta desde Alameda Doctor Areilza, 31')+' · '+link('/distancias/','Cómo se calculan los km')+'</p></section>'
         enlaces_locales=[
             ('Limpieza de tejados en '+n, 'Consultar la limpieza de faldones y limahoyas', '/servicios/limpieza-de-tejados/'),
             ('Arreglo de goteras en '+n, 'Ver cómo se localiza y repara una filtración', '/servicios/reparacion-de-goteras/'),
@@ -99,10 +101,7 @@ for k,title in provs.items():
         if k=='bizkaia' and slug(n) in CASOS:
             body='<div id="trabajo">'+galeria(slug(n))+'</div>'+body
         if r.get('nucleos'):
-            body+='<section><h2>Localidades del municipio</h2><p></p><ul class="municipios">'+''.join('<li>'+escape(v)+'</li>' for v in r['nucleos'])+'</ul></section>'
-        cab=r.get('cabecera') if r.get('cabecera')!=n else None
-        if cab:
-            body=body.replace('<h2>Desplazamiento desde Bilbao</h2>','<h2>Desplazamiento desde Bilbao</h2><p>La capital municipal es '+escape(cab)+'. Si la vivienda está en otro núcleo de '+escape(n)+', indica el barrio o la pedanía para concretar el último tramo.</p>')
+            body+='<section><h2>Localidades del municipio</h2><ul class="municipios">'+''.join('<li>'+escape(v)+'</li>' for v in r['nucleos'])+'</ul></section>'
         body+='<p>'+link('/preparar-consulta/?'+urlencode({'municipio':n+', '+title}),'Preparar una consulta para '+n)+'</p>'
         caso=CASOS.get(slug(n)) if k=='bizkaia' else None
         descripcion=(caso[1]+' en '+n+'. Fotografías del trabajo y contacto para una visita.') if caso else ('Servicio desde Bilbao hasta '+n+' ('+title+'). '+str(r['km'])+' km de referencia. Consulta el itinerario, las localidades atendidas y la previsión.')
