@@ -11,7 +11,7 @@ from editorial import SERVICIOS, GUIAS
 from legal import DIRECCION, ORIGEN_RUTA, PAGINAS
 from estructura import pie, proceso
 from contacto import TELEFONO, TELEFONO_VISIBLE
-from consulta import form
+from consulta import form, presupuesto
 from weather import widget
 
 root=Path(__file__).parent.resolve()
@@ -46,11 +46,14 @@ def page(path,title,desc,body,parents=(),extra=''):
         structured=json.dumps({'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':items},ensure_ascii=False).replace('<','\\u003c')
         schema='<script type="application/ld+json">'+structured+'</script>'
     canonical=f'<link rel="canonical" href="{escape(base+path)}">' if base else ''
+    municipio = ''
     mensaje = 'Hola, quería consultar por un trabajo de canalones o tejado.'
     if path.count('/') == 4 and path.startswith('/zonas/'):
         municipio = title.removeprefix('Limpieza de canalones en ')
         mensaje = f'Hola, quería consultar por un trabajo de canalones o tejado en {municipio}.'
     whatsapp = 'https://wa.me/'+TELEFONO+'?'+urlencode({'text':mensaje})
+    if path not in ('/preparar-consulta/', '/aviso-legal/', '/privacidad/', '/cookies/', '/distancias/'):
+        main+=presupuesto(municipio)+'<script defer src="/assets/presupuesto.js"></script>'
     target.write_text(f'''<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)} · Alero Norte</title><meta name="description" content="{escape(desc,quote=True)}">{canonical}{schema}<link rel="icon" href="/assets/simbolo.svg"><link rel="stylesheet" href="/assets/style.css"><link rel="stylesheet" href="/assets/interiores.css?v=granate-1"><link rel="stylesheet" href="/assets/galeria.css">{extra}</head><body><a class="skip" href="#principal">Saltar al contenido</a><header class="site-header"><div class="wrap mast"><a class="brand" href="/">Alero Norte</a><nav aria-label="Principal"><a href="/servicios/">Servicios</a><a href="/zonas/">Zonas</a><a href="/guias/">Guías</a><a href="/galeria/">Fotos</a></nav><div class="contactos"><a class="button" href="tel:+{TELEFONO}" aria-label="Llamar al {TELEFONO_VISIBLE}">Llamar</a><a class="button wa" href="{escape(whatsapp)}">WhatsApp</a></div></div></header><main id="principal">{main}</main>{pie(whatsapp,SERVICIOS,provs)}<script defer src="/assets/galeria.js"></script></body></html>''')
 out.mkdir(exist_ok=True)
 shutil.copytree(root/'assets',out/'assets',dirs_exist_ok=True)

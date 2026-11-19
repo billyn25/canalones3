@@ -24,3 +24,12 @@ def form():
 <button type="button" class="button" data-save>Descargar texto</button>
 <a class="button" data-share hidden target="_blank" rel="noopener noreferrer">Abrir en WhatsApp</a><p role="status"></p></section>
 <script defer src="/assets/consulta.js"></script></section>"""
+
+def presupuesto(lugar=''):
+    return f'''<section id="presupuesto" class="presupuesto"><div class="wrap presupuesto-grid"><div><h2>Pide presupuesto</h2><p>Cuéntanos qué ocurre. Podrás añadir fotos al abrir WhatsApp.</p></div>
+<form id="solicitud-presupuesto" data-phone="{TELEFONO}" hidden>
+<label>Municipio o barrio<input name="lugar" value="{escape(lugar, quote=True)}" maxlength="140" required></label>
+<label>¿Qué necesitas?<textarea name="detalle" rows="3" maxlength="1500" required placeholder="Por ejemplo, limpiar el canalón de una comunidad de tres plantas."></textarea></label>
+<p>Al continuar se abre WhatsApp con tu consulta preparada. Tú decides cuándo enviarla. <a href="/privacidad/">Privacidad</a></p>
+<button class="button" type="submit">Continuar en WhatsApp</button></form>
+<noscript><a href="https://wa.me/{TELEFONO}">Pedir presupuesto por WhatsApp</a></noscript></div></section>'''
