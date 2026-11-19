@@ -15,7 +15,7 @@ def foto(nombre, pie):
 
 def galeria(slug):
     lugar,titulo,texto,fotos=CASOS[slug]
-    return f'<section class="obra"><h2>{titulo} en {lugar}</h2><p>{texto}</p><div class="fotos-obra">'+''.join(foto(*f) for f in fotos)+'</div></section>'
+    return f'<section class="obra"><h2>{titulo} en {lugar}</h2><p>{texto}</p><div class="fotos-obra">'+''.join(foto(*f) for f in fotos)+'</div><p><a href="/guias/que-incluir-limpieza-cubierta-comunidad/">Qué incluir en una limpieza de cubierta de comunidad</a></p></section>'
 
 def destacados():
     tarjetas=''

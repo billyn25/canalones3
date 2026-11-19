@@ -79,7 +79,7 @@ for k,title in provs.items():
         roads=' · '.join(r['carreteras'])
         near=sorted((a for a in groups[k] if a!=r),key=lambda a:(a['lat']-r['lat'])**2+((a['lon']-r['lon'])*math.cos(math.radians(r['lat'])))**2)[:4]
         desplazamiento='<section><h2>Desplazamiento desde Bilbao</h2>'+('<p>'+escape(str(r['km'])+' km '+{'osrm':'aprox. por carretera hasta el punto de referencia municipal','local':'· origen del desplazamiento','geodesica':'en línea recta'}.get(r['metodo'],r['metodo']))+'</p>' if r['km'] is not None else '')+('<p>Vías principales: '+escape(roads)+'</p>' if roads else '')+'<p>'+link(maps,'Ver itinerario por carretera hasta '+n)+'</p></section>'
-        body='<section><h2>¿Qué ocurre en el inmueble?</h2>'+cards([('/servicios/limpieza-de-canalones/','El agua rebosa por el alero','Limpieza del canalón y revisión de la salida a la bajante.'),('/servicios/reparacion-de-goteras/','Hay una mancha interior','Localización de la entrada de agua y revisión de encuentros.'),('/servicios/limpieza-de-tejados/','Se acumulan restos en el tejado','Revisión de faldones, limahoyas y puntos de evacuación.')])+'</section><p>'+link('/preparar-consulta/?'+urlencode({'municipio':n+', '+title}),'Preparar presupuesto en '+n)+'</p>'+desplazamiento+widget(r)+'<h2>Municipios próximos</h2>'+proximity(r,near)
+        body=desplazamiento+widget(r)+'<h2>Municipios próximos</h2>'+proximity(r,near)
         if k=='bizkaia' and slug(n) in CASOS:
             body='<div id="trabajo">'+galeria(slug(n))+'</div>'+body
         if r.get('nucleos'):
@@ -89,7 +89,9 @@ for k,title in provs.items():
             body=body.replace('<h2>Desplazamiento desde Bilbao</h2>','<h2>Desplazamiento desde Bilbao</h2><p>La capital municipal es '+escape(cab)+'. Si la vivienda está en otro núcleo de '+escape(n)+', indica el barrio o la pedanía para concretar el último tramo.</p>')
         body+='<p><small>Capitales municipales y cartografía de referencia: '+link('https://www.ign.es/web/ign/portal/ane-datos-geograficos','IGN, 2025 · CC BY 4.0')+'. Rutas OSRM con datos de '+link('https://www.openstreetmap.org/copyright','© colaboradores de OpenStreetMap, ODbL')+'.</small></p>'
         body+='<p>'+link('/preparar-consulta/?'+urlencode({'municipio':n+', '+title}),'Preparar una consulta para '+n)+'</p>'
-        page(r['path'],'Limpieza de canalones y tejados en '+n,'Goteras, bajantes y mantenimiento de cubiertas en '+n+' ('+title+'). Consulta el trayecto desde Bilbao y el tiempo previsto para organizar la visita.',body,[('/zonas/','Zonas'),(parent,title)],'<link rel="stylesheet" href="/assets/weather.css"><script defer src="/assets/weather.js"></script>')
+        caso=CASOS.get(slug(n)) if k=='bizkaia' else None
+        descripcion=(caso[1]+' en '+n+'. Fotografías del trabajo y contacto para una visita.') if caso else ('Servicio desde Bilbao hasta '+n+' ('+title+'). '+str(r['km'])+' km de referencia. Consulta el itinerario, las localidades atendidas y la previsión.')
+        page(r['path'],'Limpieza de canalones y tejados en '+n,descripcion,body,[('/zonas/','Zonas'),(parent,title)],'<link rel="stylesheet" href="/assets/weather.css"><script defer src="/assets/weather.js"></script>')
 if base:
     tree=ET.Element('urlset',xmlns='http://www.sitemaps.org/schemas/sitemap/0.9')
     for p in paths: ET.SubElement(ET.SubElement(tree,'url'),'loc').text=base+p

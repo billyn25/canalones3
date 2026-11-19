@@ -100,3 +100,20 @@ GUIAS = {
 <p>Si al levantar una teja aparece otro defecto, acordad quién recibirá la explicación y el coste antes de autorizarlo. Para cerrar el expediente, guardad el presupuesto aceptado, la ubicación exacta y, cuando existan, las fotografías de la intervención. Este registro facilita reconocer si un aviso posterior corresponde al mismo punto.</p></section>""",
     },
 }
+
+GUIAS['que-incluir-limpieza-cubierta-comunidad'] = {
+    'title': 'Qué pedir en una limpieza de cubierta de comunidad',
+    'intro': 'Un presupuesto que solo dice «limpieza de tejado» deja una duda importante para la junta: ¿hasta dónde llega el trabajo? Estas dos intervenciones de Bizkaia ayudan a concretarlo.',
+    'body': '''
+<section><h2>Ugao-Miraballes: el faldón y los residuos</h2>
+<p>La intervención abarcó la cubierta y los canalones. En una fotografía se reconoce el faldón de teja y en otra se ven las hojas y restos recogidos. Cada imagen responde a una pregunta distinta de la comunidad: dónde se ha trabajado y qué material se ha retirado.</p>
+<figure><img loading="lazy" src="/assets/obras/ugao-restos-hojas-small.webp" alt="Restos vegetales recogidos en la limpieza de Ugao-Miraballes"><figcaption>Material recogido en Ugao-Miraballes.</figcaption></figure>
+<p><a href="/zonas/bizkaia/ugao-miraballes/#trabajo">Ver la cubierta y la intervención de Ugao-Miraballes</a></p></section>
+<section><h2>Lekeitio: identificar el tramo de canalón</h2>
+<p>En Lekeitio se retiraron hojas del tejado y de los canalones. La vista longitudinal permite reconocer el recorrido junto al alero. Para preparar un encargo similar, indica si se incluye toda la fachada, el retorno de la esquina o únicamente el tramo situado sobre el portal.</p>
+<p><a href="/zonas/bizkaia/lekeitio/#trabajo">Ver el recorrido del canalón de Lekeitio</a></p></section>
+<section><h2>Tres partidas que conviene dejar por escrito</h2><dl>
+<dt><strong>Zonas incluidas</strong></dt><dd>Identifica faldones, patios, aleros y entradas a bajantes. Si dos portales comparten cubierta, anota hasta qué punto llega el encargo.</dd>
+<dt><strong>Retirada y salida</strong></dt><dd>Acuerda quién recoge los restos y si se comprobará la evacuación en una salida accesible. Una foto de las hojas recogidas acredita esa retirada; la comprobación de la bajante merece su propia anotación.</dd>
+<dt><strong>Defectos encontrados</strong></dt><dd>Si aparece una junta abierta o un soporte vencido, pide que se identifique el punto y se indique por separado el coste de repararlo. Así la junta puede autorizar una actuación concreta.</dd></dl></section>'''
+}
