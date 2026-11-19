@@ -28,7 +28,19 @@ def foto(nombre, pie):
     return f'<figure><a data-foto href="{ORIGINALES}{nombre}.webp"><img loading="lazy" src="{src}" alt="{escape(pie,quote=True)}"></a><figcaption>{escape(pie)}</figcaption></figure>'
 
 def album():
-    return '<div class="obra"><div class="fotos-obra">'+''.join(foto(f['id'],f['alt']) for f in FOTOS)+'</div></div>'
+    usados=set()
+    bloques=[]
+    def grupo(titulo,texto,seleccion,url=None):
+        usados.update(f['id'] for f in seleccion)
+        enlace=f'<p><a href="{url}">Ver el trabajo completo</a></p>' if url else ''
+        bloques.append('<section class="obra"><h2>'+titulo+'</h2><p>'+texto+'</p>'+enlace+'<div class="fotos-obra">'+''.join(foto(f['id'],f['alt']) for f in seleccion)+'</div></section>')
+    for slug,(lugar,titulo,texto,fotos) in CASOS.items():
+        ids={nombre for nombre,_ in fotos}
+        grupo(lugar+' · '+titulo,texto,[f for f in FOTOS if f['id'] in ids],'/zonas/bizkaia/'+slug+'/#trabajo')
+    grupo('Provincia de León · Del tejado a la bajante','Cuatro vistas del mismo trabajo sitúan las tejas, el alero, el canalón y su salida.',[f for f in FOTOS if f['id'] in {'tejas-suciedad','canalon-alero','leon-canalon-lateral','leon-salida-canalon'}],RUTA_LEON)
+    grupo('Detalles de otros trabajos','Tejas, uniones, canalones y humedades fotografiados durante nuestras intervenciones.',[f for f in FOTOS if f['id'] not in usados])
+    return ''.join(bloques)
+
 
 def galeria(slug):
     lugar,titulo,texto,fotos=CASOS[slug]
@@ -59,3 +71,14 @@ def trabajo_leon():
 
 def tarjeta_leon():
     return f'<a class="obra-tarjeta" href="{RUTA_LEON}"><img loading="lazy" src="/assets/obras/leon-salida-canalon-small.webp" alt="Detalle de la salida del canalón"><div><small>Provincia de León</small><strong>{TITULO_LEON}</strong><span>Ver las cuatro fotografías</span></div></a>'
+
+def recorrido():
+    puntos = [
+        ('El agua cae por el borde del canalón', 'leon-salida-canalon', 'Salida de agua de un canalón en la provincia de León.', 'Observa desde el suelo si rebosa solo junto a la bajante o a lo largo de la fachada. En este trabajo puedes seguir el recorrido hasta la salida.', RUTA_LEON, 'Ver el recorrido en León'),
+        ('Hay hojas acumuladas en el tejado', 'ugao-restos-hojas', 'Restos vegetales recogidos en Ugao-Miraballes.', 'Estas hojas se recogieron durante la limpieza integral en Ugao-Miraballes. Para valorar una limpieza parecida, señala si los restos se concentran en un faldón, en el alero o en ambos.', '/zonas/bizkaia/ugao-miraballes/#trabajo', 'Ver la limpieza de Ugao-Miraballes'),
+        ('Quiero identificar qué tramo hay que limpiar', 'lekeitio-alero', 'Detalle del borde de cubierta en Lekeitio.', 'Una vista general ayuda a reconocer la fachada. Una segunda foto de la esquina o de la bajante permite concretar hasta dónde llega el tramo. Así se ve en la cubierta de Lekeitio.', '/zonas/bizkaia/lekeitio/#trabajo', 'Ver el alero de Lekeitio'),
+    ]
+    partes=[]
+    for titulo,imagen,pie,texto,url,enlace in puntos:
+        partes.append(f'<details><summary>{titulo}</summary><div class="detalle-trabajo">{foto(imagen,pie)}<div><p>{texto}</p><a href="{url}">{enlace}</a></div></div></details>')
+    return '<section class="wrap consulta-visual"><h2>¿Qué ves en tu tejado?</h2>'+''.join(partes)+'</section>'

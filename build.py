@@ -5,7 +5,7 @@ from urllib.parse import urlencode
 from collections import defaultdict
 from xml.etree import ElementTree as ET
 from provincias import TEXTOS
-from obras import album, CASOS, destacados, galeria, RUTA_LEON, TITULO_LEON, trabajo_leon, tarjeta_leon
+from obras import recorrido, album, CASOS, destacados, galeria, RUTA_LEON, TITULO_LEON, trabajo_leon, tarjeta_leon
 from design import home
 from editorial import SERVICIOS, GUIAS
 from legal import DIRECCION, ORIGEN_RUTA, PAGINAS
@@ -57,12 +57,12 @@ def page(path,title,desc,body,parents=(),extra=''):
     target.write_text(f'''<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)} · Alero Norte</title><meta name="description" content="{escape(desc,quote=True)}">{canonical}{schema}<link rel="icon" href="/assets/simbolo.svg"><link rel="stylesheet" href="/assets/style.css"><link rel="stylesheet" href="/assets/interiores.css?v=granate-1"><link rel="stylesheet" href="/assets/galeria.css">{extra}</head><body><a class="skip" href="#principal">Saltar al contenido</a><header class="site-header"><div class="wrap mast"><a class="brand" href="/">Alero Norte</a><nav aria-label="Principal"><a href="/servicios/">Servicios</a><a href="/zonas/">Zonas</a><a href="/guias/">Guías</a><a href="/galeria/">Fotos</a></nav><div class="contactos"><a class="button" href="tel:+{TELEFONO}" aria-label="Llamar al {TELEFONO_VISIBLE}">Llamar</a><a class="button wa" href="{escape(whatsapp)}">WhatsApp</a></div></div></header><main id="principal">{main}</main>{pie(whatsapp,SERVICIOS,provs)}<script defer src="/assets/galeria.js"></script></body></html>''')
 out.mkdir(exist_ok=True)
 shutil.copytree(root/'assets',out/'assets',dirs_exist_ok=True)
-page('/','Limpieza de canalones y tejados desde Bilbao','Limpieza de canalones y tejados, reparación de goteras y bajantes. Consulta los servicios, el desplazamiento desde Bilbao y la previsión de tu municipio.',(home(rows)+proceso()).replace('<section class="coverage-band"', destacados(incluir_leon=True)+'<section class="coverage-band"'))
+page('/','Limpieza de canalones y tejados desde Bilbao','Limpieza de canalones y tejados, reparación de goteras y bajantes. Consulta los servicios, el desplazamiento desde Bilbao y la previsión de tu municipio.',(home(rows)+proceso()).replace('<section class="coverage-band"', recorrido()+destacados(incluir_leon=True)+'<section class="coverage-band"'))
 for group,title,desc,data in [('servicios','Servicios de canalones y tejados','Elige la intervención según lo que ocurre en tu cubierta.',SERVICIOS),('guias','Guías para viviendas y comunidades','Orientación para describir una incidencia, organizar el mantenimiento y comparar el alcance de una reparación.',GUIAS)]:
     path='/'+group+'/'
     page(path,title,desc,cards((path+k+'/',v['title'],v['intro']) for k,v in data.items()))
     for k,v in data.items(): page(path+k+'/',v['title'],v['intro'],v['body']+'<p>'+link('/preparar-consulta/','Preparar los datos para una consulta')+'</p>',[(path,title)])
-page('/galeria/','Galería de canalones y tejados','Fotografías de cubiertas, canalones, aleros y puntos de entrada de agua.',album())
+page('/galeria/','Trabajos reales realizados por Alero Norte','Fotografías de nuestros trabajos de limpieza y reparación en distintos pueblos de nuestra zona de cobertura. Desde Bilbao atendemos Bizkaia, Álava, Gipuzkoa, Cantabria, Burgos y León.',album())
 page(RUTA_LEON,TITULO_LEON,'Cuatro fotografías de un trabajo en la provincia de León: las tejas, el alero, el tramo lateral y la salida del canalón.',trabajo_leon(),[('/zonas/leon/','León')])
 page('/preparar-consulta/','Preparar una consulta','Anota dónde está el inmueble y qué ocurre cuando llueve.',form())
 def listing(items):
@@ -79,7 +79,7 @@ def filt(): return '<label class="filter" hidden>Buscar municipio <input type="s
 def resumen_rutas(items, nombres):
     elegidos=[r for r in items if r['ine'] in nombres]
     elegidos.sort(key=lambda r:r['km'])
-    filas=''.join('<tr><th scope="row">'+link(r['path'],r['nombre'])+'</th><td>'+str(r['km'])+' km</td><td>'+escape(' · '.join(r['carreteras'][:2]) or 'Bilbao')+'</td></tr>' for r in elegidos)
+    filas=''.join('<tr><th scope="row">'+link(r['path'],r['nombre'])+'</th><td>'+str(r['km'])+' km</td><td>'+escape(' · '.join(r['carreteras']) or 'Recorrido local')+'</td></tr>' for r in elegidos)
     return '<section class="rutas-zona"><h2>Trayectos desde Bilbao</h2><table><caption>Distancias aproximadas por carretera</caption><thead><tr><th>Destino</th><th>Distancia</th><th>Vías principales</th></tr></thead><tbody>'+filas+'</tbody></table></section>'
 
 representantes={'48044','01059','20069','39075','09059','24089'}
