@@ -184,3 +184,15 @@ GUIAS['tiempo-y-acceso-para-limpiar-canalones'] = {
 <dt><strong>Rebose o gotera</strong></dt><dd>Anota si el agua salta por encima del canalón, gotea por una unión o aparece dentro de casa. Si sucede solo cuando el viento empuja la lluvia contra una fachada, indica cuál.</dd></dl></section>
 <section><h2>Quién confirma la intervención</h2><p>El equipo valora el acceso, la pendiente, el estado de la cubierta y el tiempo en el propio inmueble. Para pedir presupuesto bastan tus observaciones desde el suelo o desde el interior.</p></section>"""
 }
+
+SERVICIOS['mantenimiento-de-tejados-para-comunidades'] = {
+    'title': 'Mantenimiento de tejados y canalones para comunidades de propietarios',
+    'intro': 'Limpieza de canalones, revisión de bajantes y reparación de goteras en cubiertas compartidas. Atendemos a comunidades de propietarios y administradores de fincas por desplazamiento desde Bilbao.',
+    'body': """<section><h2>Una incidencia en el patio o una limpieza de todo el edificio</h2>
+<p>Si el agua cae delante de una ventana del patio, identifica el portal, la planta y el lado del edificio. Dos vecinos pueden estar describiendo la misma bajante desde ventanas distintas. Una vista general desde el patio permite situar los dos avisos en la misma fachada.</p>
+<p>Para una limpieza de toda la comunidad, enumera los portales y los tramos que se quieren incluir: calle, patio interior y cubierta de los anexos, si los hay. Si un portal da acceso a la cubierta de otro, indícalo al concertar la visita.</p></section>
+<section><h2>Preparar el presupuesto para la junta</h2><p>Una propuesta para retirar hojas del canalón de la calle tiene un alcance distinto a otra que incluya el patio y la revisión de una bajante compartida. Conviene identificar cada tramo y dejar por separado la reparación de una junta o la sustitución de una pieza que se detecte durante la revisión.</p>
+<a href="/guias/comparar-presupuestos-comunidad/">Cómo comparar presupuestos para una comunidad</a></section>
+<section><h2>Si gestionas varias fincas</h2><p>Para cada aviso, facilita municipio, dirección, portales afectados y quién puede abrir el acceso común. Si es una gotera, indica en qué vivienda aparece y cuándo se vio por última vez. Puedes adjuntar al mensaje una foto general del edificio y otra del punto afectado.</p>
+<a href="/preparar-consulta/#comunidad">Preparar una solicitud para mi comunidad</a></section>"""
+}

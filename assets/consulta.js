@@ -5,6 +5,7 @@
   const output = result.querySelector('textarea');
   const status = result.querySelector('[role=status]');
   form.hidden = false;
+  if (location.hash === '#comunidad') form.elements.inmueble.value = 'Comunidad de vecinos';
   form.elements.lugar.value = (new URLSearchParams(location.search).get('municipio') || '').slice(0, 140);
   const sintomas = {
     'junto-bajante': ['Limpieza de canalones', 'El canalón rebosa junto a la bajante.'],
