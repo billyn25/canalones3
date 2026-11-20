@@ -5,6 +5,8 @@ import re
 from html import escape
 
 
+REBOSE = """<label>¿Cuándo rebosa el canalón? (opcional)<br><select name="rebose"><option value="">Elige si procede</option><option>También con lluvia suave</option><option>Solo con chaparrones fuertes</option><option>No lo sé</option></select></label>"""
+
 def form():
     phone = re.sub(r'[\s()+-]', '', os.getenv('WHATSAPP_NUMBER', TELEFONO))
     if not re.fullmatch(r'[1-9]\d{8,14}', phone):
@@ -17,6 +19,7 @@ def form():
 <p><label>Tipo de inmueble<br><select name="inmueble"><option>Vivienda unifamiliar</option><option>Comunidad de vecinos</option><option>Local o nave</option><option>Otro inmueble</option></select></label></p>
 <p><label>Motivo de la consulta<br><select name="motivo"><option>Limpieza de canalones</option><option>Limpieza de tejado</option><option>Gotera o filtración</option><option>Reparación de canalón o bajante</option><option>Reparación de tejado</option><option>Otro motivo</option></select></label></p>
 <p><label>¿Qué has observado?<br><textarea name="detalle" required rows="4" maxlength="1800" placeholder="Por ejemplo, el canalón rebosa junto al portal cuando llueve."></textarea></label></p>
+<p>{REBOSE}</p>
 <p><label>Acceso y disponibilidad (opcional)<br><textarea name="acceso" rows="2" maxlength="500" placeholder="Patio interior, número de plantas o persona que puede abrir el portal."></textarea></label></p>
 <button class="button" type="submit">{'Continuar en WhatsApp' if phone else 'Crear resumen'}</button>
 {('<button type="submit" value="resumen">Ver resumen</button>' if phone else '')}</form>
@@ -32,6 +35,7 @@ def presupuesto(lugar=''):
 <form id="solicitud-presupuesto" data-phone="{TELEFONO}" hidden>
 <label>Municipio o barrio<input name="lugar" value="{escape(lugar, quote=True)}" maxlength="140" required></label>
 <label>¿Qué necesitas?<textarea name="detalle" rows="3" maxlength="1500" required placeholder="Por ejemplo, limpiar el canalón de una comunidad de tres plantas."></textarea></label>
+{REBOSE}
 <p>Al continuar se abre WhatsApp con tu consulta preparada. Tú decides cuándo enviarla. <a href="/privacidad/">Privacidad</a></p>
 <button class="button" type="submit">Continuar en WhatsApp</button></form>
 <noscript><a href="https://wa.me/{TELEFONO}">Pedir presupuesto por WhatsApp</a></noscript></div></section>'''

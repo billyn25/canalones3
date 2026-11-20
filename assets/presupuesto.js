@@ -5,7 +5,8 @@ if (solicitud) {
     event.preventDefault();
     const lugar = solicitud.elements.lugar.value.trim();
     const detalle = solicitud.elements.detalle.value.trim();
-    const mensaje = 'Hola, quisiera un presupuesto en ' + lugar + '.\n\n' + detalle;
+    const rebose = solicitud.elements.rebose?.value;
+    const mensaje = 'Hola, quisiera un presupuesto en ' + lugar + '.\n\n' + detalle + (rebose ? '\n\nCuándo rebosa: ' + rebose : '');
     location.assign('https://wa.me/' + solicitud.dataset.phone + '?text=' + encodeURIComponent(mensaje));
   });
 }

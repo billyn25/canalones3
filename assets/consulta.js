@@ -10,10 +10,10 @@
   form.addEventListener('submit', event => {
     event.preventDefault();
     const fields = new FormData(form);
-    const labels = {lugar: 'Ubicación', inmueble: 'Inmueble', motivo: 'Servicio', detalle: 'Observaciones', acceso: 'Acceso y disponibilidad'};
+    const labels = {lugar: 'Ubicación', inmueble: 'Inmueble', motivo: 'Servicio', detalle: 'Observaciones', rebose: 'Cuándo rebosa', acceso: 'Acceso y disponibilidad'};
     const summary = ['Consulta para Alero Norte'];
     for (const [key, label] of Object.entries(labels)) {
-      const value = fields.get(key).trim();
+      const value = (fields.get(key) || '').trim();
       if (value) summary.push(label + ': ' + value);
     }
     output.value = summary.join('\n\n');
