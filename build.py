@@ -60,8 +60,8 @@ shutil.copytree(root/'assets',out/'assets',dirs_exist_ok=True)
 
 ruta_comunidades = '/comunidades/'
 titulo_comunidades = 'Limpieza de canalones y tejados para comunidades de vecinos'
-portada_comunidades = '''<section class="wrap" style="margin-block:clamp(3rem,7vw,6rem);border-top:3px solid currentColor;padding-top:1.5rem"><h2>¿Gestionas varios portales?</h2>
-<p>Una bajante puede recoger agua de dos portales y dar problemas solo en uno. Prepara la visita con un parte que identifique la fachada, el patio y el tramo afectado.</p>
+portada_comunidades = '''<section class="wrap" style="margin-block:clamp(3rem,7vw,6rem);border-top:3px solid currentColor;padding-top:1.5rem;display:grid;justify-items:start;gap:clamp(1rem,2vw,1.5rem)"><h2 style="margin:0">¿Gestionas varios portales?</h2>
+<p style="margin:0;max-width:65ch">Una bajante puede recoger agua de dos portales y dar problemas solo en uno. Prepara la visita con un parte que identifique la fachada, el patio y el tramo afectado.</p>
 <a class="button" href="/comunidades/">Preparar un parte de comunidad</a></section>'''
 parte_comunidad = '''<section><h2>Del aviso del vecino al encargo de la comunidad</h2>
 <dl><dt><strong>Rebosa sobre la acera</strong></dt><dd>Indica entre qué portales cae el agua y si se ve una cortina a lo largo del borde o un chorro junto a una unión. Esa diferencia ayuda a escoger el tramo que revisar.</dd>
