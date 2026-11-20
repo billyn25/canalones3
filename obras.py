@@ -79,6 +79,12 @@ def recorrido():
         ('Quiero identificar qué tramo hay que limpiar', 'lekeitio-alero', 'Detalle del borde de cubierta en Lekeitio.', 'Una vista general ayuda a reconocer la fachada. Una segunda foto de la esquina o de la bajante permite concretar hasta dónde llega el tramo. Así se ve en la cubierta de Lekeitio.', '/zonas/bizkaia/lekeitio/#trabajo', 'Ver el alero de Lekeitio'),
     ]
     partes=[]
-    for titulo,imagen,pie,texto,url,enlace in puntos:
-        partes.append(f'<details><summary>{titulo}</summary><div class="detalle-trabajo">{foto(imagen,pie)}<div><p>{texto}</p><a href="{url}">{enlace}</a></div></div></details>')
+    opciones = [
+        [('junto-bajante', 'Rebosa junto a la bajante'), ('fachada', 'Rebosa a lo largo de la fachada')],
+        [('hojas', 'Consultar por las hojas acumuladas')],
+        [('tramo', 'Pedir presupuesto para un tramo')],
+    ]
+    for (titulo,imagen,pie,texto,url,enlace), consultas in zip(puntos, opciones):
+        acciones = ''.join(f'<p><a href="/preparar-consulta/#sintoma={clave}">{etiqueta}</a></p>' for clave, etiqueta in consultas)
+        partes.append(f'<details><summary>{titulo}</summary><div class="detalle-trabajo">{foto(imagen,pie)}<div><p>{texto}</p><a href="{url}">{enlace}</a>{acciones}</div></div></details>')
     return '<section class="wrap consulta-visual"><h2>¿Qué ves en tu tejado?</h2>'+''.join(partes)+'</section>'

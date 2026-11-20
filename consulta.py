@@ -12,7 +12,7 @@ def form():
     if not re.fullmatch(r'[1-9]\d{8,14}', phone):
         phone = ''
     return f"""<section>
-<p>Para una limpieza, indica cuántas fachadas tienen canalón y si alguna da a un patio. Si hay una fuga, señala la unión o la ventana junto a la que aparece. Puedes adjuntar las fotos al abrir el chat.</p>
+<p>Para una limpieza, indica si quieres incluir la fachada de la calle, el patio o todo el perímetro. Si hay una fuga, señala la unión o la ventana junto a la que aparece. Puedes adjuntar las fotos al abrir el chat.</p>
 <p>Describe el trabajo y pulsa «Continuar en WhatsApp». Se abrirá tu consulta lista para enviarla. También puedes revisar o descargar el resumen.</p>
 <form id="consulta" data-phone="{escape(phone)}" hidden>
 <p><label>Municipio y provincia<br><input name="lugar" required maxlength="140" placeholder="Por ejemplo, Boñar, León"></label></p>
@@ -31,7 +31,7 @@ def form():
 <script defer src="/assets/consulta.js"></script></section>"""
 
 def presupuesto(lugar=''):
-    return f'''<section id="presupuesto" class="presupuesto"><div class="wrap presupuesto-grid"><div><h2>Pide presupuesto</h2><p>Cuéntanos qué ocurre. Podrás añadir fotos al abrir WhatsApp.</p></div>
+    return f'''<section id="presupuesto" class="presupuesto"><div class="wrap presupuesto-grid"><div><h2>Pide presupuesto</h2><p>Indica qué tramos quieres incluir: el canalón de la calle, el del patio o todo el perímetro. Si además gotea una junta, señala dónde para valorar esa reparación por separado.</p></div>
 <form id="solicitud-presupuesto" data-phone="{TELEFONO}" hidden>
 <label>Municipio o barrio<input name="lugar" value="{escape(lugar, quote=True)}" maxlength="140" required></label>
 <label>¿Qué necesitas?<textarea name="detalle" rows="3" maxlength="1500" required placeholder="Por ejemplo, limpiar el canalón de una comunidad de tres plantas."></textarea></label>

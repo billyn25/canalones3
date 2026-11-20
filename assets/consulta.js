@@ -6,6 +6,16 @@
   const status = result.querySelector('[role=status]');
   form.hidden = false;
   form.elements.lugar.value = (new URLSearchParams(location.search).get('municipio') || '').slice(0, 140);
+  const sintomas = {
+    'junto-bajante': ['Limpieza de canalones', 'El canalón rebosa junto a la bajante.'],
+    fachada: ['Limpieza de canalones', 'El canalón rebosa a lo largo de la fachada.'],
+    hojas: ['Limpieza de tejado', 'Hay hojas acumuladas en el tejado.'],
+    tramo: ['Limpieza de canalones', 'Quiero presupuesto para limpiar un tramo del canalón.']
+  };
+  const clave = new URLSearchParams(location.hash.slice(1)).get('sintoma');
+  if (Object.hasOwn(sintomas, clave)) {
+    [form.elements.motivo.value, form.elements.detalle.value] = sintomas[clave];
+  }
   form.addEventListener('input', () => { result.hidden = true; });
   form.addEventListener('submit', event => {
     event.preventDefault();
