@@ -19,11 +19,9 @@ def widget(row):
     return f'''<section class="weather-box" aria-labelledby="prevision-local">
 <h2 id="prevision-local">El tiempo en {name}</h2>
 <p>Consulta las rachas previstas durante la visita y si se esperan lluvias o tormentas. Una noche de helada o una lluvia reciente pueden dejar la cubierta húmeda o con hielo aunque ya luzca el sol. El equipo comprueba el estado del tejado y el acceso antes de empezar.</p>
-<details hidden class="weather-disclosure" data-forecast="{base}/mostrarwidget/{ident}">
-<summary>Ver previsión de AEMET para {estacion}</summary>
-<div class="weather-output"></div>
+<details class="weather-disclosure" data-codigo="{code if code in AEMET else '48036'}">
+<summary>Tiempo por horas y avisos en {estacion}</summary>
+<div class="weather-output" aria-live="polite"></div>
 </details>
-<p><a href="{base}/horas/{ident}">Previsión por horas de {estacion}</a> · <a href="https://www.aemet.es/es/eltiempo/prediccion/avisos">Consultar avisos de AEMET</a></p>
-<p>Compara los milímetros de lluvia previstos y las rachas durante la visita. Si hay aviso, comprueba la zona y su horario.</p>
-<a href="{base}/{ident}">Previsión completa de {estacion}</a><p><a href="/guias/tiempo-y-acceso-para-limpiar-canalones/">Qué tener en cuenta para elegir el día de la limpieza</a></p>
+<noscript><a href="{base}/horas/{ident}">Consultar la previsión en AEMET</a></noscript><p><a href="/guias/tiempo-y-acceso-para-limpiar-canalones/">Qué tener en cuenta para elegir el día de la limpieza</a></p>
 </section>'''

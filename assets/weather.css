@@ -3,3 +3,6 @@
 .weather-disclosure { margin-block: 1rem; }
 .weather-disclosure summary { padding: .8rem 1rem; border: 1px solid currentColor; border-radius: .35rem; width: fit-content; cursor: pointer; font-weight: 650; }
 .weather-output iframe { margin-top: 1rem; background: white; display: block; width: min(100%, 36rem); height: 25rem; border: 0; }
+.weather-output {max-width:42rem;overflow-x:auto}
+.weather-output table {width:100%;border-collapse:collapse;font-size:.95rem}
+.weather-output th,.weather-output td {padding:.5rem .3rem;text-align:left;border-bottom:1px solid #ccc}
