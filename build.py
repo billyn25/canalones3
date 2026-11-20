@@ -52,15 +52,39 @@ def page(path,title,desc,body,parents=(),extra=''):
         municipio = title.removeprefix('Limpieza de canalones en ')
         mensaje = f'Hola, quería consultar por un trabajo de canalones o tejado en {municipio}.'
     whatsapp = 'https://wa.me/'+TELEFONO+'?'+urlencode({'text':mensaje})
-    if path not in ('/preparar-consulta/', '/aviso-legal/', '/privacidad/', '/cookies/', '/distancias/'):
+    if path not in ('/comunidades/', '/preparar-consulta/', '/aviso-legal/', '/privacidad/', '/cookies/', '/distancias/'):
         main+=presupuesto(municipio)+'<script defer src="/assets/presupuesto.js"></script>'
     target.write_text(f'''<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)} · Alero Norte</title><meta name="description" content="{escape(desc,quote=True)}">{canonical}{schema}<link rel="icon" type="image/svg+xml" href="/assets/alero-norte-icono.svg"><link rel="stylesheet" href="/assets/style.css?v=alero-2"><link rel="stylesheet" href="/assets/interiores.css?v=granate-1"><link rel="stylesheet" href="/assets/galeria.css">{extra}</head><body><a class="skip" href="#principal">Saltar al contenido</a><header class="site-header"><div class="wrap mast"><a class="brand" href="/">Alero Norte</a><nav aria-label="Principal"><a href="/servicios/">Servicios</a><a href="/zonas/">Zonas</a><a href="/guias/">Guías</a><a href="/galeria/">Fotos</a></nav><div class="contactos"><a class="button" href="tel:+{TELEFONO}" aria-label="Llamar al {TELEFONO_VISIBLE}">Llamar</a><a class="button wa" href="{escape(whatsapp)}">WhatsApp</a></div></div></header><main id="principal">{main}</main>{pie(whatsapp,SERVICIOS,provs)}<script defer src="/assets/galeria.js"></script></body></html>''')
 out.mkdir(exist_ok=True)
 shutil.copytree(root/'assets',out/'assets',dirs_exist_ok=True)
-page('/','Limpieza de canalones y tejados desde Bilbao','Limpieza de canalones y tejados, reparación de goteras y bajantes. Consulta los servicios, el desplazamiento desde Bilbao y la previsión de tu municipio.',(home(rows)+proceso()).replace('<section class="coverage-band"', recorrido()+destacados(incluir_leon=True)+'<section class="coverage-band"'))
+
+ruta_comunidades = '/comunidades/'
+titulo_comunidades = 'Limpieza de canalones y tejados para comunidades de vecinos'
+portada_comunidades = '''<section class="wrap" style="margin-block:clamp(3rem,7vw,6rem);border-top:3px solid currentColor;padding-top:1.5rem"><h2>¿Gestionas varios portales?</h2>
+<p>Una bajante puede recoger agua de dos portales y dar problemas solo en uno. Prepara la visita con un parte que identifique la fachada, el patio y el tramo afectado.</p>
+<a class="button" href="/comunidades/">Preparar un parte de comunidad</a></section>'''
+parte_comunidad = '''<section><h2>Del aviso del vecino al encargo de la comunidad</h2>
+<dl><dt><strong>Rebosa sobre la acera</strong></dt><dd>Indica entre qué portales cae el agua y si se ve una cortina a lo largo del borde o un chorro junto a una unión. Esa diferencia ayuda a escoger el tramo que revisar.</dd>
+<dt><strong>Gotea dentro del patio</strong></dt><dd>Dos vecinos pueden estar viendo la misma bajante desde lados opuestos. Identifica el patio por el portal que da acceso y señala una referencia visible, como la ventana de la escalera.</dd>
+<dt><strong>Hay una mancha en el último piso</strong></dt><dd>Anota cuándo apareció y en qué habitación. Para situarla en el edificio sirve una referencia como «junto a la fachada que da a la plaza». Guarda una foto del interior tomada tras la lluvia.</dd></dl></section>
+<section><h2>Parte para el administrador de fincas</h2><p>Completa los datos que conoces. Al continuar podrás revisar el mensaje en WhatsApp y adjuntar fotografías.</p>
+<form action="https://wa.me/PHONE" method="get" class="parte-comunidad"><label for="incidencia-comunidad"><strong>Datos del aviso</strong></label>
+<textarea id="incidencia-comunidad" name="text" rows="11" required style="display:block;width:100%;max-width:44rem;padding:1rem;margin:0.7rem 0 1rem;font:inherit">Solicitud de visita para una comunidad
+Municipio y calle: 
+Portal o bloque: 
+Fachada, patio o vivienda afectada: 
+Qué se observa cuando llueve: 
+Desde cuándo ocurre: 
+Acceso al patio o cuarto de cubierta: 
+Horario de contacto: </textarea><button class="button" type="submit">Revisar el parte en WhatsApp</button></form></section>
+<section><h2>Qué dejar por escrito para la junta</h2><p>Si hay tres portales y el problema aparece en el central, pide que la oferta identifique qué canalones abarca, si incluye la comprobación de sus bajantes y dónde se retirarán los restos. Así la junta puede decidir entre atender la incidencia puntual o encargar el mantenimiento del conjunto.</p>
+<p><a href="/guias/comparar-presupuestos-comunidad/">Comparar dos presupuestos de cubierta</a> · <a href="/galeria/">Ver fotografías de trabajos realizados</a></p></section>'''.replace('PHONE', TELEFONO)
+page(ruta_comunidades,titulo_comunidades,'Atendemos a presidentes de comunidades y administradores de fincas con desplazamiento desde Bilbao. Describe el aviso y prepara la visita al edificio.',parte_comunidad)
+
+page('/','Limpieza de canalones y tejados desde Bilbao','Limpieza de canalones y tejados, reparación de goteras y bajantes. Consulta los servicios, el desplazamiento desde Bilbao y la previsión de tu municipio.',(home(rows)+proceso()).replace('<section class="coverage-band"', recorrido()+'<div style="padding-block-start:clamp(2rem,5vw,4rem)">'+destacados(incluir_leon=True)+'</div>'+portada_comunidades+'<section class="coverage-band"'))
 for group,title,desc,data in [('servicios','Servicios de canalones y tejados','Elige la intervención según lo que ocurre en tu cubierta.',SERVICIOS),('guias','Guías para viviendas y comunidades','Orientación para describir una incidencia, organizar el mantenimiento y comparar el alcance de una reparación.',GUIAS)]:
     path='/'+group+'/'
-    page(path,title,desc,cards((path+k+'/',v['title'],v['intro']) for k,v in data.items()))
+    page(path,title,desc,cards((path+k+'/',v['title'],v['intro']) for k,v in data.items())+(portada_comunidades if group=='servicios' else ''))
     for k,v in data.items(): page(path+k+'/',v['title'],v['intro'],v['body']+'<p>'+link('/preparar-consulta/','Preparar los datos para una consulta')+'</p>',[(path,title)])
 page('/galeria/','Trabajos reales realizados por Alero Norte','Fotografías de nuestros trabajos de limpieza y reparación en distintos pueblos de nuestra zona de cobertura. Desde Bilbao atendemos Bizkaia, Álava, Gipuzkoa, Cantabria, Burgos, León, Palencia y La Rioja.',album())
 page(RUTA_LEON,TITULO_LEON,'Cuatro fotografías de un trabajo en la provincia de León: las tejas, el alero, el tramo lateral y la salida del canalón.',trabajo_leon(),[('/zonas/leon/','León')])
@@ -95,7 +119,7 @@ def resumen_rutas(items, nombres):
     elegidos=[r for r in items if r['ine'] in nombres and r['km'] is not None]
     elegidos.sort(key=lambda r:r['km'])
     filas=''.join('<tr><th scope="row">'+link(r['path'],r['nombre'])+'</th><td>'+str(r['km'])+' km</td><td>'+(' · '.join('<span class="via">'+escape(v)+'</span>' for v in r['carreteras']) or ('Recorrido local' if r['metodo']=='local' else 'Consultar itinerario'))+'</td></tr>' for r in elegidos)
-    return '<section class="rutas-zona"><h2>Trayectos desde Bilbao</h2><table><caption>Distancias aproximadas por carretera</caption><thead><tr><th>Destino</th><th>Distancia</th><th>Vías principales</th></tr></thead><tbody>'+filas+'</tbody></table></section>'
+    return '<section class="rutas-zona"><h2>Trayectos desde Bilbao</h2><table><caption>Distancias aproximadas por carretera</caption><thead><tr><th>Destino</th><th><span aria-label="Distancia en kilómetros">Km</span></th><th>Vías principales</th></tr></thead><tbody>'+filas+'</tbody></table></section>'
 
 representantes={'48044','01059','20069','39075','09059','24089','34120','26089'}
 for ruta,(titulo,intro,texto) in PAGINAS.items():
@@ -137,11 +161,12 @@ for k,title in provs.items():
             ('Reparación de canalones y bajantes en '+n, 'Consultar reparaciones de juntas, soportes y tramos', '/servicios/reparacion-de-canalones-y-bajantes/'),
         ]
         servicios_locales='<div class="servicios-locales">'+''.join('<section><h2>'+escape(encabezado)+'</h2><p>'+link(url,etiqueta)+'</p></section>' for encabezado,etiqueta,url in enlaces_locales)+'</div>'
-        body=servicios_locales+referencia_obra(r)+desplazamiento+widget(r)+'<h2>Municipios próximos</h2>'+proximity(r,rows)
+        body=referencia_obra(r)+desplazamiento+servicios_locales+widget(r)+'<h2>Municipios próximos</h2>'+proximity(r,rows)
         if k=='bizkaia' and slug(n) in CASOS:
             body='<div id="trabajo">'+galeria(slug(n))+'</div>'+body
         if r.get('nucleos'):
             body+='<section id="localidades"><h2>Localidades del municipio</h2><ul class="municipios">'+''.join('<li>'+escape(v)+'</li>' for v in r['nucleos'])+'</ul></section>'
+        body+='<p>'+link(ruta_comunidades,'Preparar un aviso de comunidad o administrador de fincas')+'</p>'
         body+='<p>'+link('/preparar-consulta/?'+urlencode({'municipio':n+', '+title}),'Preparar una consulta para '+n)+'</p>'
         caso=CASOS.get(slug(n)) if k=='bizkaia' else None
         descripcion=(caso[1]+' en '+n+'. Fotografías del trabajo y contacto para una visita.') if caso else introduccion_municipal(r)
