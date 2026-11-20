@@ -10,6 +10,7 @@ def form():
     if not re.fullmatch(r'[1-9]\d{8,14}', phone):
         phone = ''
     return f"""<section>
+<p>Para una limpieza, indica cuántas fachadas tienen canalón y si alguna da a un patio. Si hay una fuga, señala la unión o la ventana junto a la que aparece. Puedes adjuntar las fotos al abrir el chat.</p>
 <p>Describe el trabajo y pulsa «Continuar en WhatsApp». Se abrirá tu consulta lista para enviarla. También puedes revisar o descargar el resumen.</p>
 <form id="consulta" data-phone="{escape(phone)}" hidden>
 <p><label>Municipio y provincia<br><input name="lugar" required maxlength="140" placeholder="Por ejemplo, Boñar, León"></label></p>

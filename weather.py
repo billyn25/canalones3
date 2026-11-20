@@ -18,10 +18,10 @@ def widget(row):
         return f'<section><h2>Previsión cerca de {name}</h2><p>AEMET ofrece como referencia cercana la <a href="{base}/{AEMET["48036"]}">previsión de Galdakao</a>.</p></section>'
     return f'''<section class="weather-box" aria-labelledby="prevision-local">
 <h2 id="prevision-local">El tiempo en {name}</h2>
-<p>Previsión de lluvia y viento.</p>
+<p>Consulta las rachas previstas durante la visita y si se esperan lluvias o tormentas. Una noche de helada o una lluvia reciente pueden dejar la cubierta húmeda o con hielo aunque ya luzca el sol. El equipo comprueba el estado del tejado y el acceso antes de empezar.</p>
 <details hidden class="weather-disclosure" data-forecast="{base}/mostrarwidget/{ident}">
 <summary>Ver previsión de AEMET para {name}</summary>
 <div class="weather-output"></div>
 </details>
-<a href="{base}/{ident}">Ver viento, rachas y previsión completa de {name} en AEMET</a>
+<a href="{base}/{ident}">Ver viento, rachas y previsión completa de {name} en AEMET</a><p><a href="/guias/tiempo-y-acceso-para-limpiar-canalones/">Qué tener en cuenta para elegir el día de la limpieza</a></p>
 </section>'''

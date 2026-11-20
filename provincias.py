@@ -1,5 +1,7 @@
 # Contexto para organizar el acceso al inmueble desde Bilbao.
 TEXTOS = {
+    'palencia': ('Visitas a Palencia y sus municipios', 'Nos desplazamos desde Bilbao para atender viviendas y comunidades en toda la provincia, desde Aguilar de Campoo hasta Palencia capital. Si la cubierta pertenece a una finca fuera del casco urbano, envíanos la ubicación de la entrada para acordar el punto de encuentro.'),
+    'la-rioja': ('Desplazamientos a La Rioja', 'Atendemos avisos en Haro, Nájera, Logroño, Calahorra y el resto de municipios riojanos. Si varios portales comparten cubierta, indica por cuál se accede al patio y a qué fachada da el tramo afectado para organizar la visita desde Bilbao.'),
     'bizkaia': ('Del portal urbano al caserío', 'En Bilbao o Barakaldo, indica si el tramo afectado da a la calle o a un patio de comunidad. Para un caserío, facilita el barrio y un punto de encuentro si la numeración queda lejos de la carretera. Así se puede preparar el acceso al lado del alero donde rebosa el agua.'),
     'alava': ('Visitas a pueblos y barrios de Álava', 'Para una visita en Aramaio, por ejemplo, dinos si la vivienda está en Ibarra o en otro pueblo del municipio. Así podemos calcular la ruta hasta el portal o el caserío.'),
     'gipuzkoa': ('Una referencia para llegar al alero afectado', 'En una comunidad de Donostia o Eibar, indica desde qué portal se entra al patio si la fachada con la fuga da a otra calle. En un caserío apartado del núcleo urbano, añade el nombre del barrio y el último cruce. Ambos detalles ayudan a preparar la visita.'),

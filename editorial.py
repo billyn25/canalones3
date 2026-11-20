@@ -11,6 +11,7 @@ SERVICIOS = {
 <section><h2>Qué conviene comprobar después</h2>
 <ul><li>Si el agua alcanza la bajante y por dónde sale cuando la descarga es visible.</li><li>Si queda agua retenida siempre en el mismo tramo, especialmente entre dos soportes.</li><li>Si alguna unión sigue goteando una vez despejado el recorrido.</li></ul>
 <p>Una fuga localizada o un tramo vencido pueden requerir una <a href="/servicios/reparacion-de-canalones-y-bajantes/">reparación del canalón o la bajante</a>. Conviene que esa actuación figure por separado en el presupuesto.</p></section>
+<section><h2>Una limpieza en Lekeitio</h2><p>En este trabajo retiramos hojas del tejado y del canalón. Las vistas del alero permiten reconocer el tramo que recoge el agua. <a href="/zonas/bizkaia/lekeitio/#trabajo">Ver las fotografías de Lekeitio</a>.</p></section>
 <section><h2>Acceso por patio o por calle</h2>
 <p>Indica cuántas plantas hay, si el canalón da al patio, al jardín o a la vía pública y si hay un acceso de mantenimiento conocido. Una foto general tomada desde el suelo ayuda a identificar toldos, salientes y otros obstáculos antes de preparar la visita.</p></section>""",
     },
@@ -21,6 +22,7 @@ SERVICIOS = {
 <section><h2>Delimitar la zona que necesita limpieza</h2>
 <p>Un árbol sobre un faldón, un canalón interior entre dos edificios o un patio bajo una cubierta alta requieren planteamientos distintos. Identificar dónde se acumulan los restos permite valorar si basta intervenir en el recorrido de evacuación o si conviene incluir otros paños.</p>
 <p>La propuesta debe tener en cuenta el tipo y el estado de la cobertura. Las tejas sueltas o deterioradas y las uniones antiguas pueden condicionar el método de trabajo. La visita sirve también para precisar qué zonas se pueden alcanzar y revisar.</p></section>
+<section><h2>Una limpieza integral en Ugao-Miraballes</h2><p>La limpieza abarcó tanto el faldón como los canalones. En las fotografías se distinguen la zona de teja y los restos vegetales recogidos durante la intervención. <a href="/zonas/bizkaia/ugao-miraballes/#trabajo">Ver la cubierta y las hojas retiradas en Ugao-Miraballes</a>.</p></section>
 <section><h2>Qué ocurre con los restos</h2>
 <p>Desplazar la suciedad hasta el borde puede trasladar el atasco al canalón. Al comparar ofertas, comprueba si incluyen la retirada de los residuos y la revisión de los puntos donde desemboca el agua del faldón. Si el problema se concentra en el alero, consulta la <a href="/servicios/limpieza-de-canalones/">limpieza de canalones</a>.</p></section>
 <section><h2>Si ya hay una mancha interior</h2>
@@ -172,3 +174,13 @@ GUIAS['humedad-junto-a-chimenea-o-pared'] = {
 <section><h2>Qué debe quedar identificado en la propuesta</h2><p>Pide que se detalle qué encuentro se ha revisado, qué se ha observado y qué comprobación queda pendiente si el origen sigue oculto. En el trabajo de limpieza de Ugao-Miraballes puedes ver una fotografía del entorno de una chimenea para reconocer esa parte de la cubierta.</p><a href="/zonas/bizkaia/ugao-miraballes/#trabajo">Ver las fotos de la cubierta de Ugao-Miraballes</a></section>'''
 }
 SERVICIOS['reparacion-de-goteras']['body'] += '<p><a href="/guias/humedad-junto-a-chimenea-o-pared/">Qué indicar si la humedad aparece junto a una chimenea o una pared</a></p>'
+
+GUIAS['tiempo-y-acceso-para-limpiar-canalones'] = {
+    'title': 'Cómo elegir el día para limpiar los canalones',
+    'intro': 'Para acordar una visita cuentan tanto la previsión por horas como las condiciones de la fachada donde está el canalón. Dos lados del mismo edificio pueden secarse a ritmos distintos.',
+    'body': """<section><h2>Qué mirar en la previsión municipal</h2><p>Busca el tramo horario de la visita. Revisa la posibilidad de tormenta, las rachas máximas y si ha llovido durante la noche. Una mañana despejada puede empezar con teja mojada o escarcha en la vertiente que sigue a la sombra. Si cambia el tiempo, contacta con el equipo antes del desplazamiento.</p></section>
+<section><h2>Qué se puede contar desde el suelo</h2><dl><dt><strong>Árboles sobre el alero</strong></dt><dd>Señala qué tramo queda bajo las ramas y dónde aparecen hojas después de una racha. Eso ayuda a precisar qué parte interesa limpiar.</dd>
+<dt><strong>Patio, terraza o acera</strong></dt><dd>Indica hacia dónde cae el agua, cuántas plantas hay y quién puede abrir el acceso. Si la fachada da a una calle estrecha, una vista general ayuda a preparar la visita.</dd>
+<dt><strong>Rebose o gotera</strong></dt><dd>Anota si el agua salta por encima del canalón, gotea por una unión o aparece dentro de casa. Si sucede solo cuando el viento empuja la lluvia contra una fachada, indica cuál.</dd></dl></section>
+<section><h2>Quién confirma la intervención</h2><p>El equipo valora el acceso, la pendiente, el estado de la cubierta y el tiempo en el propio inmueble. Para pedir presupuesto bastan tus observaciones desde el suelo o desde el interior.</p></section>"""
+}

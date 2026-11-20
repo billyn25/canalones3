@@ -17,7 +17,7 @@ from weather import widget
 root=Path(__file__).parent.resolve()
 out=root/'dist'
 base=(os.getenv('SITE_URL') or os.getenv('URL') or '').rstrip('/')
-provs={'bizkaia':'Bizkaia','alava':'Álava','gipuzkoa':'Gipuzkoa','cantabria':'Cantabria','burgos':'Burgos','leon':'León'}
+provs={'bizkaia':'Bizkaia','alava':'Álava','gipuzkoa':'Gipuzkoa','cantabria':'Cantabria','burgos':'Burgos','leon':'León','palencia':'Palencia','la-rioja':'La Rioja'}
 def slug(s):
     return re.sub('[^a-z0-9]+','-',unicodedata.normalize('NFKD',s).encode('ascii','ignore').decode().lower()).strip('-')
 rows=json.loads((root/'data/municipios.json').read_text())
@@ -62,53 +62,89 @@ for group,title,desc,data in [('servicios','Servicios de canalones y tejados','E
     path='/'+group+'/'
     page(path,title,desc,cards((path+k+'/',v['title'],v['intro']) for k,v in data.items()))
     for k,v in data.items(): page(path+k+'/',v['title'],v['intro'],v['body']+'<p>'+link('/preparar-consulta/','Preparar los datos para una consulta')+'</p>',[(path,title)])
-page('/galeria/','Trabajos reales realizados por Alero Norte','Fotografías de nuestros trabajos de limpieza y reparación en distintos pueblos de nuestra zona de cobertura. Desde Bilbao atendemos Bizkaia, Álava, Gipuzkoa, Cantabria, Burgos y León.',album())
+page('/galeria/','Trabajos reales realizados por Alero Norte','Fotografías de nuestros trabajos de limpieza y reparación en distintos pueblos de nuestra zona de cobertura. Desde Bilbao atendemos Bizkaia, Álava, Gipuzkoa, Cantabria, Burgos, León, Palencia y La Rioja.',album())
 page(RUTA_LEON,TITULO_LEON,'Cuatro fotografías de un trabajo en la provincia de León: las tejas, el alero, el tramo lateral y la salida del canalón.',trabajo_leon(),[('/zonas/leon/','León')])
 page('/preparar-consulta/','Preparar una consulta','Anota dónde está el inmueble y qué ocurre cuando llueve.',form())
 def listing(items):
     return '<ul class="municipios">'+''.join(f'<li data-localidades="{escape(" | ".join(r.get("nucleos",[])),quote=True)}">{link(r["path"],r["nombre"])}</li>' for r in items)+'</ul>'
+def separacion_km(origin, other):
+    lat1, lat2 = map(math.radians, (origin['lat'], other['lat']))
+    dl = math.radians(other['lon'] - origin['lon'])
+    h = math.sin((lat2-lat1)/2)**2 + math.cos(lat1)*math.cos(lat2)*math.sin(dl/2)**2
+    return 12742 * math.asin(math.sqrt(h))
+
+obras_municipales = [r for r in rows if r['provincia'] == 'bizkaia' and slug(r['nombre']) in CASOS]
+
+def referencia_obra(r):
+    if r in obras_municipales:
+        return ''
+    if r['provincia'] == 'leon':
+        return '<aside><h2>Una cubierta de la provincia de León, en fotos</h2><p>'+link(RUTA_LEON, 'Ver el alero, el canalón lateral y la salida del agua')+'</p></aside>'
+    obra = min(obras_municipales, key=lambda lugar: separacion_km(r, lugar))
+    km = separacion_km(r, obra)
+    if km > 35:
+        return ''
+    nombre, trabajo, _, _ = CASOS[slug(obra['nombre'])]
+    return '<aside><h2>Un trabajo cerca de '+escape(r['nombre'])+'</h2><p>'+link(obra['path']+'#trabajo', trabajo+' en '+nombre)+f' · A unos {max(1, round(km))} km en línea recta.</p></aside>'
+
 def proximity(origin,items):
-    def separation(other):
-        lat1,lat2=map(math.radians,[origin['lat'],other['lat']])
-        dl=math.radians(other['lon']-origin['lon'])
-        h=math.sin((lat2-lat1)/2)**2+math.cos(lat1)*math.cos(lat2)*math.sin(dl/2)**2
-        return 12742*math.asin(math.sqrt(h))
-    cercanos=sorted(((separation(a),a) for a in items if a!=origin),key=lambda par:par[0])[:4]
+    cercanos=sorted(((separacion_km(origin,a),a) for a in items if a!=origin),key=lambda par:par[0])[:4]
     return '<p>Distancias aproximadas en línea recta desde '+escape(origin['nombre'])+'.</p><ul class="vecinos-km">'+''.join('<li>'+link(a['path'],a['nombre'])+'<strong>'+format(km,'.1f').replace('.',',')+' km</strong></li>' for km,a in cercanos)+'</ul>'
 def filt(): return '<label class="filter" hidden>Buscar municipio <input type="search" placeholder="Escribe el nombre del pueblo"></label><p id="resultados" role="status"></p><script src="/assets/filter.js" defer></script>'
 def resumen_rutas(items, nombres):
-    elegidos=[r for r in items if r['ine'] in nombres]
+    elegidos=[r for r in items if r['ine'] in nombres and r['km'] is not None]
     elegidos.sort(key=lambda r:r['km'])
-    filas=''.join('<tr><th scope="row">'+link(r['path'],r['nombre'])+'</th><td>'+str(r['km'])+' km</td><td>'+(' · '.join('<span class="via">'+escape(v)+'</span>' for v in r['carreteras']) or 'Recorrido local')+'</td></tr>' for r in elegidos)
+    filas=''.join('<tr><th scope="row">'+link(r['path'],r['nombre'])+'</th><td>'+str(r['km'])+' km</td><td>'+(' · '.join('<span class="via">'+escape(v)+'</span>' for v in r['carreteras']) or ('Recorrido local' if r['metodo']=='local' else 'Consultar itinerario'))+'</td></tr>' for r in elegidos)
     return '<section class="rutas-zona"><h2>Trayectos desde Bilbao</h2><table><caption>Distancias aproximadas por carretera</caption><thead><tr><th>Destino</th><th>Distancia</th><th>Vías principales</th></tr></thead><tbody>'+filas+'</tbody></table></section>'
 
-representantes={'48044','01059','20069','39075','09059','24089'}
+representantes={'48044','01059','20069','39075','09059','24089','34120','26089'}
 for ruta,(titulo,intro,texto) in PAGINAS.items():
     page('/'+ruta+'/',titulo,intro,texto)
 page('/distancias/','Cómo se calculan las distancias','Los kilómetros publicados son una referencia por carretera desde Bilbao. El enlace de cada ficha calcula la ruta desde Alameda Doctor Areilza, 31. Las distancias entre municipios cercanos se miden en línea recta.',link('https://www.ign.es/web/ign/portal/ane-datos-geograficos','IGN, 2025 · CC BY 4.0')+'<p>Rutas OSRM con datos de '+link('https://www.openstreetmap.org/copyright','© colaboradores de OpenStreetMap, ODbL')+'</p>')
-page('/zonas/','Municipios atendidos desde Bilbao','Busca tu localidad para consultar el desplazamiento y la previsión antes de organizar una visita.','<section><h2>Desplazamientos desde Bilbao</h2><p>Salimos de '+escape(DIRECCION)+'. Atendemos estas seis provincias por desplazamiento. Indica el pueblo y la dirección del inmueble para confirmar el recorrido y acordar la visita.</p></section>'+resumen_rutas(rows,representantes)+filt()+''.join('<section><h2>'+link('/zonas/'+k+'/',v)+'</h2>'+listing(groups[k])+'</section>' for k,v in provs.items()))
+page('/zonas/','Municipios atendidos desde Bilbao','Busca tu localidad para consultar el desplazamiento y la previsión antes de organizar una visita.','<section><h2>Desplazamientos desde Bilbao</h2><p>Salimos de '+escape(DIRECCION)+'. Atendemos las ocho provincias por desplazamiento. Indica el pueblo y la dirección del inmueble para confirmar el recorrido y acordar la visita.</p></section>'+resumen_rutas(rows,representantes)+filt()+''.join('<section><h2>'+link('/zonas/'+k+'/',v)+'</h2>'+listing(groups[k])+'</section>' for k,v in provs.items()))
+def introduccion_municipal(r):
+    nombre = r['nombre']
+    textos = {
+        'vitoria-gasteiz': '¿El canalón rebosa hacia la calle o gotea por una unión? Dinos en qué fachada sucede. Si el aviso es en Abetxuko, Armentia u otra localidad de Vitoria-Gasteiz, indica también el núcleo para preparar el desplazamiento desde Bilbao.',
+        'eibar': 'Si el agua cae al patio de tu comunidad en Eibar, indica desde qué viviendas se ve y si el portal da acceso al patio. Una foto general ayuda a situar la bajante antes de presupuestar la visita.',
+        'deba': 'Para pedir una limpieza en Deba, señala qué tramo quieres revisar. Una foto desde la calle que incluya el alero y la bajante nos ayuda a distinguir el canalón de la fachada del que vierte hacia el patio.',
+        'lerma': 'Para una visita a Lerma desde Bilbao conviene concretar el alcance en el primer mensaje. Indica si quieres limpiar todo el perímetro de la cubierta o revisar un tramo concreto donde se sale el agua.',
+        'bonar': 'Si pides una visita en Boñar, envía la ubicación del inmueble y señala cuándo aparece el problema. Que el agua caiga por la fachada durante el chaparrón o que siga goteando después son dos detalles útiles para la revisión.',
+        'bilbao': 'Salimos de Alameda Doctor Areilza, en Abando. Para revisar un canalón en Bilbao, dinos la calle y si el tramo afectado da a la vía pública, a un patio interior o a una terraza con acceso desde la vivienda.',
+    }
+    if slug(nombre) in textos:
+        return textos[slug(nombre)]
+    nucleos = [v for v in r['nucleos'] if slug(v) != slug(nombre)]
+    if len(nucleos) >= 2:
+        return f'Atendemos {nombre}, incluidas localidades como {nucleos[0]} y {nucleos[1]}. Indica en cuál está la cubierta para concretar el recorrido desde Bilbao y valorar el acceso.'
+    return f'Nos desplazamos desde Bilbao para limpiar canalones y revisar goteras en {nombre}. Puedes consultar el itinerario y pedir presupuesto indicando la calle del inmueble.'
+
 for k,title in provs.items():
     parent='/zonas/'+k+'/'
-    page(parent,'Limpieza de canalones y tejados en '+title,'Directorio de los '+str(len(groups[k]))+' municipios de '+title+' con desplazamiento desde Bilbao.',(destacados() if k=='bizkaia' else '<section class="archivo-obras"><h2>Trabajo en la provincia</h2><div class="fotos-obra">'+tarjeta_leon()+'</div></section>' if k=='leon' else '')+"<h2>"+TEXTOS[k][0]+"</h2><p>"+TEXTOS[k][1]+"</p>"+resumen_rutas(groups[k],{r["ine"] for r in sorted(groups[k],key=lambda r:r["km"])[::max(1,len(groups[k])//4)][:4]})+filt()+listing(groups[k]),[('/zonas/','Zonas')])
+    destinos_provinciales = {
+        'palencia': {'34120','34004','34080','34083'},
+        'la-rioja': {'26089','26071','26036','26102'},
+    }.get(k, {r["ine"] for r in sorted((r for r in groups[k] if r['km'] is not None),key=lambda r:r["km"])[::max(1,sum(r['km'] is not None for r in groups[k])//4)][:4]})
+    page(parent,'Limpieza de canalones y tejados en '+title,'Atendemos los '+str(len(groups[k]))+' municipios de '+title+' con desplazamiento desde Bilbao.',(destacados() if k=='bizkaia' else '<section class="archivo-obras"><h2>Trabajo en la provincia</h2><div class="fotos-obra">'+tarjeta_leon()+'</div></section>' if k=='leon' else '')+"<h2>"+TEXTOS[k][0]+"</h2><p>"+TEXTOS[k][1]+"</p>"+resumen_rutas(groups[k],destinos_provinciales)+filt()+listing(groups[k]),[('/zonas/','Zonas')])
     for r in groups[k]:
         n=r['nombre']; dest=str(r['lat'])+','+str(r['lon'])
         maps='https://www.google.com/maps/dir/?'+urlencode(dict(api=1,origin=ORIGEN_RUTA,destination=dest,travelmode='driving'))
         roads=' · '.join(r['carreteras'])
-        desplazamiento='<section class="ruta-municipal"><h2>Desplazamiento desde Bilbao</h2>'+('<p>'+escape(str(r['km'])+' km '+{'osrm':'aprox. por carretera hasta el punto de referencia municipal','local':'· origen del desplazamiento','geodesica':'en línea recta'}.get(r['metodo'],r['metodo']))+'</p>' if r['km'] is not None else '')+('<p>Vías principales: '+escape(roads)+'</p>' if roads else '')+'<p>'+link(maps,'Ver ruta desde Alameda Doctor Areilza, 31')+' · '+link('/distancias/','Cómo se calculan los km')+'</p></section>'
+        desplazamiento='<section class="ruta-municipal"><h2>Desplazamiento desde Bilbao</h2>'+('<p>'+escape(str(r['km'])+' km '+{'consulta':'aprox. por carretera hasta el municipio','carretera':'aprox. por carretera desde Bilbao','osrm':'aprox. por carretera hasta el punto de referencia municipal','local':'· origen del desplazamiento','geodesica':'en línea recta'}.get(r['metodo'],r['metodo']))+'</p>' if r['km'] is not None else '')+('<p>Vías principales: '+escape(roads)+'</p>' if roads else '')+'<p>'+link(maps,'Ver ruta desde Alameda Doctor Areilza, 31')+' · '+link('/distancias/','Cómo se calculan los km')+'</p></section>'
         enlaces_locales=[
             ('Limpieza de tejados en '+n, 'Consultar la limpieza de faldones y limahoyas', '/servicios/limpieza-de-tejados/'),
             ('Arreglo de goteras en '+n, 'Ver cómo se localiza y repara una filtración', '/servicios/reparacion-de-goteras/'),
             ('Reparación de canalones y bajantes en '+n, 'Consultar reparaciones de juntas, soportes y tramos', '/servicios/reparacion-de-canalones-y-bajantes/'),
         ]
         servicios_locales='<div class="servicios-locales">'+''.join('<section><h2>'+escape(encabezado)+'</h2><p>'+link(url,etiqueta)+'</p></section>' for encabezado,etiqueta,url in enlaces_locales)+'</div>'
-        body=servicios_locales+desplazamiento+widget(r)+'<h2>Municipios próximos</h2>'+proximity(r,rows)
+        body=servicios_locales+referencia_obra(r)+desplazamiento+widget(r)+'<h2>Municipios próximos</h2>'+proximity(r,rows)
         if k=='bizkaia' and slug(n) in CASOS:
             body='<div id="trabajo">'+galeria(slug(n))+'</div>'+body
         if r.get('nucleos'):
             body+='<section><h2>Localidades del municipio</h2><ul class="municipios">'+''.join('<li>'+escape(v)+'</li>' for v in r['nucleos'])+'</ul></section>'
         body+='<p>'+link('/preparar-consulta/?'+urlencode({'municipio':n+', '+title}),'Preparar una consulta para '+n)+'</p>'
         caso=CASOS.get(slug(n)) if k=='bizkaia' else None
-        descripcion=(caso[1]+' en '+n+'. Fotografías del trabajo y contacto para una visita.') if caso else ('Servicio desde Bilbao hasta '+n+' ('+title+'). '+str(r['km'])+' km de referencia. Consulta el itinerario, las localidades atendidas y la previsión.')
+        descripcion=(caso[1]+' en '+n+'. Fotografías del trabajo y contacto para una visita.') if caso else introduccion_municipal(r)
         page(r['path'],'Limpieza de canalones en '+n,descripcion,body,[('/zonas/','Zonas'),(parent,title)],'<link rel="stylesheet" href="/assets/weather.css"><script defer src="/assets/weather.js"></script>')
 if base:
     tree=ET.Element('urlset',xmlns='http://www.sitemaps.org/schemas/sitemap/0.9')

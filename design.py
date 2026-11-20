@@ -5,7 +5,7 @@ from html import escape
 def home(rows):
     provinces = [
         ("Bizkaia", "bizkaia"), ("Álava", "alava"), ("Gipuzkoa", "gipuzkoa"),
-        ("Cantabria", "cantabria"), ("Burgos", "burgos"), ("León", "leon"),
+        ("Cantabria", "cantabria"), ("Burgos", "burgos"), ("León", "leon"), ("Palencia", "palencia"), ("La Rioja", "la-rioja"),
     ]
     selecciones = {
         "bizkaia": ("48020","48013","48044","48057","48065"),
@@ -13,6 +13,8 @@ def home(rows):
         "gipuzkoa": ("20069","20045","20030","20079","20029"),
         "cantabria": ("39075","39087","39020","39059"),
         "burgos": ("09059","09219","09018","09410"),
+        "palencia": ("34120","34004","34080"),
+        "la-rioja": ("26089","26071","26036","26102"),
         "leon": ("24089","24115","24008","24021"),
     }
     por_codigo = {r["ine"]:r for r in rows}
