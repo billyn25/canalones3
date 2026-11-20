@@ -139,9 +139,17 @@ def introduccion_municipal(r):
     if slug(nombre) in textos:
         return textos[slug(nombre)]
     nucleos = [v for v in r['nucleos'] if slug(v) != slug(nombre)]
-    if len(nucleos) >= 2:
-        return f'Atendemos {nombre}, incluidas localidades como {nucleos[0]} y {nucleos[1]}. Indica en cuál está la cubierta para concretar el recorrido desde Bilbao y valorar el acceso.'
-    return f'Nos desplazamos desde Bilbao para limpiar canalones y revisar goteras en {nombre}. Puedes consultar el itinerario y pedir presupuesto indicando la calle del inmueble.'
+    destino = r.get('cabecera') or nombre
+    frases = [f'Organizamos las visitas a {nombre} desde Bilbao.']
+    if r['metodo'] in ('osrm', 'carretera', 'consulta') and r['km'] is not None:
+        frases = [f'Desde Bilbao hasta {destino} hay aproximadamente {r["km"]} km por carretera.']
+    if nucleos:
+        lugares = ' o '.join(nucleos[:2])
+        frases.append(f'Si el inmueble está en una localidad como {lugares}, indica su nombre al pedir la visita.')
+    elif r['carreteras']:
+        frases.append('El itinerario de referencia pasa por ' + ' y '.join(r['carreteras'][-2:]) + '.')
+    return ' '.join(frases)
+
 
 for k,title in provs.items():
     parent='/zonas/'+k+'/'
@@ -164,6 +172,11 @@ for k,title in provs.items():
         body=referencia_obra(r)+desplazamiento+servicios_locales+widget(r)+'<h2>Municipios próximos</h2>'+proximity(r,rows)
         if k=='bizkaia' and slug(n) in CASOS:
             body='<div id="trabajo">'+galeria(slug(n))+'</div>'+body
+            notas = {
+                'ugao-miraballes': '<h3>Qué abarcó la limpieza integral</h3><p>Se trabajó en el faldón de teja y en los canalones que reciben el agua de esa cubierta. La vista general sitúa el faldón y la foto de los restos recogidos documenta la retirada de material vegetal.</p><p>Para presupuestar un edificio parecido, señala si quieres incluir los tramos del patio. El perímetro que se ve desde la calle puede ser solo una parte del recorrido.</p>',
+                'lekeitio': '<h3>Cómo situar el tramo afectado</h3><p>En este trabajo se retiraron hojas del tejado y del canalón. La vista longitudinal permite seguir el tramo que bordea la cubierta. El detalle del alero muestra dónde termina la teja y empieza la recogida de agua.</p><p>Si consultas por un rebose, indica si el agua cae siempre por el mismo punto o a lo largo de varios metros. Esa observación nos ayuda a delimitar qué tramo revisar al llegar.</p>',
+            }
+            body = body.replace('</section>', notas.get(slug(n), '') + '</section>', 1)
         if r.get('nucleos'):
             body+='<section id="localidades"><h2>Localidades del municipio</h2><ul class="municipios">'+''.join('<li>'+escape(v)+'</li>' for v in r['nucleos'])+'</ul></section>'
         body+='<p>'+link(ruta_comunidades,'Preparar un aviso de comunidad o administrador de fincas')+'</p>'
