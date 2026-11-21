@@ -6,3 +6,24 @@
 .weather-output {max-width:42rem;overflow-x:auto}
 .weather-output table {width:100%;border-collapse:collapse;font-size:.95rem}
 .weather-output th,.weather-output td {padding:.5rem .3rem;text-align:left;border-bottom:1px solid #ccc}
+
+@media screen and (max-width: 680px) {
+  .weather-output table {
+    table-layout: auto;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.35;
+  }
+  .weather-output th,
+  .weather-output td {
+    padding: .45rem .2rem;
+    text-align: right;
+  }
+  .weather-output tr > :first-child {
+    white-space: nowrap;
+    text-align: left;
+  }
+  .weather-output caption {
+    text-align: left;
+    padding-block: .4rem;
+  }
+}
