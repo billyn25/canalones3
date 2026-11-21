@@ -203,3 +203,18 @@ SERVICIOS['mantenimiento-de-tejados-para-comunidades'] = {
 <section><h2>Si gestionas varias fincas</h2><p>Para cada aviso, facilita municipio, dirección, portales afectados y quién puede abrir el acceso común. Si es una gotera, indica en qué vivienda aparece y cuándo se vio por última vez. Puedes adjuntar al mensaje una foto general del edificio y otra del punto afectado.</p>
 <a href="/preparar-consulta/#comunidad">Preparar una solicitud para mi comunidad</a></section>"""
 }
+
+SERVICIOS['pintura-de-fachadas'] = {
+    'title': 'Pintura de fachadas',
+    'intro': 'Repintado exterior de viviendas y comunidades. Para definir el trabajo empezamos por identificar los paños, el acabado actual y las zonas donde la pintura ha perdido adherencia.',
+    'body': """<section><h2>Qué superficie quieres pintar</h2><p>Una fachada a la calle y un patio interior pueden requerir preparaciones distintas. Indica si entran en el encargo los techos de balcones, los laterales de las ventanas y los bajos del edificio. Si quieres mantener el color, señala un tramo protegido que pueda servir de referencia.</p></section>
+<section><h2>Cuando la pintura se levanta junto a la bajante</h2><p>Indica si la mancha reaparece después de llover y hasta dónde llega. Antes de elegir el acabado conviene revisar el recorrido del agua. Si también falta mortero, podemos valorar la <a href="/servicios/albanileria-de-fachadas/">reparación del revestimiento</a> en el mismo presupuesto.</p></section>
+<section><h2>Qué comparar en dos ofertas</h2><p>Comprueba que ambas incluyan las mismas superficies, la preparación de la pared, la protección de ventanas y suelos y los medios de acceso. Un precio para la fachada principal puede dejar fuera el patio aunque ambos se vean desde el mismo portal.</p></section>"""
+}
+SERVICIOS['albanileria-de-fachadas'] = {
+    'title': 'Albañilería y reparación de fachadas',
+    'intro': 'Reparaciones localizadas de revestimientos, juntas y remates exteriores. En la visita se delimita qué zona necesita reparación y qué acabado se busca al terminar.',
+    'body': """<section><h2>Qué ha cambiado en la pared</h2><p>Si se ha desprendido parte del revestimiento, una vista general desde el suelo permite situar la zona respecto a ventanas, balcones o bajantes. Describe si ves una pérdida puntual de mortero, una junta abierta o varias marcas que continúan de una planta a otra.</p></section>
+<section><h2>Un parche y su acabado</h2><p>Una reparación pequeña puede quedar visible sobre un revestimiento envejecido. Al pedir presupuesto conviene distinguir el área que necesita albañilería del paño que se quiere igualar en textura o color. Si el encargo incluye <a href="/servicios/pintura-de-fachadas/">pintura exterior</a>, deja indicado dónde debe terminar el repintado.</p></section>
+<section><h2>Si el aviso viene de varios vecinos</h2><p>Identifica portal, altura aproximada y lado del edificio en cada aviso. Dos fotografías del mismo punto tomadas desde viviendas distintas pueden parecer dos averías. Una referencia común, como la esquina del patio, ayuda a preparar una única visita.</p></section>"""
+}
