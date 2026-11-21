@@ -115,11 +115,20 @@ def proximity(origin,items):
     cercanos=sorted(((separacion_km(origin,a),a) for a in items if a!=origin),key=lambda par:par[0])[:4]
     return '<p>Distancias aproximadas en línea recta desde '+escape(origin['nombre'])+'.</p><ul class="vecinos-km">'+''.join('<li>'+link(a['path'],a['nombre'])+'<strong>'+format(km,'.1f').replace('.',',')+' km</strong></li>' for km,a in cercanos)+'</ul>'
 def filt(): return '<label class="filter" hidden>Buscar municipio <input type="search" placeholder="Escribe el nombre del pueblo"></label><p id="resultados" role="status"></p><script src="/assets/filter.js" defer></script>'
+minutos_ruta = json.loads((root/'data/minutos-ruta.json').read_text())
+
+def duracion_ruta(r):
+    if r['metodo'] == 'local':
+        return 'según el barrio'
+    minutos = max(5, 5 * round(minutos_ruta[r['ine']] / 5))
+    horas, resto = divmod(minutos, 60)
+    return ' '.join(parte for parte in (f'{horas} h' if horas else '', f'{resto} min' if resto else '') if parte)
+
 def resumen_rutas(items, nombres):
     elegidos=[r for r in items if r['ine'] in nombres and r['km'] is not None]
     elegidos.sort(key=lambda r:r['km'])
-    filas=''.join('<tr><th scope="row">'+link(r['path'],r['nombre'])+'</th><td>'+str(r['km'])+' km</td><td>'+(' · '.join('<span class="via">'+escape(v)+'</span>' for v in r['carreteras']) or ('Recorrido local' if r['metodo']=='local' else 'Consultar itinerario'))+'</td></tr>' for r in elegidos)
-    return '<section class="rutas-zona"><h2>Trayectos desde Bilbao</h2><table><caption>Distancias aproximadas por carretera</caption><thead><tr><th>Destino</th><th><span aria-label="Distancia en kilómetros">Km</span></th><th>Vías principales</th></tr></thead><tbody>'+filas+'</tbody></table></section>'
+    filas=''.join('<tr><th scope="row">'+link(r['path'],r['nombre'])+'</th><td>'+str(r['km'])+' km<br><small>'+duracion_ruta(r)+'</small></td><td>'+(' · '.join('<span class="via">'+escape(v)+'</span>' for v in r['carreteras']) or ('Recorrido local' if r['metodo']=='local' else 'Consultar itinerario'))+'</td></tr>' for r in elegidos)
+    return '<section class="rutas-zona"><h2>Trayectos desde Bilbao</h2><table><caption>Distancias y tiempos aproximados de ida</caption><thead><tr><th>Destino</th><th><span aria-label="Kilómetros y tiempo de ida">Km / tiempo</span></th><th>Vías principales</th></tr></thead><tbody>'+filas+'</tbody></table></section>'
 
 representantes={'48044','01059','20069','39075','09059','24089','34120','26089'}
 for ruta,(titulo,intro,texto) in PAGINAS.items():
@@ -163,6 +172,9 @@ for k,title in provs.items():
         maps='https://www.google.com/maps/dir/?'+urlencode(dict(api=1,origin=ORIGEN_RUTA,destination=dest,travelmode='driving'))
         roads=' · '.join(r['carreteras'])
         desplazamiento='<section class="ruta-municipal"><h2>Desplazamiento desde Bilbao</h2>'+('<p>'+escape(str(r['km'])+' km '+{'consulta':'aprox. por carretera hasta el municipio','carretera':'aprox. por carretera desde Bilbao','osrm':'aprox. por carretera hasta el punto de referencia municipal. El recorrido hasta la dirección del inmueble puede variar','local':'· origen del desplazamiento','geodesica':'en línea recta'}.get(r['metodo'],r['metodo']))+'</p>' if r['km'] is not None else '')+('<p>Vías principales: '+escape(roads)+'</p>' if roads else '')+'<p>'+link(maps,'Ver ruta desde Alameda Doctor Areilza, 31')+' · '+link('/distancias/','Cómo se calculan los km')+'</p></section>'
+        tiempo = ('Trayecto urbano según el barrio.' if r['metodo'] == 'local' else 'Tiempo aproximado de ida: '+duracion_ruta(r)+' en coche, sin tráfico en tiempo real.')
+        desplazamiento = desplazamiento.replace('</p>', ' · '+tiempo+'</p>', 1)
+        desplazamiento = desplazamiento.replace('</section>', '<p>Consulta el coste del desplazamiento al pedir presupuesto.</p></section>')
         enlaces_locales=[
             ('Limpieza de tejados en '+n, 'Consultar la limpieza de faldones y limahoyas', '/servicios/limpieza-de-tejados/'),
             ('Arreglo de goteras en '+n, 'Ver cómo se localiza y repara una filtración', '/servicios/reparacion-de-goteras/'),
@@ -183,6 +195,16 @@ for k,title in provs.items():
             }
             body = body.replace('</section>', notas.get(slug(n), '') + '</section>', 1)
         localidades_visita = [v for v in r.get('nucleos', []) if slug(v) != slug(n)]
+        if r['metodo'] == 'local':
+            detalle_fachada = 'En una comunidad de Bilbao, identifica el portal y separa en el aviso la fachada de calle y el patio. Si solo se quiere pintar el patio, indica si entran también los techos de balcones.'
+        elif localidades_visita:
+            detalle_fachada = 'Si la vivienda está en '+escape(localidades_visita[0])+', indica esa localidad al pedir la visita a '+escape(n)+'. Una foto general ayuda a distinguir la pared de la vivienda de anexos o cierres que también quieras incluir.'
+        elif k == 'bizkaia' and slug(n) in CASOS:
+            detalle_fachada = 'Si la pintura se levanta bajo el alero, observa desde el suelo si el agua rebosa por el canalón cuando llueve. Al pedir la visita se pueden delimitar por separado la revisión de la salida y el repintado del paño afectado.'
+        else:
+            detalle_fachada = 'Para preparar la visita desde Bilbao, indica qué lado del edificio necesita atención. Si falta mortero alrededor de una ventana, aclara si quieres reparar solo el borde o igualar después el color de toda la pared.'
+        body += ('<section><h2>Pintura y albañilería de fachadas en '+escape(n)+'</h2><p>'+detalle_fachada+'</p><p>'
+                 +link('/servicios/pintura-de-fachadas/', 'Pintura exterior')+' · '+link('/servicios/albanileria-de-fachadas/', 'Reparación de revestimientos y remates')+'</p></section>')
         if localidades_visita:
             opciones = ''.join('<option value="'+escape(v+', '+n+', '+title, quote=True)+'">'+escape(v)+'</option>' for v in localidades_visita)
             body += ('<section id="localidades"><h2>Localidades de '+escape(n)+'</h2>'
