@@ -31,9 +31,15 @@ def form():
 <script defer src="/assets/consulta.js"></script></section>"""
 
 def presupuesto(lugar=''):
+    barrio = ''
+    if lugar == 'Bilbao':
+        nombres = ('Abando', 'Basurto', 'Begoña', 'Casco Viejo', 'Deusto', 'Indautxu', 'Miribilla', 'Santutxu', 'Zurbaran')
+        opciones = ''.join(f'<option value="{nombre}"></option>' for nombre in nombres)
+        barrio = f'<label>Barrio de Bilbao (opcional)<input name="barrio" list="barrios-bilbao" maxlength="80"></label><datalist id="barrios-bilbao">{opciones}</datalist>'
     return f'''<section id="presupuesto" class="presupuesto"><div class="wrap presupuesto-grid"><div><h2>Pide presupuesto</h2><p>Indica qué tramos quieres incluir: el canalón de la calle, el del patio o todo el perímetro. Si además gotea una junta, señala dónde para valorar esa reparación por separado.</p></div>
 <form id="solicitud-presupuesto" data-phone="{TELEFONO}" hidden>
-<label>Municipio o barrio<input name="lugar" value="{escape(lugar, quote=True)}" maxlength="140" required></label>
+<label>{"Municipio" if barrio else "Municipio o barrio"}<input name="lugar" value="{escape(lugar, quote=True)}" maxlength="140" required></label>
+{barrio}
 <label>¿Qué necesitas?<textarea name="detalle" rows="3" maxlength="1500" required placeholder="Por ejemplo, limpiar el canalón de una comunidad de tres plantas."></textarea></label>
 {REBOSE}
 <p>Al continuar se abre WhatsApp con tu consulta preparada. Tú decides cuándo enviarla. <a href="/privacidad/">Privacidad</a></p>
