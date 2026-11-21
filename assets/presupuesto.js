@@ -16,9 +16,11 @@ if (solicitud) {
   solicitud.addEventListener('submit', event => {
     event.preventDefault();
     const lugar = solicitud.elements.lugar.value.trim();
+    const barrio = lugar.toLowerCase() === 'bilbao' && solicitud.elements.barrio?.value.trim();
+    const ubicacion = barrio ? lugar + ', ' + barrio : lugar;
     const detalle = solicitud.elements.detalle.value.trim();
     const rebose = solicitud.elements.rebose?.value;
-    const mensaje = 'Hola, quisiera un presupuesto en ' + lugar + '.\n\n' + detalle + (rebose ? '\n\nCuándo rebosa: ' + rebose : '');
+    const mensaje = 'Hola, quisiera un presupuesto en ' + ubicacion + '.\n\n' + detalle + (rebose ? '\n\nCuándo rebosa: ' + rebose : '');
     location.assign('https://wa.me/' + solicitud.dataset.phone + '?text=' + encodeURIComponent(mensaje));
   });
 }
