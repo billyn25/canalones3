@@ -177,8 +177,13 @@ for k,title in provs.items():
                 'lekeitio': '<h3>Cómo situar el tramo afectado</h3><p>En este trabajo se retiraron hojas del tejado y del canalón. La vista longitudinal permite seguir el tramo que bordea la cubierta. El detalle del alero muestra dónde termina la teja y empieza la recogida de agua.</p><p>Si consultas por un rebose, indica si el agua cae siempre por el mismo punto o a lo largo de varios metros. Esa observación nos ayuda a delimitar qué tramo revisar al llegar.</p>',
             }
             body = body.replace('</section>', notas.get(slug(n), '') + '</section>', 1)
-        if r.get('nucleos'):
-            body+='<section id="localidades"><h2>Localidades del municipio</h2><ul class="municipios">'+''.join('<li>'+escape(v)+'</li>' for v in r['nucleos'])+'</ul></section>'
+        localidades_visita = [v for v in r.get('nucleos', []) if slug(v) != slug(n)]
+        if localidades_visita:
+            opciones = ''.join('<option value="'+escape(v+', '+n+', '+title, quote=True)+'">'+escape(v)+'</option>' for v in localidades_visita)
+            body += ('<section id="localidades"><h2>Localidades de '+escape(n)+'</h2>'
+                     '<form action="/preparar-consulta/" method="get"><label for="localidad-visita">¿Dónde está el inmueble?</label> '
+                     '<select id="localidad-visita" name="municipio"><option value="'+escape(n+', '+title, quote=True)+'">'+escape(n)+'</option>'+opciones+'</select> '
+                     '<button class="button" type="submit">Preparar la visita</button></form></section>')
         body+='<p>'+link(ruta_comunidades,'Preparar un aviso de comunidad o administrador de fincas')+'</p>'
         body+='<p>'+link('/preparar-consulta/?'+urlencode({'municipio':n+', '+title}),'Preparar una consulta para '+n)+'</p>'
         caso=CASOS.get(slug(n)) if k=='bizkaia' else None
