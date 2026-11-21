@@ -32,7 +32,11 @@ SERVICIOS = {
         "title": "Localización y reparación de goteras",
         "intro": "Una mancha en el techo marca dónde se hace visible el agua. El punto de entrada puede estar más arriba en el faldón, junto a una chimenea o en la unión de la cubierta con una pared.",
         "body": """
-<section><h2>Cuándo aparece y dónde deja rastro</h2>
+<section><h2>¿Qué ocurre cuando llueve?</h2>
+<ul><li><a href="#rastro">Entra agua en la última planta</a>. Anota en qué habitación y cuánto tiempo llevaba lloviendo.</li>
+<li><a href="/servicios/reparacion-de-canalones-y-bajantes/">El agua cae por fuera, junto al canalón</a>. Fíjate desde la calle si rebosa por el borde o gotea por una unión.</li>
+<li><a href="/comunidades/">Varios vecinos han avisado de la misma filtración</a>. Reúne el portal, el patio y las viviendas afectadas en un solo parte.</li></ul></section>
+<section id="rastro"><h2>Cuándo aparece y dónde deja rastro</h2>
 <p>Antes de la visita resulta útil anotar si la primera gota aparece al empezar la lluvia, tras varias horas o solo con viento de un lado. Dos fotos desde el mismo punto, una con la mancha seca y otra durante el episodio, ayudan a apreciar su evolución.</p>
 <p>Si sobre la habitación hay una terraza, un patio o una instalación de agua, conviene indicarlo. Revisar qué hay encima y alrededor evita atribuir de entrada toda humedad al tejado.</p></section>
 <section><h2>Elegir una reparación con alcance definido</h2>
