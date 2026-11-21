@@ -7,6 +7,7 @@
   form.hidden = false;
   if (location.hash === '#comunidad') form.elements.inmueble.value = 'Comunidad de vecinos';
   form.elements.lugar.value = (new URLSearchParams(location.search).get('municipio') || '').slice(0, 140);
+  if (location.hash === '#gotera') form.elements.motivo.value = 'Gotera o filtración';
   const sintomas = {
     'junto-bajante': ['Limpieza de canalones', 'El canalón rebosa junto a la bajante.'],
     fachada: ['Limpieza de canalones', 'El canalón rebosa a lo largo de la fachada.'],
