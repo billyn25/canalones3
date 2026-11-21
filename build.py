@@ -168,7 +168,12 @@ for k,title in provs.items():
             ('Arreglo de goteras en '+n, 'Ver cómo se localiza y repara una filtración', '/servicios/reparacion-de-goteras/'),
             ('Reparación de canalones y bajantes en '+n, 'Consultar reparaciones de juntas, soportes y tramos', '/servicios/reparacion-de-canalones-y-bajantes/'),
         ]
-        servicios_locales='<div class="servicios-locales">'+''.join('<section><h2>'+escape(encabezado)+'</h2><p>'+link(url,etiqueta)+'</p></section>' for encabezado,etiqueta,url in enlaces_locales)+'</div>'
+        consulta_gotera = '/preparar-consulta/?'+urlencode({'municipio': n+', '+title})+'#gotera'
+        bloques = []
+        for encabezado, etiqueta, url in enlaces_locales:
+            accion = '<p>'+link(consulta_gotera, 'Pedir visita por una gotera')+'</p>' if url == '/servicios/reparacion-de-goteras/' else ''
+            bloques.append('<section><h2>'+escape(encabezado)+'</h2><p>'+link(url, etiqueta)+'</p>'+accion+'</section>')
+        servicios_locales = '<div class="servicios-locales">'+''.join(bloques)+'</div>'
         body=referencia_obra(r)+desplazamiento+servicios_locales+widget(r)+'<h2>Municipios próximos</h2>'+proximity(r,rows)
         if k=='bizkaia' and slug(n) in CASOS:
             body='<div id="trabajo">'+galeria(slug(n))+'</div>'+body
