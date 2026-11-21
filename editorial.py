@@ -12,6 +12,9 @@ SERVICIOS = {
 <ul><li>Si el agua alcanza la bajante y por dónde sale cuando la descarga es visible.</li><li>Si queda agua retenida siempre en el mismo tramo, especialmente entre dos soportes.</li><li>Si alguna unión sigue goteando una vez despejado el recorrido.</li></ul>
 <p>Una fuga localizada o un tramo vencido pueden requerir una <a href="/servicios/reparacion-de-canalones-y-bajantes/">reparación del canalón o la bajante</a>. Conviene que esa actuación figure por separado en el presupuesto.</p></section>
 <section><h2>Una limpieza en Lekeitio</h2><p>En este trabajo retiramos hojas del tejado y del canalón. Las vistas del alero permiten reconocer el tramo que recoge el agua. <a href="/zonas/bizkaia/lekeitio/#trabajo">Ver las fotografías de Lekeitio</a>.</p></section>
+<section><h2>¿Qué influye en el precio de limpiar los canalones?</h2>
+<p>Para pedir precio, identifica qué tramos quieres incluir. Si desconoces los metros, indica las fachadas: por ejemplo, «el canalón de la calle y los dos del patio». Una foto general desde el suelo ayuda a situarlos.</p>
+<p>Dos edificios con la misma longitud de canalón pueden requerir presupuestos distintos. En uno se retiran hojas desde un único acceso. En otro hay que entrar por dos portales y revisar por separado una salida que sigue rebosando. Para comparar ofertas, comprueba si ambas incluyen los mismos tramos, la retirada de los restos y la revisión de las salidas.</p></section>
 <section><h2>Acceso por patio o por calle</h2>
 <p>Indica cuántas plantas hay, si el canalón da al patio, al jardín o a la vía pública y si hay un acceso de mantenimiento conocido. Una foto general tomada desde el suelo ayuda a identificar toldos, salientes y otros obstáculos antes de preparar la visita.</p></section>""",
     },
