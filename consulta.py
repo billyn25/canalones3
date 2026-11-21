@@ -17,7 +17,7 @@ def form():
 <form id="consulta" data-phone="{escape(phone)}" hidden>
 <p><label>Municipio y provincia<br><input name="lugar" required maxlength="140" placeholder="Por ejemplo, Boñar, León"></label></p>
 <p><label>Tipo de inmueble<br><select name="inmueble"><option>Vivienda unifamiliar</option><option>Comunidad de vecinos</option><option>Local o nave</option><option>Otro inmueble</option></select></label></p>
-<p><label>Motivo de la consulta<br><select name="motivo"><option>Limpieza de canalones</option><option>Limpieza de tejado</option><option>Gotera o filtración</option><option>Reparación de canalón o bajante</option><option>Reparación de tejado</option><option>Otro motivo</option></select></label></p>
+<p><label>Motivo de la consulta<br><select name="motivo"><option>Limpieza de canalones</option><option>Limpieza de tejado</option><option>Gotera o filtración</option><option>Reparación de canalón o bajante</option><option>Reparación de tejado</option><option>Pintura de fachadas</option><option>Albañilería de fachadas</option><option>Otro motivo</option></select></label></p>
 <p><label>¿Qué has observado?<br><textarea name="detalle" required rows="4" maxlength="1800" placeholder="Por ejemplo, el canalón rebosa junto al portal cuando llueve."></textarea></label></p>
 <p>{REBOSE}</p>
 <p><label>Acceso y disponibilidad (opcional)<br><textarea name="acceso" rows="2" maxlength="500" placeholder="Patio interior, número de plantas o persona que puede abrir el portal."></textarea></label></p>
