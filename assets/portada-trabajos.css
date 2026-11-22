@@ -1,0 +1,12 @@
+.portada-trabajos {padding-block:clamp(2.5rem,6vw,5rem)}
+.portada-trabajos h2 {margin:0 0 1.5rem}
+.portada-casos {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem 1.25rem}
+.portada-casos article {border-top:2px solid currentColor;padding-top:.6rem}
+.portada-casos a {display:block;text-decoration:none;color:inherit}
+.portada-casos img {display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.portada-casos small {display:block;margin:.9rem 0 .3rem;color:#703246;font-weight:700}
+.portada-casos h3 {margin:0;font-size:clamp(1.3rem,2vw,1.7rem);line-height:1.15}
+.portada-casos p {margin:.55rem 0 0;line-height:1.5}
+.portada-casos a:hover h3,.portada-casos a:focus-visible h3 {text-decoration:underline}
+@media(max-width:750px){.portada-casos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.portada-casos{grid-template-columns:1fr;gap:1rem}.portada-casos article:not(:first-child) a{display:grid;grid-template-columns:5.5rem 1fr;gap:.9rem}.portada-casos article:not(:first-child) img{aspect-ratio:4/5}.portada-casos article:not(:first-child) small{margin-top:0}}
