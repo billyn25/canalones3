@@ -16,7 +16,7 @@ from weather import widget
 
 root=Path(__file__).parent.resolve()
 out=root/'dist'
-base=(os.getenv('SITE_URL') or os.getenv('URL') or '').rstrip('/')
+base='https://reparaciontejadosaleronorte.com'
 provs={'bizkaia':'Bizkaia','alava':'Álava','gipuzkoa':'Gipuzkoa','cantabria':'Cantabria','burgos':'Burgos','leon':'León','palencia':'Palencia','la-rioja':'La Rioja'}
 def slug(s):
     return re.sub('[^a-z0-9]+','-',unicodedata.normalize('NFKD',s).encode('ascii','ignore').decode().lower()).strip('-')
