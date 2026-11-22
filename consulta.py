@@ -45,6 +45,11 @@ def presupuesto(lugar='', direcciones=None):
 <form id="solicitud-presupuesto" data-phone="{TELEFONO}" hidden>
 <label>{"Municipio" if lugar else "Municipio o barrio"}<input name="lugar" value="{escape(lugar, quote=True)}" maxlength="140" required></label>
 {campos_direccion}
+<label>Inmueble para la limpieza (opcional)
+<select name="tipo_limpieza"><option value="">Seleccionar</option><option>Casa o caserío</option><option>Comunidad</option><option>Nave</option></select></label>
+<fieldset class="tramos-limpieza" hidden><legend>¿Qué tramos quieres incluir?</legend><div data-tramos></div></fieldset>
+<label data-acceso-patio hidden>¿Cómo se accede al patio?
+<select name="acceso_patio"><option value="">Seleccionar</option><option>Desde el portal</option><option>Desde una vivienda</option><option>Otro acceso</option><option>Pendiente de confirmar</option></select></label>
 <label>¿Qué necesitas?<textarea name="detalle" rows="3" maxlength="1500" required placeholder="Por ejemplo, limpiar el canalón de una comunidad de tres plantas."></textarea></label>
 {REBOSE}
 <p>Al continuar se abre WhatsApp con tu consulta preparada. Tú decides cuándo enviarla. <a href="/privacidad/">Privacidad</a></p>
