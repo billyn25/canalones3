@@ -88,3 +88,29 @@ def recorrido():
         acciones = ''.join(f'<p><a href="/preparar-consulta/#sintoma={clave}">{etiqueta}</a></p>' for clave, etiqueta in consultas)
         partes.append(f'<details><summary>{titulo}</summary><div class="detalle-trabajo">{foto(imagen,pie)}<div><p>{texto}</p><a href="{url}">{enlace}</a>{acciones}</div></div></details>')
     return '<section class="wrap consulta-visual"><h2>¿Qué ves en tu tejado?</h2>'+''.join(partes)+'</section>'
+
+SALVATIERRA = '/assets/obras/salvatierra/'
+FOTOS_SALVATIERRA = [
+    ('vista-general', 'Vista del faldón de teja curva desde la parte alta de la cubierta.'),
+    ('helechos', 'Helechos entre las tejas al pie del muro.'),
+    ('dos-alturas', 'Encuentro entre dos alturas del tejado, visto hacia la calle.'),
+    ('vegetacion', 'Pequeñas plantas en los canales que forman las hileras de teja.'),
+    ('chimenea', 'La chimenea y el encuentro del tejado con la pared lateral.'),
+    ('mortero', 'Detalle de las tejas de remate y del mortero que queda a la vista.'),
+    ('cumbrera', 'Líquenes sobre las piezas curvas de la cumbrera.'),
+    ('hileras', 'Detalle de la superficie y los solapes de las tejas.'),
+]
+
+def tarjeta_salvatierra():
+    return f'<section class="obra"><h2>Trabajo en Agurain/Salvatierra, Álava</h2><a class="obra-tarjeta" href="/zonas/alava/agurain-salvatierra/#trabajo"><img loading="lazy" src="{SALVATIERRA}helechos-small.webp" alt="Helechos en el encuentro del tejado con el muro"><div><strong>Limpieza de tejado y canalones</strong><span>Ver las ocho fotos y el vídeo</span></div></a></section>'
+
+def trabajo_salvatierra():
+    fotos = ''.join(
+        f'<figure><a data-foto href="{SALVATIERRA}{nombre}.webp"><img loading="lazy" src="{SALVATIERRA}{nombre}-small.webp" alt="{pie}"></a><figcaption>{pie}</figcaption></figure>'
+        for nombre, pie in FOTOS_SALVATIERRA
+    )
+    return (
+        '<section class="obra reportaje" id="trabajo"><h2>Limpieza de tejado y canalones en Agurain/Salvatierra</h2>'
+        '<p>En esta limpieza de Alero Norte encontramos helechos entre las tejas, justo donde el faldón se junta con el muro. La vista general permite situar ese rincón respecto a la chimenea. En el detalle se aprecia cómo las plantas ocupan los huecos por los que baja la lluvia hacia el alero.</p>'
+        f'<div class="fotos-obra">{fotos}</div><figure><video controls playsinline preload="none" style="max-width:100%;max-height:65vh" poster="{SALVATIERRA}chimenea-small.webp" aria-label="Vídeo del tejado de Salvatierra"><source src="{SALVATIERRA}cubierta.mp4" type="video/mp4"></video><figcaption>Vista del encuentro entre el tejado y el muro durante el trabajo en Salvatierra.</figcaption></figure></section>'
+    )

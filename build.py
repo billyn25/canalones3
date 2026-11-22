@@ -5,7 +5,7 @@ from urllib.parse import urlencode
 from collections import defaultdict
 from xml.etree import ElementTree as ET
 from provincias import TEXTOS
-from obras import recorrido, album, CASOS, destacados, galeria, RUTA_LEON, TITULO_LEON, trabajo_leon, tarjeta_leon
+from obras import trabajo_salvatierra, tarjeta_salvatierra, recorrido, album, CASOS, destacados, galeria, RUTA_LEON, TITULO_LEON, trabajo_leon, tarjeta_leon
 from design import home
 from editorial import SERVICIOS, GUIAS
 from legal import DIRECCION, ORIGEN_RUTA, PAGINAS
@@ -88,7 +88,7 @@ for group,title,desc,data in [('servicios','Servicios de canalones y tejados','E
     path='/'+group+'/'
     page(path,title,desc,cards((path+k+'/',v['title'],v['intro']) for k,v in data.items())+(portada_comunidades if group=='servicios' else ''))
     for k,v in data.items(): page(path+k+'/',v['title'],v['intro'],v['body']+'<p>'+link('/preparar-consulta/','Preparar los datos para una consulta')+'</p>',[(path,title)])
-page('/galeria/','Trabajos reales realizados por Alero Norte','Fotografías de nuestros trabajos de limpieza y reparación en distintos pueblos de nuestra zona de cobertura. Desde Bilbao atendemos Bizkaia, Álava, Gipuzkoa, Cantabria, Burgos, León, Palencia y La Rioja.',album())
+page('/galeria/','Trabajos reales realizados por Alero Norte','Fotografías de nuestros trabajos de limpieza y reparación en distintos pueblos de nuestra zona de cobertura. Desde Bilbao atendemos Bizkaia, Álava, Gipuzkoa, Cantabria, Burgos, León, Palencia y La Rioja.',tarjeta_salvatierra()+album())
 page(RUTA_LEON,TITULO_LEON,'Cuatro fotografías de un trabajo en la provincia de León: las tejas, el alero, el tramo lateral y la salida del canalón.',trabajo_leon(),[('/zonas/leon/','León')])
 page('/preparar-consulta/','Preparar una consulta','Anota dónde está el inmueble y qué ocurre cuando llueve.',form())
 def listing(items):
@@ -102,6 +102,8 @@ def separacion_km(origin, other):
 obras_municipales = [r for r in rows if r['provincia'] == 'bizkaia' and slug(r['nombre']) in CASOS]
 
 def referencia_obra(r):
+    if r['ine'] == '01051':
+        return trabajo_salvatierra()
     if r in obras_municipales:
         return ''
     if r['provincia'] == 'leon':
@@ -168,7 +170,7 @@ for k,title in provs.items():
         'palencia': {'34120','34004','34080','34083'},
         'la-rioja': {'26089','26071','26036','26102'},
     }.get(k, {r["ine"] for r in sorted((r for r in groups[k] if r['km'] is not None),key=lambda r:r["km"])[::max(1,sum(r['km'] is not None for r in groups[k])//4)][:4]})
-    page(parent,'Limpieza de canalones y tejados en '+title,'Atendemos los '+str(len(groups[k]))+' municipios de '+title+' con desplazamiento desde Bilbao.',(destacados() if k=='bizkaia' else '<section class="archivo-obras"><h2>Trabajo en la provincia</h2><div class="fotos-obra">'+tarjeta_leon()+'</div></section>' if k=='leon' else '')+"<h2>"+TEXTOS[k][0]+"</h2><p>"+TEXTOS[k][1]+"</p>"+resumen_rutas(groups[k],destinos_provinciales)+filt()+listing(groups[k]),[('/zonas/','Zonas')])
+    page(parent,'Limpieza de canalones y tejados en '+title,'Atendemos los '+str(len(groups[k]))+' municipios de '+title+' con desplazamiento desde Bilbao.',(tarjeta_salvatierra() if k=='alava' else destacados() if k=='bizkaia' else '<section class="archivo-obras"><h2>Trabajo en la provincia</h2><div class="fotos-obra">'+tarjeta_leon()+'</div></section>' if k=='leon' else '')+"<h2>"+TEXTOS[k][0]+"</h2><p>"+TEXTOS[k][1]+"</p>"+resumen_rutas(groups[k],destinos_provinciales)+filt()+listing(groups[k]),[('/zonas/','Zonas')])
     for r in groups[k]:
         n=r['nombre']; dest=str(r['lat'])+','+str(r['lon'])
         maps='https://www.google.com/maps/dir/?'+urlencode(dict(api=1,origin=ORIGEN_RUTA,destination=dest,travelmode='driving'))
