@@ -59,3 +59,8 @@ body,.site-header{background:var(--paper)}.brand,h1,h2,h3,.obra-tarjeta strong,.
     outline-offset: 2px;
   }
 }
+
+.presupuesto .tramos-limpieza { min-width: 0; margin: 0 0 1rem; padding: .75rem; border: 1px solid #bba9a4; }
+.presupuesto .tramos-limpieza label { display: flex; align-items: center; gap: .6rem; min-height: 44px; margin: 0; }
+.presupuesto .tramos-limpieza input { width: 1.2rem; height: 1.2rem; padding: 0; margin: 0; flex: none; }
+.presupuesto form [hidden] { display: none; }
