@@ -84,10 +84,21 @@ Horario de contacto: </textarea><button class="button" type="submit">Revisar el 
 page(ruta_comunidades,titulo_comunidades,'Atendemos a presidentes de comunidades y administradores de fincas con desplazamiento desde Bilbao. Describe el aviso y prepara la visita al edificio.',parte_comunidad)
 
 page('/','Limpieza de canalones y tejados desde Bilbao','Limpieza de canalones y tejados, reparación de goteras y bajantes. Consulta los servicios, el desplazamiento desde Bilbao y la previsión de tu municipio.',(home(rows)+proceso()).replace('<section class="coverage-band"', recorrido()+portada_comunidades+'<section class="coverage-band"'),extra='<link rel="stylesheet" href="/assets/portada-trabajos.css">')
+ejemplos = {
+    'limpieza-de-canalones': ('¿Qué tramo del canalón hay que limpiar?', 'En el trabajo de Lekeitio se ve cómo el canalón sigue el borde del tejado. Si el agua rebosa, indicar en qué fachada ocurre y si pasa cerca de la bajante ayuda a situar el tramo de la visita.', '/zonas/bizkaia/lekeitio/#trabajo', 'Ver la retirada de hojas en Lekeitio'),
+    'limpieza-de-tejados': ('Dónde se acumulaban los helechos en Salvatierra', 'En esta cubierta la vegetación crecía al pie del muro. La vista general y el vídeo permiten localizar esa franja respecto a la chimenea antes de mirar el detalle entre las tejas.', '/zonas/alava/agurain-salvatierra/#trabajo', 'Ver las fotos y el vídeo de Salvatierra'),
+    'reparacion-de-goteras': ('El paso del agua junto a una chimenea', 'En Idiazabal fotografiamos fragmentos de teja sobre la chapa que recoge el agua de dos pendientes. Si tienes una mancha en el interior, anota cuándo aparece y en qué habitación. Esa información se puede contrastar con el recorrido del agua en la cubierta.', '/zonas/gipuzkoa/idiazabal/#trabajo', 'Ver el trabajo de goteras en Idiazabal'),
+    'reparacion-de-tejados': ('Cómo se localiza una teja partida en las fotografías', 'En Comillas, una foto general permite seguir las hileras hasta el canalón. En el detalle se distingue la fisura en la teja que queda junto al remate metálico.', '/zonas/cantabria/comillas/#trabajo', 'Ver el detalle de la cubierta de Comillas'),
+}
 for group,title,desc,data in [('servicios','Servicios de canalones y tejados','Elige la intervención según lo que ocurre en tu cubierta.',SERVICIOS),('guias','Guías para viviendas y comunidades','Orientación para describir una incidencia, organizar el mantenimiento y comparar el alcance de una reparación.',GUIAS)]:
     path='/'+group+'/'
     page(path,title,desc,cards((path+k+'/',v['title'],v['intro']) for k,v in data.items())+(portada_comunidades if group=='servicios' else ''))
-    for k,v in data.items(): page(path+k+'/',v['title'],v['intro'],v['body']+'<p>'+link('/preparar-consulta/','Preparar los datos para una consulta')+'</p>',[(path,title)])
+    for k,v in data.items():
+        body = v['body']
+        if group == 'servicios' and k in ejemplos:
+            pregunta, texto, destino, etiqueta = ejemplos[k]
+            body += '<section><h2>'+escape(pregunta)+'</h2><p>'+escape(texto)+'</p><p>'+link(destino, etiqueta)+'</p></section>'
+        page(path+k+'/',v['title'],v['intro'],body+'<p>'+link('/preparar-consulta/','Preparar los datos para una consulta')+'</p>',[(path,title)])
 import aranda
 import comillas
 import idiazabal
