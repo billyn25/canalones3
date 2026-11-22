@@ -88,7 +88,9 @@ for group,title,desc,data in [('servicios','Servicios de canalones y tejados','E
     path='/'+group+'/'
     page(path,title,desc,cards((path+k+'/',v['title'],v['intro']) for k,v in data.items())+(portada_comunidades if group=='servicios' else ''))
     for k,v in data.items(): page(path+k+'/',v['title'],v['intro'],v['body']+'<p>'+link('/preparar-consulta/','Preparar los datos para una consulta')+'</p>',[(path,title)])
-page('/galeria/','Trabajos reales realizados por Alero Norte','Fotografías de nuestros trabajos de limpieza y reparación en distintos pueblos de nuestra zona de cobertura. Desde Bilbao atendemos Bizkaia, Álava, Gipuzkoa, Cantabria, Burgos, León, Palencia y La Rioja.',tarjeta_salvatierra()+album())
+import llanes
+page(llanes.RUTA,llanes.TITULO,'Trabajo de Alero Norte en Llanes (Asturias). Cinco fotografías de la cubierta de teja curva, las ventanas de tejado y el encuentro con la cumbrera.',llanes.reportaje(),[('/galeria/','Trabajos')])
+page('/galeria/','Trabajos reales realizados por Alero Norte','Fotografías de nuestros trabajos de limpieza y reparación en distintos pueblos de nuestra zona de cobertura. Desde Bilbao atendemos Bizkaia, Álava, Gipuzkoa, Cantabria, Burgos, León, Palencia y La Rioja.',llanes.tarjeta()+tarjeta_salvatierra()+album())
 page(RUTA_LEON,TITULO_LEON,'Cuatro fotografías de un trabajo en la provincia de León: las tejas, el alero, el tramo lateral y la salida del canalón.',trabajo_leon(),[('/zonas/leon/','León')])
 page('/preparar-consulta/','Preparar una consulta','Anota dónde está el inmueble y qué ocurre cuando llueve.',form())
 def listing(items):
