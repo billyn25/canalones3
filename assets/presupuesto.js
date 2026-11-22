@@ -16,8 +16,9 @@ if (solicitud) {
   solicitud.addEventListener('submit', event => {
     event.preventDefault();
     const lugar = solicitud.elements.lugar.value.trim();
-    const barrio = lugar.toLowerCase() === 'bilbao' && solicitud.elements.barrio?.value.trim();
-    const ubicacion = barrio ? lugar + ', ' + barrio : lugar;
+    const barrio = solicitud.elements.barrio?.value.trim();
+    const calle = solicitud.elements.calle?.value.trim();
+    const ubicacion = [lugar, barrio, calle].filter(Boolean).join(', ');
     const detalle = solicitud.elements.detalle.value.trim();
     const rebose = solicitud.elements.rebose?.value;
     const mensaje = 'Hola, quisiera un presupuesto en ' + ubicacion + '.\n\n' + detalle + (rebose ? '\n\nCuándo rebosa: ' + rebose : '');
