@@ -26,6 +26,7 @@ def home(rows):
             assert r['provincia']==slug
             enlaces.append(f'<li><a href="{r["path"]}">{escape(r["nombre"])}</a></li>')
         bloques.append(f'<section><h3><a href="/zonas/{slug}/">{name}</a></h3><ul>{"".join(enlaces)}</ul></section>')
+    bloques.append('<section><h3><a href="/zonas/#asturias">Asturias</a></h3><ul><li><a href="/trabajos/reparacion-limpieza-tejado-llanes/">Llanes</a></li></ul></section>')
     area_links="".join(bloques)
     return '''<section class="portada-obra"><div class="wrap escena">
 <a class="escena-foto" href="/zonas/bizkaia/lekeitio/#trabajo"><img src="/assets/obras/lekeitio-borde-tejado.webp" alt="Borde de la cubierta y alero en el trabajo de limpieza de Lekeitio" fetchpriority="high"><span>Lekeitio · Ver intervención</span></a>
