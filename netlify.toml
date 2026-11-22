@@ -2,5 +2,8 @@
 command = "python3 build.py"
 publish = "dist"
 
-[context.production.environment]
-SITE_URL = "https://reparaciontejadosaleronorte.es"
+[[redirects]]
+from = "https://www.reparaciontejadosaleronorte.com/*"
+to = "https://reparaciontejadosaleronorte.com/:splat"
+status = 301
+force = true
