@@ -30,7 +30,9 @@ for r in sorted(rows,key=lambda r:slug(r['nombre'])):
 def link(url,s): return f'<a href="{escape(url,quote=True)}">{escape(s)}</a>'
 def cards(items): return '<div class="grid">'+''.join(f'<a class="card" href="{escape(p)}"><strong>{escape(t)}</strong><p>{escape(d)}</p></a>' for p,t,d in items)+'</div>'
 paths=[]
-def page(path,title,desc,body,parents=(),extra=''):
+vias_locales = json.loads((root/'data/vias-locales.json').read_text())
+
+def page(path,title,desc,body,parents=(),extra='',direcciones=None):
     target=out/path.strip('/')/'index.html'
     target.parent.mkdir(parents=True,exist_ok=True)
     if path in paths:
@@ -53,7 +55,7 @@ def page(path,title,desc,body,parents=(),extra=''):
         mensaje = f'Hola, quería consultar por un trabajo de canalones o tejado en {municipio}.'
     whatsapp = 'https://wa.me/'+TELEFONO+'?'+urlencode({'text':mensaje})
     if path not in ('/comunidades/', '/preparar-consulta/', '/aviso-legal/', '/privacidad/', '/cookies/', '/distancias/'):
-        main+=presupuesto(municipio)+'<script defer src="/assets/presupuesto.js"></script>'
+        main+=presupuesto(municipio, direcciones)+'<script defer src="/assets/presupuesto.js"></script>'
     target.write_text(f'''<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)} · Alero Norte</title><meta name="description" content="{escape(desc,quote=True)}">{canonical}{schema}<link rel="icon" type="image/svg+xml" href="/assets/alero-norte-icono.svg"><link rel="stylesheet" href="/assets/style.css?v=alero-2"><link rel="stylesheet" href="/assets/interiores.css?v=granate-1"><link rel="stylesheet" href="/assets/galeria.css">{extra}</head><body><a class="skip" href="#principal">Saltar al contenido</a><header class="site-header"><div class="wrap mast"><a class="brand" href="/">Alero Norte</a><nav aria-label="Principal"><a href="/servicios/">Servicios</a><a href="/zonas/">Zonas</a><a href="/guias/">Guías</a><a href="/galeria/">Trabajos</a></nav><div class="contactos"><a class="button" href="tel:+{TELEFONO}" aria-label="Llamar al {TELEFONO_VISIBLE}">Llamar</a><a class="button wa" href="{escape(whatsapp)}">WhatsApp</a></div></div></header><main id="principal">{main}</main>{pie(whatsapp,SERVICIOS,provs)}<script defer src="/assets/galeria.js"></script></body></html>''')
 out.mkdir(exist_ok=True)
 shutil.copytree(root/'assets',out/'assets',dirs_exist_ok=True)
@@ -205,6 +207,16 @@ for k,title in provs.items():
             detalle_fachada = 'Para preparar la visita desde Bilbao, indica qué lado del edificio necesita atención. Si falta mortero alrededor de una ventana, aclara si quieres reparar solo el borde o igualar después el color de toda la pared.'
         body += ('<section><h2>Pintura y albañilería de fachadas en '+escape(n)+'</h2><p>'+detalle_fachada+'</p><p>'
                  +link('/servicios/pintura-de-fachadas/', 'Pintura exterior')+' · '+link('/servicios/albanileria-de-fachadas/', 'Reparación de revestimientos y remates')+'</p></section>')
+        referencias = vias_locales.get(r['ine'], {})
+        barrios = referencias.get('barrios', [])
+        vias = referencias.get('vias', [])
+        if barrios or vias:
+            cobertura = '<section><h2>¿En qué zona de '+escape(n)+' necesitas la visita?</h2>'
+            if barrios:
+                cobertura += '<p>Barrios de referencia: '+escape(' · '.join(barrios[:4]))+'.</p>'
+            if vias:
+                cobertura += '<p>Calles de referencia: '+escape(' · '.join(vias[:3]))+'.</p>'
+            body += cobertura+'<p>'+link('#presupuesto', 'Indicar mi calle o barrio')+'</p></section>'
         if localidades_visita:
             opciones = ''.join('<option value="'+escape(v+', '+n+', '+title, quote=True)+'">'+escape(v)+'</option>' for v in localidades_visita)
             body += ('<section id="localidades"><h2>Localidades de '+escape(n)+'</h2>'
@@ -215,7 +227,7 @@ for k,title in provs.items():
         body+='<p>'+link('/preparar-consulta/?'+urlencode({'municipio':n+', '+title}),'Preparar una consulta para '+n)+'</p>'
         caso=CASOS.get(slug(n)) if k=='bizkaia' else None
         descripcion=(caso[1]+' en '+n+'. Fotografías del trabajo y contacto para una visita.') if caso else introduccion_municipal(r)
-        page(r['path'],'Limpieza de canalones en '+n,descripcion,body,[('/zonas/','Zonas'),(parent,title)],'<link rel="stylesheet" href="/assets/weather.css"><script defer src="/assets/weather.js"></script>')
+        page(r['path'],'Limpieza de canalones en '+n,descripcion,body,[('/zonas/','Zonas'),(parent,title)],'<link rel="stylesheet" href="/assets/weather.css"><script defer src="/assets/weather.js"></script>', direcciones=vias_locales.get(r['ine'], {}))
 if base:
     tree=ET.Element('urlset',xmlns='http://www.sitemaps.org/schemas/sitemap/0.9')
     for p in paths: ET.SubElement(ET.SubElement(tree,'url'),'loc').text=base+p
