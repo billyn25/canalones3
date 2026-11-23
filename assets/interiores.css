@@ -64,3 +64,13 @@ body,.site-header{background:var(--paper)}.brand,h1,h2,h3,.obra-tarjeta strong,.
 .presupuesto .tramos-limpieza label { display: flex; align-items: center; gap: .6rem; min-height: 44px; margin: 0; }
 .presupuesto .tramos-limpieza input { width: 1.2rem; height: 1.2rem; padding: 0; margin: 0; flex: none; }
 .presupuesto form [hidden] { display: none; }
+
+@media (max-width: 700px) {
+    #localidades form {
+        display: grid;
+        gap: .75rem;
+        padding-bottom: .5rem;
+    }
+    #localidades form select { width: 100%; min-width: 0; }
+    #localidades form button { justify-self: start; }
+}
