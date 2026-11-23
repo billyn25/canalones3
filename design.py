@@ -1,3 +1,4 @@
+from territorio import indice, inicial
 """Landing page for Alero Norte."""
 
 from html import escape
@@ -19,15 +20,22 @@ def home(rows):
     }
     por_codigo = {r["ine"]:r for r in rows}
     bloques=[]
-    for name,slug in provinces:
+    orden = sorted(provinces + [("Asturias","asturias")], key=lambda item: item[1])
+    letras = set()
+    for name,slug in orden:
+        letra = inicial(name)
+        ancla = '' if letra in letras else f' id="prov-{letra}"'
+        letras.add(letra)
+        if slug == "asturias":
+            bloques.append(f'<section{ancla}><h3><a href="/zonas/#asturias">Asturias</a></h3><ul><li><a href="/trabajos/reparacion-limpieza-tejado-llanes/">Llanes</a></li></ul></section>')
+            continue
         enlaces=[]
         for codigo in selecciones[slug]:
             r=por_codigo[codigo]
             assert r['provincia']==slug
             enlaces.append(f'<li><a href="{r["path"]}">{escape(r["nombre"])}</a></li>')
-        bloques.append(f'<section><h3><a href="/zonas/{slug}/">{name}</a></h3><ul>{"".join(enlaces)}</ul></section>')
-    bloques.append('<section><h3><a href="/zonas/#asturias">Asturias</a></h3><ul><li><a href="/trabajos/reparacion-limpieza-tejado-llanes/">Llanes</a></li></ul></section>')
-    area_links="".join(bloques)
+        bloques.append(f'<section{ancla}><h3><a href="/zonas/{slug}/">{name}</a></h3><ul>{"".join(enlaces)}</ul></section>')
+    area_links=indice(letras, "prov", "Provincias por inicial") + "".join(bloques)
     return '''<section class="portada-obra"><div class="wrap escena">
 <a class="escena-foto" href="/zonas/bizkaia/lekeitio/#trabajo"><img src="/assets/obras/lekeitio-borde-tejado.webp" alt="Borde de la cubierta y alero en el trabajo de limpieza de Lekeitio" fetchpriority="high"><span>Lekeitio · Ver intervención</span></a>
 <div class="escena-texto"><h1>Limpieza de canalones y tejados</h1><p>Goteras, bajantes y reparaciones de cubierta para viviendas y comunidades. Servicio desde Bilbao.</p><a href="/zonas/">Buscar mi localidad</a></div>

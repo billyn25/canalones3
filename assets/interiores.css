@@ -74,3 +74,10 @@ body,.site-header{background:var(--paper)}.brand,h1,h2,h3,.obra-tarjeta strong,.
     #localidades form select { width: 100%; min-width: 0; }
     #localidades form button { justify-self: start; }
 }
+
+.indice-local {grid-column:1/-1;margin:1rem 0}
+.indice-local div,.perfil-local dl {display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0}
+.indice-local a {display:inline-grid;place-items:center;min-width:44px;min-height:44px;border:1px solid currentColor;border-radius:.25rem}
+.perfil-local dl {gap:1rem 2rem}
+.perfil-local dd {margin:0;font-weight:700}
+[id^="letra-"],[id^="prov-"],[id^="zona-"] {scroll-margin-top:5rem}
