@@ -154,7 +154,15 @@ def referencia_obra(r):
     obra = min(obras_municipales, key=lambda lugar: separacion_km(r, lugar))
     km = separacion_km(r, obra)
     if km > 35:
-        return ''
+        ejemplos = {
+            'burgos': ('/zonas/burgos/#trabajo', 'Tejas partidas junto a la cumbrera en la provincia de Burgos'),
+            'cantabria': (comillas.RUTA+'#trabajo', 'Tejas y canalón en Comillas'),
+            'gipuzkoa': (idiazabal.RUTA+'#trabajo', 'Limpieza de tejas y reparación de goteras en Idiazabal'),
+            'alava': ('/zonas/alava/agurain-salvatierra/#trabajo', 'Limpieza de tejado y canalones en Agurain/Salvatierra'),
+            'bizkaia': ('/zonas/bizkaia/lekeitio/#trabajo', 'Retirada de hojas en Lekeitio'),
+        }
+        ejemplo = ejemplos.get(r['provincia'])
+        return '<aside><h2>Un trabajo en la provincia</h2><p>'+link(*ejemplo)+'</p></aside>' if ejemplo else ''
     nombre, trabajo, _, _ = CASOS[slug(obra['nombre'])]
     return '<aside><h2>Un trabajo cerca de '+escape(r['nombre'])+'</h2><p>'+link(obra['path']+'#trabajo', trabajo+' en '+nombre)+f' · A unos {max(1, round(km))} km en línea recta.</p></aside>'
 
@@ -222,12 +230,13 @@ def introduccion_municipal(r):
 
 for k,title in provs.items():
     parent='/zonas/'+k+'/'
+    ambito = 'la provincia de '+title
     destinos_provinciales = {
         'segovia': {'40194','40063','40076','40195'},
         'palencia': {'34120','34004','34080','34083'},
         'la-rioja': {'26089','26071','26036','26102'},
     }.get(k, {r["ine"] for r in sorted((r for r in groups[k] if r['km'] is not None),key=lambda r:r["km"])[::max(1,sum(r['km'] is not None for r in groups[k])//4)][:4]})
-    page(parent,'Limpieza de canalones, limpieza y reparación de tejados en '+title,'Atendemos los '+str(len(groups[k]))+' municipios de '+title+' con desplazamiento desde Bilbao.',('<section id="trabajo" class="obra reportaje"><h2>Reparación y limpieza de un tejado en Burgos</h2><p>En este trabajo de Alero Norte, los desperfectos se aprecian especialmente bajo la cumbrera, la línea donde se unen las dos pendientes. En la vista general se pueden seguir las hileras de teja curva hasta ese remate. Al ampliar el detalle se distinguen bordes partidos y fragmentos sueltos entre las piezas.</p><div class="fotos-obra"><figure><a data-foto href="/assets/obras/burgos/remate.webp"><img loading="lazy" src="/assets/obras/burgos/remate-small.webp" alt="Encuentro del faldón con el remate de teja y mortero."></a><figcaption>Encuentro del faldón con el remate de teja y mortero.</figcaption></figure><figure><a data-foto href="/assets/obras/burgos/faldon.webp"><img loading="lazy" src="/assets/obras/burgos/faldon-small.webp" alt="Vista general del faldón, con la cumbrera al fondo."></a><figcaption>Vista general del faldón, con la cumbrera al fondo.</figcaption></figure><figure><a data-foto href="/assets/obras/burgos/hileras.webp"><img loading="lazy" src="/assets/obras/burgos/hileras-small.webp" alt="Vista lateral de las hileras y de los huecos entre piezas."></a><figcaption>Vista lateral de las hileras y de los huecos entre piezas.</figcaption></figure><figure><a data-foto href="/assets/obras/burgos/fragmentos.webp"><img loading="lazy" src="/assets/obras/burgos/fragmentos-small.webp" alt="Fragmentos de teja y mortero bajo la línea de cumbrera."></a><figcaption>Fragmentos de teja y mortero bajo la línea de cumbrera.</figcaption></figure></div></section>'+aranda.tarjeta() if k=='burgos' else comillas.tarjeta() if k=='cantabria' else idiazabal.tarjeta() if k=='gipuzkoa' else tarjeta_salvatierra() if k=='alava' else destacados() if k=='bizkaia' else '<section class="archivo-obras"><h2>Trabajo en la provincia</h2><div class="fotos-obra">'+tarjeta_leon()+'</div></section>' if k=='leon' else '')+"<h2>"+TEXTOS[k][0]+"</h2><p>"+TEXTOS[k][1]+"</p>"+resumen_rutas(groups[k],destinos_provinciales)+filt()+listing(groups[k], alfabeto=True),[('/zonas/','Zonas')], seo_title='Limpieza de tejados y canalones en '+('la provincia de Segovia' if k == 'segovia' else title))
+    page(parent,'Limpieza de canalones y tejados en '+ambito,'Atendemos los '+str(len(groups[k]))+' municipios de '+title+' con desplazamiento desde Bilbao.',('<section id="trabajo" class="obra reportaje"><h2>Reparación y limpieza de un tejado en Burgos</h2><p>En este trabajo de Alero Norte, los desperfectos se aprecian especialmente bajo la cumbrera, la línea donde se unen las dos pendientes. En la vista general se pueden seguir las hileras de teja curva hasta ese remate. Al ampliar el detalle se distinguen bordes partidos y fragmentos sueltos entre las piezas.</p><div class="fotos-obra"><figure><a data-foto href="/assets/obras/burgos/remate.webp"><img loading="lazy" src="/assets/obras/burgos/remate-small.webp" alt="Encuentro del faldón con el remate de teja y mortero."></a><figcaption>Encuentro del faldón con el remate de teja y mortero.</figcaption></figure><figure><a data-foto href="/assets/obras/burgos/faldon.webp"><img loading="lazy" src="/assets/obras/burgos/faldon-small.webp" alt="Vista general del faldón, con la cumbrera al fondo."></a><figcaption>Vista general del faldón, con la cumbrera al fondo.</figcaption></figure><figure><a data-foto href="/assets/obras/burgos/hileras.webp"><img loading="lazy" src="/assets/obras/burgos/hileras-small.webp" alt="Vista lateral de las hileras y de los huecos entre piezas."></a><figcaption>Vista lateral de las hileras y de los huecos entre piezas.</figcaption></figure><figure><a data-foto href="/assets/obras/burgos/fragmentos.webp"><img loading="lazy" src="/assets/obras/burgos/fragmentos-small.webp" alt="Fragmentos de teja y mortero bajo la línea de cumbrera."></a><figcaption>Fragmentos de teja y mortero bajo la línea de cumbrera.</figcaption></figure></div></section>'+aranda.tarjeta() if k=='burgos' else comillas.tarjeta() if k=='cantabria' else idiazabal.tarjeta() if k=='gipuzkoa' else tarjeta_salvatierra() if k=='alava' else destacados() if k=='bizkaia' else '<section class="archivo-obras"><h2>Trabajo en la provincia</h2><div class="fotos-obra">'+tarjeta_leon()+'</div></section>' if k=='leon' else '')+"<h2>"+TEXTOS[k][0]+"</h2><p>"+TEXTOS[k][1]+"</p>"+resumen_rutas(groups[k],destinos_provinciales)+filt()+listing(groups[k], alfabeto=True),[('/zonas/','Zonas')], seo_title='Limpieza de canalones y tejados en '+ambito)
     for r in groups[k]:
         n=r['nombre']; dest=str(r['lat'])+','+str(r['lon'])
         maps='https://www.google.com/maps/dir/?'+urlencode(dict(api=1,origin=ORIGEN_RUTA,destination=dest,travelmode='driving'))
@@ -236,6 +245,11 @@ for k,title in provs.items():
         tiempo = ('Trayecto urbano según el barrio.' if r['metodo'] == 'local' else 'Tiempo aproximado de ida: '+duracion_ruta(r)+' en coche, sin tráfico en tiempo real.')
         desplazamiento = desplazamiento.replace('</p>', ' · '+tiempo+'</p>', 1)
         desplazamiento = desplazamiento.replace('</section>', '<p>Consulta el coste del desplazamiento al pedir presupuesto.</p></section>')
+        lugar_aviso = next((v for v in r['nucleos'] if slug(v) != slug(n)), '')
+        direccion_aviso = ('Si el aviso es en '+escape(lugar_aviso)+', indica también el núcleo al pedir presupuesto.'
+                           if lugar_aviso else 'Para pedir presupuesto en '+escape(n)+', indica la altura del alero y si se accede desde la calle o desde un patio.')
+        limpieza = ('<p>Retiramos las hojas y el sedimento de los tramos acordados y revisamos la embocadura de la bajante. '
+                    'Si el agua sigue rebosando, comprobamos dónde se retiene antes de proponer una reparación.</p><p>'+direccion_aviso+'</p>')
         enlaces_locales=[
             ('Limpieza de canalones', 'Ver la retirada de hojas y la revisión de las salidas', '/servicios/limpieza-de-canalones/'),
             ('Limpieza de tejados en '+n, 'Consultar la limpieza de faldones y limahoyas', '/servicios/limpieza-de-tejados/'),
@@ -247,7 +261,7 @@ for k,title in provs.items():
         bloques = []
         for encabezado, etiqueta, url in enlaces_locales:
             accion = '<p>'+link(consulta_gotera, 'Pedir visita por una gotera')+'</p>' if url == '/servicios/reparacion-de-goteras/' else ''
-            bloques.append('<section><h2>'+escape(encabezado)+'</h2><p>'+link(url, etiqueta)+'</p>'+accion+'</section>')
+            bloques.append('<section><h2>'+escape(encabezado)+'</h2>'+(limpieza if url == '/servicios/limpieza-de-canalones/' else '')+'<p>'+link(url, etiqueta)+'</p>'+accion+'</section>')
         servicios_locales = '<div class="servicios-locales">'+''.join(bloques)+'</div>'
         body=referencia_obra(r)+perfil(r["ine"],n,r.get("cabecera") or n)+desplazamiento+servicios_locales+widget(r)+'<h2>Municipios próximos</h2>'+proximity(r,rows)
         if k=='bizkaia' and slug(n) in CASOS:
