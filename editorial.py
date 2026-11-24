@@ -42,6 +42,10 @@ SERVICIOS = {
 <section id="rastro"><h2>Cuándo aparece y dónde deja rastro</h2>
 <p>Antes de la visita resulta útil anotar si la primera gota aparece al empezar la lluvia, tras varias horas o solo con viento de un lado. Dos fotos desde el mismo punto, una con la mancha seca y otra durante el episodio, ayudan a apreciar su evolución.</p>
 <p>Si sobre la habitación hay una terraza, un patio o una instalación de agua, conviene indicarlo. Revisar qué hay encima y alrededor evita atribuir de entrada toda humedad al tejado.</p></section>
+<section><h2>¿La gotera aparece junto a una ventana de tejado?</h2>
+<p>Indica si la primera gota se ve en una esquina del marco, en el cristal o en el techo que rodea la ventana. Una foto desde dentro permite situarla antes de revisar cómo desagua el remate entre la ventana y las tejas. En el <a href="/trabajos/reparacion-limpieza-tejado-llanes/">trabajo de Llanes</a> se aprecia ese encuentro y la vegetación que se acumulaba a su lado.</p></section>
+<section><h2>¿La mancha está debajo de una terraza?</h2>
+<p>Al pedir la visita, señala qué queda encima de la mancha: la puerta de salida, una pared, el sumidero o el centro de la terraza. Si desde la vivienda has visto que queda agua encharcada después de llover, indica dónde. Son referencias para revisar el recorrido del agua y valorar el alcance de una <a href="/servicios/impermeabilizacion-de-cubiertas/">impermeabilización de la cubierta</a>.</p></section>
 <section><h2>Elegir una reparación con alcance definido</h2>
 <p>Una teja rota, una junta abierta en un remate y una limahoya obstruida requieren actuaciones diferentes. Antes de aceptar una propuesta, pide que identifique la zona afectada, el indicio que relaciona el defecto con la filtración y las piezas o encuentros que se van a intervenir.</p>
 <p>Si la entrada está oculta, una primera inspección puede dejar pendiente una comprobación concreta. Conviene distinguir esa fase de la reparación definitiva y acordar cómo se autorizaría cualquier apertura necesaria.</p></section>
