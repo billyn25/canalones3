@@ -6,7 +6,7 @@ from html import escape
 def home(rows):
     provinces = [
         ("Bizkaia", "bizkaia"), ("Álava", "alava"), ("Gipuzkoa", "gipuzkoa"),
-        ("Cantabria", "cantabria"), ("Burgos", "burgos"), ("León", "leon"), ("Palencia", "palencia"), ("La Rioja", "la-rioja"),
+        ("Cantabria", "cantabria"), ("Burgos", "burgos"), ("León", "leon"), ("Palencia", "palencia"), ("La Rioja", "la-rioja"), ("Segovia", "segovia"),
     ]
     selecciones = {
         "bizkaia": ("48020","48013","48044","48057","48065","48027","48046"),
@@ -14,6 +14,7 @@ def home(rows):
         "gipuzkoa": ("20069","20045","20030","20079","20029","20071","20009"),
         "cantabria": ("39075","39087","39020","39059","39035","39079","39024"),
         "burgos": ("09059","09219","09018","09410","09194","09056"),
+        "segovia": ("40194","40063","40076","40181","40195","40024","40170"),
         "palencia": ("34120","34004","34080","34047","34157"),
         "la-rioja": ("26089","26071","26036","26102","26011","26018"),
         "leon": ("24089","24115","24008","24021","24010","24014"),

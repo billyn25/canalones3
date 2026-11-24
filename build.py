@@ -18,7 +18,7 @@ from weather import widget
 root=Path(__file__).parent.resolve()
 out=root/'dist'
 base='https://reparaciontejadosaleronorte.com'
-provs={'bizkaia':'Bizkaia','alava':'Álava','gipuzkoa':'Gipuzkoa','cantabria':'Cantabria','burgos':'Burgos','leon':'León','palencia':'Palencia','la-rioja':'La Rioja'}
+provs={'bizkaia':'Bizkaia','alava':'Álava','gipuzkoa':'Gipuzkoa','cantabria':'Cantabria','burgos':'Burgos','leon':'León','palencia':'Palencia','la-rioja':'La Rioja','segovia':'Segovia'}
 def slug(s):
     return re.sub('[^a-z0-9]+','-',unicodedata.normalize('NFKD',s).encode('ascii','ignore').decode().lower()).strip('-')
 rows=json.loads((root/'data/municipios.json').read_text())
@@ -118,7 +118,7 @@ mosaico = '<div class="mosaico-trabajos">' + ''.join(
     f'<div><p>{lugar}</p><h2>{titulo}</h2><span>{enlace}</span></div></a></article>'
     for lugar, titulo, foto, alt, url, enlace in trabajos_galeria
 ) + '</div>'
-page('/galeria/','Trabajos reales realizados por Alero Norte','Fotografías de nuestros trabajos de limpieza y reparación en distintos pueblos de nuestra zona de cobertura. Desde Bilbao atendemos Bizkaia, Álava, Gipuzkoa, Cantabria, Burgos, León, Palencia y La Rioja.',mosaico+album())
+page('/galeria/','Trabajos reales realizados por Alero Norte','Fotografías de nuestros trabajos de limpieza y reparación en distintos pueblos de nuestra zona de cobertura. Desde Bilbao atendemos Bizkaia, Álava, Gipuzkoa, Cantabria, Burgos, León, Palencia, La Rioja y Segovia.',mosaico+album())
 page(RUTA_LEON,TITULO_LEON,'Cuatro fotografías de un trabajo en la provincia de León: las tejas, el alero, el tramo lateral y la salida del canalón.',trabajo_leon(),[('/zonas/leon/','León')])
 page('/preparar-consulta/','Preparar una consulta','Anota dónde está el inmueble y qué ocurre cuando llueve.',form())
 def listing(items, alfabeto=False):
@@ -177,7 +177,7 @@ def resumen_rutas(items, nombres):
     filas=''.join('<tr><th scope="row">'+link(r['path'],r['nombre'])+'</th><td>'+str(r['km'])+' km<br><small>'+duracion_ruta(r)+'</small></td><td>'+(' · '.join('<span class="via">'+escape(v)+'</span>' for v in r['carreteras']) or ('Recorrido local' if r['metodo']=='local' else 'Consultar itinerario'))+'</td></tr>' for r in elegidos)
     return '<section class="rutas-zona"><h2>Trayectos desde Bilbao</h2><table><caption>Distancias y tiempos aproximados de ida</caption><thead><tr><th>Destino</th><th><span aria-label="Kilómetros y tiempo de ida">Km / tiempo</span></th><th>Vías principales</th></tr></thead><tbody>'+filas+'</tbody></table></section>'
 
-representantes={'48044','01059','20069','39075','09059','24089','34120','26089'}
+representantes={'48044','01059','20069','39075','09059','24089','34120','26089','40194'}
 for ruta,(titulo,intro,texto) in PAGINAS.items():
     page('/'+ruta+'/',titulo,intro,texto)
 page('/distancias/','Cómo se calculan las distancias','Los kilómetros publicados son una referencia por carretera desde Bilbao. El enlace de cada ficha calcula la ruta desde Alameda Doctor Areilza, 31. Las distancias entre municipios cercanos se miden en línea recta.',link('https://www.ign.es/web/ign/portal/ane-datos-geograficos','IGN, 2025 · CC BY 4.0')+'<p>Rutas OSRM con datos de '+link('https://www.openstreetmap.org/copyright','© colaboradores de OpenStreetMap, ODbL')+'</p>')
@@ -223,6 +223,7 @@ def introduccion_municipal(r):
 for k,title in provs.items():
     parent='/zonas/'+k+'/'
     destinos_provinciales = {
+        'segovia': {'40194','40063','40076','40195'},
         'palencia': {'34120','34004','34080','34083'},
         'la-rioja': {'26089','26071','26036','26102'},
     }.get(k, {r["ine"] for r in sorted((r for r in groups[k] if r['km'] is not None),key=lambda r:r["km"])[::max(1,sum(r['km'] is not None for r in groups[k])//4)][:4]})

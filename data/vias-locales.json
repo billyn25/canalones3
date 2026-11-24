@@ -13027,5 +13027,2094 @@
    "Carrasqueda",
    "San Pedro"
   ]
+ },
+ "40001": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Elena Fortun",
+   "Calle Dulzainero Tocino",
+   "Calle Ayuntamiento",
+   "Calle Caños"
+  ],
+  "barrios": []
+ },
+ "40002": {
+  "vias": [
+   "Calle Arriba",
+   "Calle Barbecho",
+   "Calle Calvario",
+   "Calle Cantarranas",
+   "Calle Fragua"
+  ],
+  "barrios": []
+ },
+ "40003": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Cilla",
+   "Calle Arroyo",
+   "Calle Carretera",
+   "Calle Cinco"
+  ],
+  "barrios": []
+ },
+ "40004": {
+  "vias": [
+   "Plaza Peña",
+   "Plaza Fuente",
+   "Plaza San Juan",
+   "Plaza Mayor del Sinodo",
+   "Plaza Isabel la Catolica"
+  ],
+  "barrios": []
+ },
+ "40005": {
+  "vias": [
+   "Plaza Fuente",
+   "Plaza Constitucion",
+   "Calle Arriba",
+   "Calle Calvario",
+   "Calle Cantarranas"
+  ],
+  "barrios": []
+ },
+ "40006": {
+  "vias": [
+   "Plaza Constitucion",
+   "Calle Cantarranas",
+   "Calle Carretero",
+   "Calle Del Norte",
+   "Calle El Pozo"
+  ],
+  "barrios": []
+ },
+ "40007": {
+  "vias": [
+   "Plaza Pinar",
+   "Plaza Campillo",
+   "Calle Baeza",
+   "Calle Caz",
+   "Calle Fuente"
+  ],
+  "barrios": []
+ },
+ "40008": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Arriba",
+   "Calle Camino de Ayllon",
+   "Calle Eras",
+   "Calle Fronton"
+  ],
+  "barrios": []
+ },
+ "40009": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Adobera",
+   "Calle Calvario",
+   "Calle Eras",
+   "Calle La Siega"
+  ],
+  "barrios": []
+ },
+ "40010": {
+  "vias": [
+   "Plaza Fronton",
+   "Plaza Constitucion",
+   "Calle Amistad",
+   "Calle Arevalo Alta",
+   "Camino Carranuevo"
+  ],
+  "barrios": []
+ },
+ "40012": {
+  "vias": [
+   "Plaza Cruz",
+   "Plaza Constitucion",
+   "Plaza Rubia",
+   "Plaza San Juan",
+   "Plaza San Antonio"
+  ],
+  "barrios": []
+ },
+ "40013": {
+  "vias": [
+   "Calle Alta",
+   "Calle Atalaya",
+   "Calle Eras",
+   "Calle Fuente",
+   "Calle Iglesia"
+  ],
+  "barrios": []
+ },
+ "40014": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Iglesia",
+   "Calle Buitrera",
+   "Calle Enmedio",
+   "Calle Eras"
+  ],
+  "barrios": []
+ },
+ "40015": {
+  "vias": [
+   "Plaza San Sebastian",
+   "Calle Aldeanueva",
+   "Calle Ayuntamiento",
+   "Calle Fragua",
+   "Calle Huertas"
+  ],
+  "barrios": []
+ },
+ "40016": {
+  "vias": [
+   "Calle Encinas",
+   "Calle Pozo",
+   "Calle Prado",
+   "Calle Real",
+   "Calle Sol"
+  ],
+  "barrios": []
+ },
+ "40017": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Añe",
+   "Calle Ahusin",
+   "Calle Cilla",
+   "Calle Eras"
+  ],
+  "barrios": []
+ },
+ "40018": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Anaya",
+   "Calle Armuña",
+   "Carretera Armuña",
+   "Calle Ayuntamiento"
+  ],
+  "barrios": []
+ },
+ "40019": {
+  "vias": [
+   "Calle Ancha",
+   "Calle Callejon",
+   "Calle Cercatos",
+   "Calle Fuente",
+   "Calle Iglesia"
+  ],
+  "barrios": []
+ },
+ "40020": {
+  "vias": [
+   "Calle Aleguillas",
+   "Calle Arconcillos",
+   "Calle Caño",
+   "Calle Carretera",
+   "Calle Castillejo"
+  ],
+  "barrios": []
+ },
+ "40021": {
+  "vias": [
+   "Calle Angosta",
+   "Calle Cruz",
+   "Calle Eras",
+   "Calle Fuente",
+   "Calle Iglesia"
+  ],
+  "barrios": []
+ },
+ "40022": {
+  "vias": [
+   "Plaza Arriba",
+   "Plaza Constitucion",
+   "Plaza Caño",
+   "Plaza Delicias",
+   "Calle Alameda"
+  ],
+  "barrios": []
+ },
+ "40024": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Obispo Vellosillo",
+   "Camino Abajo",
+   "Calle Adarves",
+   "Calle Alfareria"
+  ],
+  "barrios": []
+ },
+ "40025": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Barquillo",
+   "Calle Boceguillas",
+   "Calle Carrera",
+   "Calle Corralon"
+  ],
+  "barrios": []
+ },
+ "40026": {
+  "vias": [
+   "Calle Escuelas",
+   "Calle Fragua",
+   "Calle Iglesia",
+   "Plaza La Iglesia",
+   "Calle Real"
+  ],
+  "barrios": []
+ },
+ "40028": {
+  "vias": [
+   "Plaza Iglesia",
+   "Plaza Pozo",
+   "Calle Toros",
+   "Plaza Mayor",
+   "Plaza Sol"
+  ],
+  "barrios": []
+ },
+ "40029": {
+  "vias": [
+   "Plaza Mayor",
+   "Carretera Boceguillas",
+   "Calle Campillo",
+   "Calle Cantarranas",
+   "Calle Carretero"
+  ],
+  "barrios": []
+ },
+ "40030": {
+  "vias": [
+   "Plaza Blas Marugan",
+   "Plaza Mayor",
+   "Calle Abajo",
+   "Calle Almendro",
+   "Calle Ancha"
+  ],
+  "barrios": []
+ },
+ "40031": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Ambrosio Luciañez",
+   "Calle Apolos",
+   "Calle Barrionuevo",
+   "Calle Carril de las Eras"
+  ],
+  "barrios": []
+ },
+ "40032": {
+  "vias": [
+   "Plaza España",
+   "Plaza Virgen del Rosario",
+   "Plaza Oriente",
+   "Plaza Fragua",
+   "Plaza Constitucion"
+  ],
+  "barrios": []
+ },
+ "40033": {
+  "vias": [
+   "Plaza Oriente",
+   "Calle Ancha",
+   "Calle Las Traseras",
+   "Calle Nueva",
+   "Calle Camino de la Dehesa"
+  ],
+  "barrios": []
+ },
+ "40034": {
+  "vias": [
+   "Plaza Nogal Elias",
+   "Plaza Constitucion",
+   "Plaza Iglesia",
+   "Calle Angel Rebollo",
+   "Calle Cantizal"
+  ],
+  "barrios": []
+ },
+ "40035": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Iglesia",
+   "Plaza Renteros",
+   "Calle Antonio Machado",
+   "Calle Callejon"
+  ],
+  "barrios": []
+ },
+ "40036": {
+  "vias": [
+   "Plaza Tariego",
+   "Plaza España",
+   "Plaza Paredon",
+   "Plaza Parque",
+   "Plaza Mediodia"
+  ],
+  "barrios": []
+ },
+ "40037": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Calvario",
+   "Calle Enmedio",
+   "Calle Fuente",
+   "Calle Gallegueria"
+  ],
+  "barrios": []
+ },
+ "40039": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Ermita",
+   "Calle Abajo",
+   "Calle Cañada Guerrero",
+   "Calle Cantarranas"
+  ],
+  "barrios": []
+ },
+ "40040": {
+  "vias": [
+   "Plaza Adoberas",
+   "Plaza Alcazar de Toledo",
+   "Plaza Alemania",
+   "Plaza Amistad",
+   "Plaza Calvo Sotelo"
+  ],
+  "barrios": []
+ },
+ "40041": {
+  "vias": [
+   "Plaza Ayuntamiento",
+   "Plaza Iglesia",
+   "Plaza Mayor",
+   "Plaza Pozo",
+   "Calle Aguila"
+  ],
+  "barrios": []
+ },
+ "40043": {
+  "vias": [
+   "Plaza España",
+   "Plaza Abastos",
+   "Plaza Posito Real",
+   "Plaza Sarmiento",
+   "Calle Alfareros"
+  ],
+  "barrios": []
+ },
+ "40044": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Anarieto",
+   "Calle Burgomillodo",
+   "Calle Burguillo",
+   "Calle Castro"
+  ],
+  "barrios": []
+ },
+ "40045": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Alta",
+   "Calle Angosta",
+   "Calle Fielato",
+   "Calle Mayor"
+  ],
+  "barrios": []
+ },
+ "40046": {
+  "vias": [
+   "Calle Caldera",
+   "Calle Castillo",
+   "Calle Mediodia",
+   "Calle Real",
+   "Calle Riaza"
+  ],
+  "barrios": []
+ },
+ "40047": {
+  "vias": [
+   "Plaza Felix Peña",
+   "Calle Bodegas",
+   "Calle Eras",
+   "Calle Fragua Vieja",
+   "Calle Iglesia"
+  ],
+  "barrios": []
+ },
+ "40048": {
+  "vias": [
+   "Plaza España",
+   "Calle Arroyo",
+   "Calle Castillo",
+   "Calle Frio",
+   "Calle Iglesia"
+  ],
+  "barrios": []
+ },
+ "40049": {
+  "vias": [
+   "Calle Cansejal",
+   "Calle Carrascal",
+   "Calle Iglesia",
+   "Calle Paja",
+   "Calle Puente"
+  ],
+  "barrios": []
+ },
+ "40051": {
+  "vias": [
+   "Calle Cuevas",
+   "Calle Eras",
+   "Calle Fuente",
+   "Calle Iglesia",
+   "Calle Poniente"
+  ],
+  "barrios": []
+ },
+ "40052": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Calvario",
+   "Calle Cantarranas",
+   "Calle Cantarranas Baja",
+   "Calle Iglesia"
+  ],
+  "barrios": []
+ },
+ "40053": {
+  "vias": [
+   "Plaza Libertad",
+   "Plaza San Benito",
+   "Plaza Pastor Domingo",
+   "Plaza Herradura",
+   "Plaza Buenavista"
+  ],
+  "barrios": []
+ },
+ "40054": {
+  "vias": [
+   "Plaza Constitucion",
+   "Calle Arrabal",
+   "Calle Carama",
+   "Calle Cerezuelo",
+   "Calle Chorro"
+  ],
+  "barrios": []
+ },
+ "40055": {
+  "vias": [
+   "Plaza San Mames",
+   "Calle Cantarranas",
+   "Calle Ceniceros",
+   "Calle Iglesia",
+   "Calle Real"
+  ],
+  "barrios": []
+ },
+ "40056": {
+  "vias": [
+   "Plaza España",
+   "Calle Castro",
+   "Calle Ermita",
+   "Calle Fragua",
+   "Calle Iglesia"
+  ],
+  "barrios": []
+ },
+ "40057": {
+  "vias": [
+   "Plaza Arco",
+   "Plaza Chica",
+   "Plaza Gobernador Murillo Valdivia",
+   "Plaza Iglesia",
+   "Plaza Mayor"
+  ],
+  "barrios": []
+ },
+ "40058": {
+  "vias": [
+   "Plaza Constitucion",
+   "Calle Salida A Martin Muñoz",
+   "Calle Ancha",
+   "Calle Angosta",
+   "Calle Arevalo"
+  ],
+  "barrios": []
+ },
+ "40059": {
+  "vias": [
+   "Calle Baja",
+   "Calle Castillo",
+   "Calle Real",
+   "Calle Rosario",
+   "Calle Salud"
+  ],
+  "barrios": []
+ },
+ "40060": {
+  "vias": [
+   "Calle Angosta",
+   "Calle Carretera",
+   "Calle Corpus",
+   "Calle Mayor",
+   "Calle Real"
+  ],
+  "barrios": []
+ },
+ "40061": {
+  "vias": [
+   "Plaza Arrenes",
+   "Plaza Mayor",
+   "Plaza Rey",
+   "Calle Abajo",
+   "Calle Arriba"
+  ],
+  "barrios": []
+ },
+ "40062": {
+  "vias": [
+   "Calle Cotanillos",
+   "Calle La Cuesta",
+   "Calle Cueva",
+   "Calle De la Fuente",
+   "Calle Mediodia"
+  ],
+  "barrios": []
+ },
+ "40063": {
+  "vias": [
+   "Plaza Acacias",
+   "Plaza Campo",
+   "Plaza Cruz",
+   "Plaza Cuesta",
+   "Calle Cuevas"
+  ],
+  "barrios": []
+ },
+ "40065": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Fuente",
+   "Plaza Huertas",
+   "Plaza San Antonio",
+   "Calle Aguera"
+  ],
+  "barrios": []
+ },
+ "40068": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Abajo",
+   "Calle Ayuntamiento",
+   "Calle Maestro D. Afrodisio Martinez",
+   "Calle Fuente"
+  ],
+  "barrios": []
+ },
+ "40069": {
+  "vias": [
+   "Calle Arevalo",
+   "Calle Botalhornillo",
+   "Calle Iglesia",
+   "Calle Rio",
+   "Calle Alameda"
+  ],
+  "barrios": []
+ },
+ "40070": {
+  "vias": [
+   "Plaza Ayuntamiento",
+   "Calle Cantarranas",
+   "Calle Carrancha",
+   "Carretera Cortos",
+   "Calle Egido"
+  ],
+  "barrios": []
+ },
+ "40071": {
+  "vias": [
+   "Calle Aranda",
+   "Calle Heras",
+   "Calle Iglesia",
+   "Calle Oriente",
+   "Calle Real"
+  ],
+  "barrios": []
+ },
+ "40072": {
+  "vias": [
+   "Calle Curato",
+   "Calle Iglesia",
+   "Calle Real",
+   "Calle Rio",
+   "Calle Roda"
+  ],
+  "barrios": []
+ },
+ "40073": {
+  "vias": [
+   "Plaza Norte",
+   "Plaza Corpus",
+   "Plaza Mayor",
+   "Plaza San Zoilo",
+   "Calle Alfonso Gonzalez de la Hoz"
+  ],
+  "barrios": []
+ },
+ "40074": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Sexmo",
+   "Calle Adoberas",
+   "Calle Areneras",
+   "Calle Cabezas"
+  ],
+  "barrios": []
+ },
+ "40075": {
+  "vias": [
+   "Plaza Rey",
+   "Plaza Iglesia",
+   "Plaza Mayor",
+   "Plaza Constitucion",
+   "Plaza Ayuntamiento"
+  ],
+  "barrios": []
+ },
+ "40076": {
+  "vias": [
+   "Plaza Egidillo",
+   "Plaza Fronton",
+   "Plaza Arenal",
+   "Paseo Acacias",
+   "Calle Alamillos"
+  ],
+  "barrios": []
+ },
+ "40077": {
+  "vias": [
+   "Calle Almuzara",
+   "Calle Arrieros",
+   "Calle Baja",
+   "Calle La Fragua",
+   "Calle Fuente"
+  ],
+  "barrios": []
+ },
+ "40078": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Arco",
+   "Calle Arco",
+   "Calle Arenal",
+   "Calle Canarias"
+  ],
+  "barrios": []
+ },
+ "40079": {
+  "vias": [
+   "Plaza San Nicolas",
+   "Calle Arroyo",
+   "Calle Calvario",
+   "Calle Corporario",
+   "Calle Las Damas"
+  ],
+  "barrios": []
+ },
+ "40080": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Eras",
+   "Carretera Grajera",
+   "Calle Madrid",
+   "Calle Martin Lloret"
+  ],
+  "barrios": []
+ },
+ "40081": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Arroyo",
+   "Calle Carretera",
+   "Calle Eras",
+   "Calle Fronton"
+  ],
+  "barrios": []
+ },
+ "40082": {
+  "vias": [
+   "Plaza Cantarranas",
+   "Plaza La Cigueña",
+   "Plaza Caño",
+   "Plaza La Olma",
+   "Plaza Mayor"
+  ],
+  "barrios": []
+ },
+ "40083": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Ayuntamiento",
+   "Plaza Paloma",
+   "Calle Arroyo",
+   "Calle Calvario"
+  ],
+  "barrios": []
+ },
+ "40084": {
+  "vias": [
+   "Plaza Pozo",
+   "Plaza Mesones",
+   "Plaza Mayor",
+   "Calle Alameda",
+   "Calle Caño"
+  ],
+  "barrios": []
+ },
+ "40086": {
+  "vias": [
+   "Plaza Oriente",
+   "Plaza Salvador",
+   "Plaza Fuente",
+   "Plaza Mayor",
+   "Plaza General Torres"
+  ],
+  "barrios": []
+ },
+ "40087": {
+  "vias": [
+   "Plaza Santa Brigida",
+   "Calle Cuesta",
+   "Calle Eras",
+   "Calle Fragua",
+   "Calle Fronton"
+  ],
+  "barrios": []
+ },
+ "40088": {
+  "vias": [
+   "Plaza España",
+   "Plaza San Antonio",
+   "Plaza Caidos",
+   "Plaza Fuente",
+   "Calle Alameda"
+  ],
+  "barrios": []
+ },
+ "40089": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Ayuntamiento",
+   "Plaza Mercado",
+   "Calle Altillo",
+   "Calle Bascula"
+  ],
+  "barrios": []
+ },
+ "40091": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Ayuntamiento",
+   "Calle Berral",
+   "Calle Castro",
+   "Calle Chorro"
+  ],
+  "barrios": []
+ },
+ "40092": {
+  "vias": [
+   "Plaza Franco",
+   "Plaza Del Palacio",
+   "Plaza De la Villa",
+   "Calle De las Bodegas",
+   "Calle Calzada"
+  ],
+  "barrios": []
+ },
+ "40093": {
+  "vias": [
+   "Plaza Mayo",
+   "Calle Aldealengua",
+   "Calle Caño",
+   "Camino Data",
+   "Calle Eras"
+  ],
+  "barrios": []
+ },
+ "40094": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Alferez Provisional",
+   "Carretera Arevalo",
+   "Calle Carbonero",
+   "Calle Doctor Zamarriego"
+  ],
+  "barrios": []
+ },
+ "40095": {
+  "vias": [
+   "Plaza Rufino Cano",
+   "Plaza De los Caños",
+   "Calle Alta",
+   "Calle Arroyos",
+   "Calle Calleja"
+  ],
+  "barrios": []
+ },
+ "40097": {
+  "vias": [
+   "Calle Humorista Gila",
+   "Plaza Grajera",
+   "Calle Real",
+   "Calle La Alegria",
+   "Calle El Pastor"
+  ],
+  "barrios": []
+ },
+ "40099": {
+  "vias": [
+   "Calle Carramoral",
+   "Calle Carrocajo",
+   "Calle Chorron",
+   "Calle Cruz Alta",
+   "Calle Eras"
+  ],
+  "barrios": []
+ },
+ "40100": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Reto",
+   "Plaza Castilla y Leon",
+   "Calle Alberca",
+   "Calle Amapola"
+  ],
+  "barrios": []
+ },
+ "40101": {
+  "vias": [
+   "Calle Fuente",
+   "Calle Iglesia",
+   "Calle Norte",
+   "Calle Real",
+   "Calle Rio"
+  ],
+  "barrios": []
+ },
+ "40103": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza El Sauce",
+   "Plaza Las Escuelas (De)",
+   "Calle Ahusin",
+   "Calle Arroyo"
+  ],
+  "barrios": []
+ },
+ "40104": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Arroyo",
+   "Calle Carretera",
+   "Calle Eras",
+   "Calle Fuente"
+  ],
+  "barrios": []
+ },
+ "40105": {
+  "vias": [
+   "Plaza Publica",
+   "Plaza Caño",
+   "Calle Anaya",
+   "Calle Codo",
+   "Calle Eras"
+  ],
+  "barrios": []
+ },
+ "40106": {
+  "vias": [
+   "Plaza Asuncion",
+   "Plaza Mayor",
+   "Calle Balisa",
+   "Calle Casillo",
+   "Calle Ubaldo Moreno Fernandez"
+  ],
+  "barrios": []
+ },
+ "40107": {
+  "vias": [
+   "Plaza Constitucion",
+   "Plaza Posito",
+   "Camino Avila",
+   "Calle Iglesia",
+   "Calle Sol"
+  ],
+  "barrios": []
+ },
+ "40108": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Alta",
+   "Calle Calleja",
+   "Calle Calvario",
+   "Calle Charco"
+  ],
+  "barrios": []
+ },
+ "40109": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Alta",
+   "Calle Aranda",
+   "Calle Campo",
+   "Calle Delicias"
+  ],
+  "barrios": []
+ },
+ "40110": {
+  "vias": [
+   "Plaza Cazadores",
+   "Plaza Escritor Ignacio Sanz",
+   "Plaza Viudas",
+   "Calle Angel",
+   "Calle Barreros"
+  ],
+  "barrios": []
+ },
+ "40111": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Marugan",
+   "Plaza Ayuntamiento",
+   "Plaza Iglesia",
+   "Calle Ayuntamiento"
+  ],
+  "barrios": []
+ },
+ "40112": {
+  "vias": [
+   "Plaza Constitucion",
+   "Avenida America",
+   "Paseo Cabanillas",
+   "Calle Clavel",
+   "Calle Colombia"
+  ],
+  "barrios": []
+ },
+ "40113": {
+  "vias": [
+   "Plaza Huertos",
+   "Plaza Iglesia",
+   "Plaza Espejos",
+   "Plaza Rancho",
+   "Plaza Novillos"
+  ],
+  "barrios": []
+ },
+ "40115": {
+  "vias": [
+   "Plaza San Miguel",
+   "Plaza Santa Maria",
+   "Plaza Castillo",
+   "Calle Abajo",
+   "Calle Arriba"
+  ],
+  "barrios": []
+ },
+ "40118": {
+  "vias": [
+   "Calle Alameda",
+   "Calle Carretas",
+   "Calle Cristo del Humilladero",
+   "Calle Doctor Benito Arranz",
+   "Calle Duque"
+  ],
+  "barrios": []
+ },
+ "40119": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Caño",
+   "Calle Corpus",
+   "Calle Garcillan",
+   "Calle Iglesia"
+  ],
+  "barrios": []
+ },
+ "40120": {
+  "vias": [
+   "Plaza Constitucion",
+   "Calle Arevalo",
+   "Calle Caño",
+   "Calle Callejon",
+   "Calle Caz"
+  ],
+  "barrios": []
+ },
+ "40121": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Arroyo",
+   "Plaza Morales",
+   "Calle Adanero",
+   "Calle Alegria"
+  ],
+  "barrios": []
+ },
+ "40122": {
+  "vias": [
+   "Plaza Baile",
+   "Plaza Novillos",
+   "Plaza Constitucion",
+   "Plaza Iglesia",
+   "Calle Alegas"
+  ],
+  "barrios": []
+ },
+ "40123": {
+  "vias": [
+   "Plaza Iglesia",
+   "Plaza San Pedro",
+   "Plaza Constitucion",
+   "Calle Abajo",
+   "Calle Agustin Benito"
+  ],
+  "barrios": []
+ },
+ "40124": {
+  "vias": [
+   "Plaza Constitucion",
+   "Plaza Sur",
+   "Calle Abajo",
+   "Calle Alamo",
+   "Calle Ancha"
+  ],
+  "barrios": []
+ },
+ "40125": {
+  "vias": [
+   "Plaza Iglesia",
+   "Calle Amargura",
+   "Calle Cementerio",
+   "Calle Egidillo",
+   "Calle Eras"
+  ],
+  "barrios": []
+ },
+ "40126": {
+  "vias": [
+   "Plaza Arrabal",
+   "Plaza Mayor",
+   "Plaza Paz",
+   "Plaza Costanilla",
+   "Calle Arevalo"
+  ],
+  "barrios": []
+ },
+ "40127": {
+  "vias": [
+   "Plaza Palacio",
+   "Calle Aldeasoña",
+   "Carretera Aldeasoña",
+   "Calle Ayuntamiento",
+   "Calle Carrobledo"
+  ],
+  "barrios": []
+ },
+ "40128": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Don Deogracias",
+   "Calle Doctor Leon de Pedro",
+   "Calle Bernardos",
+   "Calle Berrueco"
+  ],
+  "barrios": []
+ },
+ "40129": {
+  "vias": [
+   "Plaza De la Constitucion",
+   "Calle Arevalo",
+   "Calle Cadena",
+   "Calle Empedrada",
+   "Calle Ermita"
+  ],
+  "barrios": []
+ },
+ "40130": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Bañuelos",
+   "Calle Bañuelos",
+   "Calle Calvario",
+   "Calle Castillo"
+  ],
+  "barrios": []
+ },
+ "40131": {
+  "vias": [
+   "Camino Calvario",
+   "Calle Fuentona",
+   "Calle Iglesia",
+   "Calle Marques de Pons",
+   "Carretera Otero Herreros"
+  ],
+  "barrios": []
+ },
+ "40132": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Iglesia",
+   "Calle Calzada",
+   "Calle Carrascal",
+   "Calle Corta"
+  ],
+  "barrios": []
+ },
+ "40134": {
+  "vias": [
+   "Plaza Fuente",
+   "Plaza Mayor",
+   "Plaza Castilla",
+   "Plaza Hermandad",
+   "Plaza Arenales"
+  ],
+  "barrios": []
+ },
+ "40135": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Baile",
+   "Plaza Estanco",
+   "Calle Acedos",
+   "Calle Ayuntamiento"
+  ],
+  "barrios": []
+ },
+ "40136": {
+  "vias": [
+   "Plaza Sol",
+   "Plaza Constitucion",
+   "Calle Angosta",
+   "Calle Carraturegano",
+   "Calle Covachuelas"
+  ],
+  "barrios": []
+ },
+ "40138": {
+  "vias": [
+   "Plaza Constitucion",
+   "Plaza Mayor",
+   "Plaza Sedeño",
+   "Plaza Sonsoto",
+   "Plaza Tomas Gallego"
+  ],
+  "barrios": []
+ },
+ "40139": {
+  "vias": [
+   "Plaza Mayo",
+   "Plaza Mayor",
+   "Plaza Campillo",
+   "Calle Adrian",
+   "Calle Arriba"
+  ],
+  "barrios": []
+ },
+ "40140": {
+  "vias": [
+   "Plaza Castilla y Leon",
+   "Plaza España",
+   "Plaza Norte",
+   "Plaza Cuadro",
+   "Carretera Aranda"
+  ],
+  "barrios": []
+ },
+ "40141": {
+  "vias": [
+   "Plaza Postas",
+   "Plaza Labajos",
+   "Plaza Pelayos",
+   "Plaza Mayor",
+   "Plaza La Rubia"
+  ],
+  "barrios": []
+ },
+ "40142": {
+  "vias": [
+   "Calle Los Frailes",
+   "Calle La Fuente",
+   "Camino De la Iglesia",
+   "Calle Real",
+   "Calle Sustento"
+  ],
+  "barrios": []
+ },
+ "40143": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Fuente",
+   "Calle Corta",
+   "Calle Fragua",
+   "Calle Fuente"
+  ],
+  "barrios": []
+ },
+ "40144": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Ancha",
+   "Calle Empedrada",
+   "Calle Ermita",
+   "Calle Fuente"
+  ],
+  "barrios": []
+ },
+ "40145": {
+  "vias": [
+   "Plaza Orceña",
+   "Plaza Mayor",
+   "Plaza Cristo",
+   "Calle Abrojal",
+   "Calle Abundio Martin"
+  ],
+  "barrios": []
+ },
+ "40146": {
+  "vias": [
+   "Plaza Novillos",
+   "Plaza Julian Fernandez",
+   "Plaza Puente",
+   "Plaza España",
+   "Calle Sol"
+  ],
+  "barrios": []
+ },
+ "40148": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza De la Iglesia",
+   "Calle Arevalo",
+   "Calle Ayuntamiento Viejo",
+   "Calle Cercas"
+  ],
+  "barrios": []
+ },
+ "40149": {
+  "vias": [
+   "Plaza Toros",
+   "Plaza Cristo",
+   "Plaza San Pablo",
+   "Plaza Mayor",
+   "Plaza Iglesia"
+  ],
+  "barrios": []
+ },
+ "40150": {
+  "vias": [
+   "Calle Abajo",
+   "Calle Arriba",
+   "Calle Arroyo",
+   "Calle Ermita",
+   "Calle Escuela"
+  ],
+  "barrios": []
+ },
+ "40151": {
+  "vias": [
+   "Plaza Mayor",
+   "Avenida Estacion",
+   "Calle Fronton",
+   "Avenida De la Constitucion",
+   "Calle Nieva"
+  ],
+  "barrios": []
+ },
+ "40152": {
+  "vias": [
+   "Plaza Afrodisio Aparicio",
+   "Plaza España",
+   "Plaza Hispanidad",
+   "Plaza Canalejas",
+   "Plaza Santiago"
+  ],
+  "barrios": []
+ },
+ "40154": {
+  "vias": [
+   "Plaza Generalisimo",
+   "Calle Barahona",
+   "Calle Eras",
+   "Calle Real"
+  ],
+  "barrios": []
+ },
+ "40155": {
+  "vias": [
+   "Plaza Fuente",
+   "Plaza De Arriba",
+   "Camino De los Arrieta",
+   "Calle Asomadilla",
+   "Calle Cerca Grande"
+  ],
+  "barrios": []
+ },
+ "40156": {
+  "vias": [
+   "Plaza Ganado",
+   "Plaza Mayor",
+   "Plaza Santo Domingo",
+   "Plaza Eras",
+   "Paseo Alamo"
+  ],
+  "barrios": []
+ },
+ "40157": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Ayuntamiento",
+   "Calle Egido",
+   "Calle Fragua",
+   "Calle Huertos"
+  ],
+  "barrios": []
+ },
+ "40158": {
+  "vias": [
+   "Calle Adrados",
+   "Calle Fuente",
+   "Calle Higuera",
+   "Calle Iglesia",
+   "Calle Molino"
+  ],
+  "barrios": []
+ },
+ "40159": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Sur",
+   "Plaza Oeste",
+   "Calle Alameda",
+   "Calle Arroyejo"
+  ],
+  "barrios": []
+ },
+ "40160": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Aldea Real",
+   "Calle Carbonero",
+   "Calle Eras",
+   "Calle Ermita"
+  ],
+  "barrios": []
+ },
+ "40161": {
+  "vias": [
+   "Calle Carretera",
+   "Calle Casilla",
+   "Calle Eras",
+   "Calle Fragua",
+   "Calle Fuente"
+  ],
+  "barrios": []
+ },
+ "40162": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza España",
+   "Plaza Constitucion",
+   "Calle Amargura",
+   "Calle Bataneros"
+  ],
+  "barrios": []
+ },
+ "40163": {
+  "vias": [
+   "Calle Constitucion",
+   "Calle Cuesta",
+   "Calle Encina",
+   "Calle Eras",
+   "Calle Federico Escudero"
+  ],
+  "barrios": []
+ },
+ "40164": {
+  "vias": [
+   "Plaza Constitucion",
+   "Calle Alegria",
+   "Calle Arevalo",
+   "Calle Artistas",
+   "Calle Cirio"
+  ],
+  "barrios": []
+ },
+ "40165": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Ancha",
+   "Calle Carraldosancho",
+   "Calle Carrera",
+   "Calle Carretera"
+  ],
+  "barrios": []
+ },
+ "40166": {
+  "vias": [
+   "Plaza Vacas",
+   "Plaza Mayor",
+   "Calle Calvario",
+   "Calle Cercado",
+   "Calle Cogeces"
+  ],
+  "barrios": []
+ },
+ "40168": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Arriba",
+   "Calle Avelina del Valle",
+   "Calle Barriejo",
+   "Calle Cantarranas"
+  ],
+  "barrios": []
+ },
+ "40170": {
+  "vias": [
+   "Plaza Escorial",
+   "Plaza Mayor",
+   "Plaza San Juan",
+   "Plaza Arbol",
+   "Plaza Maria Hernando"
+  ],
+  "barrios": []
+ },
+ "40171": {
+  "vias": [
+   "Calle Alta",
+   "Calle Ermita",
+   "Calle Jose Clavero Nuñez",
+   "Calle Real",
+   "Calle Sol"
+  ],
+  "barrios": []
+ },
+ "40172": {
+  "vias": [
+   "Plaza Ricardo Provencio",
+   "Calle Alta",
+   "Calle Arrenes",
+   "Calle Cervantes",
+   "Calle Cuatro Calles"
+  ],
+  "barrios": []
+ },
+ "40173": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Abajo",
+   "Calle Arriba",
+   "Camino Cantimpalos",
+   "Calle Encinillas"
+  ],
+  "barrios": []
+ },
+ "40174": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Asperilla",
+   "Calle Concejo",
+   "Calle General Mola",
+   "Calle Iglesias"
+  ],
+  "barrios": []
+ },
+ "40176": {
+  "vias": [
+   "Plaza La Constitucion (De)",
+   "Plaza España",
+   "Plaza Mayor",
+   "Calle Abrevadero",
+   "Calle Afligidos"
+  ],
+  "barrios": []
+ },
+ "40177": {
+  "vias": [
+   "Plaza Sol",
+   "Plaza Mayor",
+   "Carretera Abajo",
+   "Calle Alta",
+   "Carretera Arriba"
+  ],
+  "barrios": []
+ },
+ "40178": {
+  "vias": [
+   "Plaza Tomas Sebastian",
+   "Carretera Adanero",
+   "Calle Bodegas",
+   "Calle Caños",
+   "Calle Cantarranas"
+  ],
+  "barrios": []
+ },
+ "40179": {
+  "vias": [
+   "Plaza Portugal",
+   "Plaza Fuente",
+   "Plaza Iglesia",
+   "Plaza Constitucion",
+   "Calle Adoberas"
+  ],
+  "barrios": []
+ },
+ "40180": {
+  "vias": [
+   "Plaza San Juan",
+   "Plaza Constitucion",
+   "Plaza Mediodia",
+   "Plaza Novillos",
+   "Plaza Iglesia"
+  ],
+  "barrios": []
+ },
+ "40181": {
+  "vias": [
+   "Plaza Canonigos",
+   "Plaza Los Dolores (De)",
+   "Plaza España",
+   "Plaza Fruta",
+   "Plaza Isabel de Farnesio"
+  ],
+  "barrios": []
+ },
+ "40182": {
+  "vias": [
+   "Plaza Santa Cruz",
+   "Plaza De Miguel Angel Blanco",
+   "Plaza Mayor",
+   "Plaza Porvenir",
+   "Calle Alegria"
+  ],
+  "barrios": []
+ },
+ "40183": {
+  "vias": [
+   "Plaza España",
+   "Calle Algarrobales",
+   "Calle Arias Miranda",
+   "Calle Calvario",
+   "Carretera Cobos"
+  ],
+  "barrios": []
+ },
+ "40184": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Arrabal",
+   "Calle Calvario",
+   "Calle Comandante Enrique Herrera",
+   "Calle Eras de Abajo"
+  ],
+  "barrios": []
+ },
+ "40185": {
+  "vias": [
+   "Plaza Alamo",
+   "Plaza Angel",
+   "Plaza Barruelo",
+   "Plaza Caño",
+   "Plaza Concejo"
+  ],
+  "barrios": []
+ },
+ "40186": {
+  "vias": [
+   "Plaza España",
+   "Calle Calvario",
+   "Calle Campo",
+   "Calle Cuesta",
+   "Calle Eras"
+  ],
+  "barrios": []
+ },
+ "40188": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Alivio",
+   "Calle Arribas",
+   "Calle Bajada",
+   "Calle Callejon"
+  ],
+  "barrios": []
+ },
+ "40189": {
+  "vias": [
+   "Plaza Pozo",
+   "Plaza Vallejo",
+   "Plaza San Vicente",
+   "Plaza Isabel Ii",
+   "Plaza Constitucion"
+  ],
+  "barrios": []
+ },
+ "40190": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Fragua",
+   "Calle Fuente",
+   "Calle Arriba",
+   "Calle La Sierra"
+  ],
+  "barrios": []
+ },
+ "40191": {
+  "vias": [
+   "Plaza San Roque",
+   "Plaza Ayuntamiento",
+   "Plaza Mayor",
+   "Plaza San Juan",
+   "Calle Alta"
+  ],
+  "barrios": []
+ },
+ "40192": {
+  "vias": [
+   "Plaza Real",
+   "Plaza Mayor",
+   "Plaza Mario Rodriguez",
+   "Plaza Castilla",
+   "Plaza Fuente"
+  ],
+  "barrios": []
+ },
+ "40193": {
+  "vias": [
+   "Plaza Colon",
+   "Calle Camposanto",
+   "Calle Charco Redondo",
+   "Calle Corta",
+   "Calle Cotarrillo"
+  ],
+  "barrios": []
+ },
+ "40194": {
+  "vias": [
+   "Plaza La Academia de Artilleria",
+   "Plaza Del Adelantado de Segovia",
+   "Calle Adolfo Sandoval",
+   "Calle Agapito Marazuela",
+   "Paseo La Alameda del Parral"
+  ],
+  "barrios": []
+ },
+ "40195": {
+  "vias": [
+   "Plaza Olma",
+   "Plaza España",
+   "Plaza San Esteban",
+   "Plaza Del Castron",
+   "Plaza Cruz"
+  ],
+  "barrios": []
+ },
+ "40196": {
+  "vias": [
+   "Plaza Ayuntamiento",
+   "Calle Alberca",
+   "Calle Alta",
+   "Camino Castiltierra",
+   "Carretera Fresno"
+  ],
+  "barrios": []
+ },
+ "40198": {
+  "vias": [
+   "Calle Pendiente",
+   "Calle Picota",
+   "Camino Sepulveda",
+   "Calle La Cuesta",
+   "Calle La Curva"
+  ],
+  "barrios": []
+ },
+ "40199": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Castillo",
+   "Calle Chorrillo",
+   "Camino Collado",
+   "Calle Eras"
+  ],
+  "barrios": []
+ },
+ "40200": {
+  "vias": [
+   "Plaza Icona",
+   "Calle Abajo",
+   "Calle Altozano",
+   "Calle Cacerilla",
+   "Calle Calleja"
+  ],
+  "barrios": []
+ },
+ "40201": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Iglesia",
+   "Calle Barrero",
+   "Calle Caño",
+   "Calle Ermita"
+  ],
+  "barrios": []
+ },
+ "40202": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Barreras",
+   "Calle Cuartel",
+   "Calle Eras",
+   "Calle Fuente"
+  ],
+  "barrios": []
+ },
+ "40203": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Siete Picos",
+   "Calle Fuente",
+   "Calle Real",
+   "Calle Rinconada"
+  ],
+  "barrios": []
+ },
+ "40204": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Carmen",
+   "Plaza Asuncion",
+   "Plaza Esperanza",
+   "Plaza Cristo"
+  ],
+  "barrios": []
+ },
+ "40205": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Esquina",
+   "Plaza Caño",
+   "Plaza Egido",
+   "Plaza Iglesia"
+  ],
+  "barrios": []
+ },
+ "40206": {
+  "vias": [
+   "Plaza Santo Cristo",
+   "Calle Aldea",
+   "Calle Cid",
+   "Calle Corta",
+   "Calle Eras"
+  ],
+  "barrios": []
+ },
+ "40207": {
+  "vias": [
+   "Plaza Constitucion",
+   "Plaza Sonsoto",
+   "Calle Cabanillas",
+   "Calle Chorrillo",
+   "Calle Eras"
+  ],
+  "barrios": []
+ },
+ "40208": {
+  "vias": [
+   "Plaza San Miguel",
+   "Plaza Bobadilla",
+   "Plaza Santiago",
+   "Plaza Mayor",
+   "Plaza España"
+  ],
+  "barrios": []
+ },
+ "40210": {
+  "vias": [
+   "Calle Barrionuevo",
+   "Calle Carrion",
+   "Calle Colmenares",
+   "Calle Huerta Murcia",
+   "Calle Huertos"
+  ],
+  "barrios": []
+ },
+ "40211": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Camposanto",
+   "Calle Carretera",
+   "Calle De la Fuente",
+   "Calle Iglesia"
+  ],
+  "barrios": []
+ },
+ "40212": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Esquina",
+   "Calle Banquete",
+   "Calle Campo",
+   "Calle Casa Quemada"
+  ],
+  "barrios": []
+ },
+ "40213": {
+  "vias": [
+   "Plaza Barruelo",
+   "Calle Agonias",
+   "Calle Cantotejio",
+   "Calle Carravilla",
+   "Calle Cuesta Parral"
+  ],
+  "barrios": []
+ },
+ "40214": {
+  "vias": [
+   "Plaza Veguilla de Avila",
+   "Plaza Mayor",
+   "Calle Ahusin",
+   "Calle Caños",
+   "Calle Cilla"
+  ],
+  "barrios": []
+ },
+ "40215": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza San Isidro",
+   "Calle Arrabal",
+   "Calle Arroyo",
+   "Calle Bodegas"
+  ],
+  "barrios": []
+ },
+ "40216": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Juan Diez",
+   "Plaza Barranco",
+   "Plaza Manuel Gomez Tabanera",
+   "Plaza Palomera"
+  ],
+  "barrios": []
+ },
+ "40218": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Sol",
+   "Calle Arroyo",
+   "Calle Barranco",
+   "Calle Cañuelo"
+  ],
+  "barrios": []
+ },
+ "40219": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Modesto Fraile",
+   "Plaza Eulogio Muñoz",
+   "Calle Almendrino",
+   "Calle Arroyo"
+  ],
+  "barrios": []
+ },
+ "40220": {
+  "vias": [
+   "Calle Barrio Alto",
+   "Camino Arenal Berzal",
+   "Calle Campo Berzal",
+   "Calle Cantarranas",
+   "Calle Cantizal"
+  ],
+  "barrios": []
+ },
+ "40221": {
+  "vias": [
+   "Plaza Fuente",
+   "Calle Calleja",
+   "Calle Casares",
+   "Calle Cerro",
+   "Calle Eras"
+  ],
+  "barrios": []
+ },
+ "40222": {
+  "vias": [
+   "Plaza Engracia Adrados",
+   "Plaza Deposito",
+   "Calle Acacias",
+   "Calle Angosta",
+   "Calle Baile"
+  ],
+  "barrios": []
+ },
+ "40223": {
+  "vias": [
+   "Plaza Argolla",
+   "Plaza Mayor",
+   "Plaza Real",
+   "Plaza Lobera",
+   "Calle Arroyo"
+  ],
+  "barrios": []
+ },
+ "40224": {
+  "vias": [
+   "Calle Barrio",
+   "Camino Barrio",
+   "Calle Calvario",
+   "Calle Fuente",
+   "Calle Iglesia"
+  ],
+  "barrios": []
+ },
+ "40225": {
+  "vias": [
+   "Plaza Los Caños",
+   "Plaza Teso",
+   "Plaza Pavona",
+   "Plaza Tahona",
+   "Plaza Mayor"
+  ],
+  "barrios": []
+ },
+ "40228": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza De la Rinconada",
+   "Plaza De la Iglesia",
+   "Calle Arenal",
+   "Calle Cañada"
+  ],
+  "barrios": []
+ },
+ "40229": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Hornuez",
+   "Plaza Eras",
+   "Plaza Iglesia",
+   "Calle Arroyo"
+  ],
+  "barrios": []
+ },
+ "40230": {
+  "vias": [
+   "Plaza Mayor",
+   "Plaza Juego Pelota",
+   "Calle Calvario",
+   "Calle Carralavieja",
+   "Calle Fuente"
+  ],
+  "barrios": []
+ },
+ "40231": {
+  "vias": [
+   "Plaza Ayuntamiento",
+   "Plaza Mayor",
+   "Calle Aguileras",
+   "Calle Barranco",
+   "Calle Cilla"
+  ],
+  "barrios": []
+ },
+ "40233": {
+  "vias": [
+   "Plaza Fuente",
+   "Plaza General Peñas",
+   "Plaza Espejos",
+   "Plaza Ayuntamiento",
+   "Camino Alamedas"
+  ],
+  "barrios": []
+ },
+ "40234": {
+  "vias": [
+   "Plaza De los Resineros",
+   "Plaza De Castilla y Leon",
+   "Plaza España",
+   "Plaza Eras",
+   "Plaza Mayor"
+  ],
+  "barrios": []
+ },
+ "40901": {
+  "vias": [
+   "Plaza Fuente",
+   "Calle Cacera Grande",
+   "Calle Cercado las Matas",
+   "Calle Corzos",
+   "Calle Eras"
+  ],
+  "barrios": []
+ },
+ "40902": {
+  "vias": [
+   "Plaza Constitucion",
+   "Plaza Solar",
+   "Calle Aulines",
+   "Calle Cañada",
+   "Calle Cantarranas"
+  ],
+  "barrios": []
+ },
+ "40903": {
+  "vias": [
+   "Plaza Mayor",
+   "Calle Anaya",
+   "Calle Baja",
+   "Calle Cervantes",
+   "Calle Coso"
+  ],
+  "barrios": []
+ },
+ "40904": {
+  "vias": [
+   "Plaza Concejo",
+   "Carretera Riofrio",
+   "Calle Asuncion",
+   "Calle Caño",
+   "Calle Concepcion"
+  ],
+  "barrios": []
+ },
+ "40905": {
+  "vias": [
+   "Calle Calvario",
+   "Carretera Castrillo",
+   "Calle Eras",
+   "Calle Escuela",
+   "Calle Fria"
+  ],
+  "barrios": []
+ },
+ "40906": {
+  "vias": [
+   "Camino De los Arrieta",
+   "Calle Cerca de Enmedio",
+   "Calle Cerca de la Casa",
+   "Calle Cruz del Rayo",
+   "Calle Las Eras"
+  ],
+  "barrios": []
  }
 }

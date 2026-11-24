@@ -21736,5 +21736,3558 @@
    "P-981"
   ],
   "metodo": "osrm"
+ },
+ {
+  "ine": "40001",
+  "nombre": "Abades",
+  "provincia": "segovia",
+  "cabecera": "Abades",
+  "lat": 40.91591991,
+  "lon": -4.267283051,
+  "km": 351,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-3122"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40002",
+  "nombre": "Adrada de Pirón",
+  "provincia": "segovia",
+  "cabecera": "Adrada de Pirón",
+  "lat": 41.05223736,
+  "lon": -4.050803943,
+  "km": 325,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-P-2222"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40003",
+  "nombre": "Adrados",
+  "provincia": "segovia",
+  "cabecera": "Adrados",
+  "lat": 41.36842906,
+  "lon": -4.113027567,
+  "km": 298,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2136"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40004",
+  "nombre": "Aguilafuente",
+  "provincia": "segovia",
+  "cabecera": "Aguilafuente",
+  "lat": 41.22813021,
+  "lon": -4.11154352,
+  "km": 309,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-211"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40005",
+  "nombre": "Alconada de Maderuelo",
+  "provincia": "segovia",
+  "cabecera": "Alconada de Maderuelo",
+  "lat": 41.44985862,
+  "lon": -3.485367597,
+  "km": 279,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-945",
+   "SG-945"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40006",
+  "nombre": "Aldealcorvo",
+  "provincia": "segovia",
+  "cabecera": "Aldealcorvo",
+  "lat": 41.24391618,
+  "lon": -3.791731603,
+  "km": 300,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-232"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40007",
+  "nombre": "Aldealengua de Pedraza",
+  "provincia": "segovia",
+  "cabecera": "Ceguilla",
+  "lat": 41.06437171,
+  "lon": -3.806291586,
+  "km": 323,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40008",
+  "nombre": "Aldealengua de Santa María",
+  "provincia": "segovia",
+  "cabecera": "Aldealengua de Santa María",
+  "lat": 41.46157715,
+  "lon": -3.467628709,
+  "km": 277,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-945",
+   "SG-945"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40009",
+  "nombre": "Aldeanueva de la Serrezuela",
+  "provincia": "segovia",
+  "cabecera": "Aldeanueva de la Serrezuela",
+  "lat": 41.4599511,
+  "lon": -3.779540217,
+  "km": 274,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-V-2414"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40010",
+  "nombre": "Aldeanueva del Codonal",
+  "provincia": "segovia",
+  "cabecera": "Aldeanueva del Codonal",
+  "lat": 41.08217898,
+  "lon": -4.543737606,
+  "km": 363,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-601",
+   "N-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40012",
+  "nombre": "Aldea Real",
+  "provincia": "segovia",
+  "cabecera": "Aldea Real",
+  "lat": 41.18550991,
+  "lon": -4.165831611,
+  "km": 316,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-211"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40013",
+  "nombre": "Aldeasoña",
+  "provincia": "segovia",
+  "cabecera": "Aldeasoña",
+  "lat": 41.47223944,
+  "lon": -4.056261381,
+  "km": 280,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "VA-241"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40014",
+  "nombre": "Aldehorno",
+  "provincia": "segovia",
+  "cabecera": "Aldehorno",
+  "lat": 41.51278338,
+  "lon": -3.777629499,
+  "km": 262,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-202",
+   "SG-V-2331"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40015",
+  "nombre": "Aldehuela del Codonal",
+  "provincia": "segovia",
+  "cabecera": "Aldehuela del Codonal",
+  "lat": 41.05554009,
+  "lon": -4.537950566,
+  "km": 366,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-601",
+   "N-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40016",
+  "nombre": "Aldeonte",
+  "provincia": "segovia",
+  "cabecera": "Aldeonte",
+  "lat": 41.35055933,
+  "lon": -3.67832565,
+  "km": 281,
+  "carreteras": [
+   "BI-10",
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40017",
+  "nombre": "Anaya",
+  "provincia": "segovia",
+  "cabecera": "Anaya",
+  "lat": 40.99110723,
+  "lon": -4.308107611,
+  "km": 353,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "CL-605"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40018",
+  "nombre": "Añe",
+  "provincia": "segovia",
+  "cabecera": "Añe",
+  "lat": 41.03813103,
+  "lon": -4.296398366,
+  "km": 348,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "A-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40019",
+  "nombre": "Arahuetes",
+  "provincia": "segovia",
+  "cabecera": "Arahuetes",
+  "lat": 41.13764576,
+  "lon": -3.856820272,
+  "km": 326,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-V-2512"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40020",
+  "nombre": "Arcones",
+  "provincia": "segovia",
+  "cabecera": "Arcones",
+  "lat": 41.11808903,
+  "lon": -3.724493442,
+  "km": 312,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40021",
+  "nombre": "Arevalillo de Cega",
+  "provincia": "segovia",
+  "cabecera": "Arevalillo de Cega",
+  "lat": 41.16150816,
+  "lon": -3.887698059,
+  "km": 315,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-232",
+   "SG-V-2312"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40022",
+  "nombre": "Armuña",
+  "provincia": "segovia",
+  "cabecera": "Armuña",
+  "lat": 41.07762206,
+  "lon": -4.319551026,
+  "km": 339,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "A-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40024",
+  "nombre": "Ayllón",
+  "provincia": "segovia",
+  "cabecera": "Ayllón",
+  "lat": 41.41970917,
+  "lon": -3.375989568,
+  "km": 287,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-945",
+   "SG-945"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40025",
+  "nombre": "Barbolla",
+  "provincia": "segovia",
+  "cabecera": "Barbolla",
+  "lat": 41.32556535,
+  "lon": -3.67311017,
+  "km": 281,
+  "carreteras": [
+   "BI-10",
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40026",
+  "nombre": "Basardilla",
+  "provincia": "segovia",
+  "cabecera": "Basardilla",
+  "lat": 41.02680325,
+  "lon": -4.025543457,
+  "km": 346,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-P-2222"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40028",
+  "nombre": "Bercial",
+  "provincia": "segovia",
+  "cabecera": "Bercial",
+  "lat": 40.90683823,
+  "lon": -4.43670596,
+  "km": 408,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-6",
+   "SG-P-3211"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40029",
+  "nombre": "Bercimuel",
+  "provincia": "segovia",
+  "cabecera": "Bercimuel",
+  "lat": 41.39919923,
+  "lon": -3.570832907,
+  "km": 276,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-V-9161"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40030",
+  "nombre": "Bernardos",
+  "provincia": "segovia",
+  "cabecera": "Bernardos",
+  "lat": 41.12792349,
+  "lon": -4.350605217,
+  "km": 333,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "A-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40031",
+  "nombre": "Bernuy de Porreros",
+  "provincia": "segovia",
+  "cabecera": "Bernuy de Porreros",
+  "lat": 41.00005339,
+  "lon": -4.116917874,
+  "km": 356,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-20"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40032",
+  "nombre": "Boceguillas",
+  "provincia": "segovia",
+  "cabecera": "Boceguillas",
+  "lat": 41.33718449,
+  "lon": -3.638654374,
+  "km": 278,
+  "carreteras": [
+   "BI-10",
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40033",
+  "nombre": "Brieva",
+  "provincia": "segovia",
+  "cabecera": "Brieva",
+  "lat": 41.03461331,
+  "lon": -4.053192913,
+  "km": 347,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-P-2222"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40034",
+  "nombre": "Caballar",
+  "provincia": "segovia",
+  "cabecera": "Caballar",
+  "lat": 41.12133934,
+  "lon": -3.96505981,
+  "km": 312,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2317"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40035",
+  "nombre": "Cabañas de Polendos",
+  "provincia": "segovia",
+  "cabecera": "Cabañas de Polendos",
+  "lat": 41.06715151,
+  "lon": -4.109996499,
+  "km": 328,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2221"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40036",
+  "nombre": "Cabezuela",
+  "provincia": "segovia",
+  "cabecera": "Cabezuela",
+  "lat": 41.23552682,
+  "lon": -3.932808456,
+  "km": 298,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40037",
+  "nombre": "Calabazas de Fuentidueña",
+  "provincia": "segovia",
+  "cabecera": "Calabazas de Fuentidueña",
+  "lat": 41.44503046,
+  "lon": -4.010425973,
+  "km": 283,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2426"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40039",
+  "nombre": "Campo de San Pedro",
+  "provincia": "segovia",
+  "cabecera": "Campo de San Pedro",
+  "lat": 41.429234,
+  "lon": -3.545232523,
+  "km": 280,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-V-9161",
+   "SG-V-9113"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40040",
+  "nombre": "Cantalejo",
+  "provincia": "segovia",
+  "cabecera": "Cantalejo",
+  "lat": 41.25849578,
+  "lon": -3.92770125,
+  "km": 295,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40041",
+  "nombre": "Cantimpalos",
+  "provincia": "segovia",
+  "cabecera": "Cantimpalos",
+  "lat": 41.07418732,
+  "lon": -4.158743598,
+  "km": 328,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2115"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40043",
+  "nombre": "Carbonero el Mayor",
+  "provincia": "segovia",
+  "cabecera": "Carbonero el Mayor",
+  "lat": 41.12234161,
+  "lon": -4.265942705,
+  "km": 323,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "A-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40044",
+  "nombre": "Carrascal del Río",
+  "provincia": "segovia",
+  "cabecera": "Carrascal del Río",
+  "lat": 41.36747835,
+  "lon": -3.897070868,
+  "km": 285,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2411"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40045",
+  "nombre": "Casla",
+  "provincia": "segovia",
+  "cabecera": "Casla",
+  "lat": 41.16395894,
+  "lon": -3.65767617,
+  "km": 304,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40046",
+  "nombre": "Castillejo de Mesleón",
+  "provincia": "segovia",
+  "cabecera": "Castillejo de Mesleón",
+  "lat": 41.28037093,
+  "lon": -3.600899946,
+  "km": 286,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-1a"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40047",
+  "nombre": "Castro de Fuentidueña",
+  "provincia": "segovia",
+  "cabecera": "Castro de Fuentidueña",
+  "lat": 41.42028905,
+  "lon": -3.855133081,
+  "km": 276,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-241"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40048",
+  "nombre": "Castrojimeno",
+  "provincia": "segovia",
+  "cabecera": "Castrojimeno",
+  "lat": 41.39573411,
+  "lon": -3.847642587,
+  "km": 280,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-241"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40049",
+  "nombre": "Castroserna de Abajo",
+  "provincia": "segovia",
+  "cabecera": "Castroserna de Abajo",
+  "lat": 41.20811826,
+  "lon": -3.734938257,
+  "km": 313,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-205",
+   "SG-V-2346"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40051",
+  "nombre": "Castroserracín",
+  "provincia": "segovia",
+  "cabecera": "Castroserracín",
+  "lat": 41.39385568,
+  "lon": -3.802308863,
+  "km": 278,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-Ia",
+   "SG-V-2331"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40052",
+  "nombre": "Cedillo de la Torre",
+  "provincia": "segovia",
+  "cabecera": "Cedillo de la Torre",
+  "lat": 41.42485423,
+  "lon": -3.605344882,
+  "km": 272,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-V-9161"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40053",
+  "nombre": "Cerezo de Abajo",
+  "provincia": "segovia",
+  "cabecera": "Cerezo de Abajo",
+  "lat": 41.21807363,
+  "lon": -3.592213206,
+  "km": 293,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-1A"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40054",
+  "nombre": "Cerezo de Arriba",
+  "provincia": "segovia",
+  "cabecera": "Cerezo de Arriba",
+  "lat": 41.23770292,
+  "lon": -3.55777167,
+  "km": 294,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40055",
+  "nombre": "Cilleruelo de San Mamés",
+  "provincia": "segovia",
+  "cabecera": "Cilleruelo de San Mamés",
+  "lat": 41.43217681,
+  "lon": -3.566700104,
+  "km": 276,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-V-9161"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40056",
+  "nombre": "Cobos de Fuentidueña",
+  "provincia": "segovia",
+  "cabecera": "Cobos de Fuentidueña",
+  "lat": 41.3828389,
+  "lon": -3.928011397,
+  "km": 282,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2411"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40057",
+  "nombre": "Coca",
+  "provincia": "segovia",
+  "cabecera": "Coca",
+  "lat": 41.21801372,
+  "lon": -4.522726261,
+  "km": 349,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-601",
+   "N-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40058",
+  "nombre": "Codorniz",
+  "provincia": "segovia",
+  "cabecera": "Codorniz",
+  "lat": 41.06704816,
+  "lon": -4.599377279,
+  "km": 358,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-601",
+   "N-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40059",
+  "nombre": "Collado Hermoso",
+  "provincia": "segovia",
+  "cabecera": "Collado Hermoso",
+  "lat": 41.03860976,
+  "lon": -3.919091384,
+  "km": 332,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40060",
+  "nombre": "Condado de Castilnovo",
+  "provincia": "segovia",
+  "cabecera": "Villafranca",
+  "lat": 41.24152232,
+  "lon": -3.742623144,
+  "km": 307,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-1A",
+   "SG-205"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40061",
+  "nombre": "Corral de Ayllón",
+  "provincia": "segovia",
+  "cabecera": "Corral de Ayllón",
+  "lat": 41.39129815,
+  "lon": -3.459617954,
+  "km": 291,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-V-9111"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40062",
+  "nombre": "Cubillo",
+  "provincia": "segovia",
+  "cabecera": "Cubillo",
+  "lat": 41.12341874,
+  "lon": -3.909364429,
+  "km": 336,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-V-2315"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40063",
+  "nombre": "Cuéllar",
+  "provincia": "segovia",
+  "cabecera": "Cuéllar",
+  "lat": 41.40061163,
+  "lon": -4.313844696,
+  "km": 291,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "VA-223"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40065",
+  "nombre": "Chañe",
+  "provincia": "segovia",
+  "cabecera": "Chañe",
+  "lat": 41.33746834,
+  "lon": -4.428668887,
+  "km": 304,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "VA-223"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40068",
+  "nombre": "Domingo García",
+  "provincia": "segovia",
+  "cabecera": "Domingo García",
+  "lat": 41.11593241,
+  "lon": -4.37903404,
+  "km": 336,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "A-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40069",
+  "nombre": "Donhierro",
+  "provincia": "segovia",
+  "cabecera": "Donhierro",
+  "lat": 41.11600612,
+  "lon": -4.695876459,
+  "km": 348,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-601",
+   "N-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40070",
+  "nombre": "Duruelo",
+  "provincia": "segovia",
+  "cabecera": "Duruelo",
+  "lat": 41.2369162,
+  "lon": -3.648950189,
+  "km": 298,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-1A",
+   "SG-205"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40071",
+  "nombre": "Encinas",
+  "provincia": "segovia",
+  "cabecera": "Encinas",
+  "lat": 41.37489268,
+  "lon": -3.667154686,
+  "km": 277,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-V-2332"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40072",
+  "nombre": "Encinillas",
+  "provincia": "segovia",
+  "cabecera": "Encinillas",
+  "lat": 41.01783921,
+  "lon": -4.157609264,
+  "km": 333,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40073",
+  "nombre": "Escalona del Prado",
+  "provincia": "segovia",
+  "cabecera": "Escalona del Prado",
+  "lat": 41.16651803,
+  "lon": -4.123160956,
+  "km": 324,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2213"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40074",
+  "nombre": "Escarabajosa de Cabezas",
+  "provincia": "segovia",
+  "cabecera": "Escarabajosa de Cabezas",
+  "lat": 41.10425774,
+  "lon": -4.19443456,
+  "km": 330,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "A-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40075",
+  "nombre": "Escobar de Polendos",
+  "provincia": "segovia",
+  "cabecera": "Escobar de Polendos",
+  "lat": 41.09073828,
+  "lon": -4.131112361,
+  "km": 324,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40076",
+  "nombre": "El Espinar",
+  "provincia": "segovia",
+  "cabecera": "El Espinar",
+  "lat": 40.71863032,
+  "lon": -4.247460396,
+  "km": 386,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "AP-61"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40077",
+  "nombre": "Espirdo",
+  "provincia": "segovia",
+  "cabecera": "Espirdo",
+  "lat": 40.99719054,
+  "lon": -4.073359856,
+  "km": 348,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40078",
+  "nombre": "Fresneda de Cuéllar",
+  "provincia": "segovia",
+  "cabecera": "Fresneda de Cuéllar",
+  "lat": 41.31855187,
+  "lon": -4.450002612,
+  "km": 329,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "VA-30",
+   "A-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40079",
+  "nombre": "Fresno de Cantespino",
+  "provincia": "segovia",
+  "cabecera": "Fresno de Cantespino",
+  "lat": 41.36877723,
+  "lon": -3.499352929,
+  "km": 286,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-V-9111"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40080",
+  "nombre": "Fresno de la Fuente",
+  "provincia": "segovia",
+  "cabecera": "Fresno de la Fuente",
+  "lat": 41.39227505,
+  "lon": -3.644084601,
+  "km": 272,
+  "carreteras": [
+   "BI-10",
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40081",
+  "nombre": "Frumales",
+  "provincia": "segovia",
+  "cabecera": "Frumales",
+  "lat": 41.38382011,
+  "lon": -4.186671642,
+  "km": 303,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2136"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40082",
+  "nombre": "Fuente de Santa Cruz",
+  "provincia": "segovia",
+  "cabecera": "Fuente de Santa Cruz",
+  "lat": 41.2091212,
+  "lon": -4.635298543,
+  "km": 338,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-601",
+   "N-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40083",
+  "nombre": "Fuente el Olmo de Fuentidueña",
+  "provincia": "segovia",
+  "cabecera": "Fuente el Olmo de Fuentidueña",
+  "lat": 41.38014545,
+  "lon": -4.000822175,
+  "km": 284,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2136"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40084",
+  "nombre": "Fuente el Olmo de Íscar",
+  "provincia": "segovia",
+  "cabecera": "Fuente el Olmo de Íscar",
+  "lat": 41.27963851,
+  "lon": -4.494369284,
+  "km": 330,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-601",
+   "VP-1202"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40086",
+  "nombre": "Fuentepelayo",
+  "provincia": "segovia",
+  "cabecera": "Fuentepelayo",
+  "lat": 41.22167142,
+  "lon": -4.17635691,
+  "km": 315,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-211"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40087",
+  "nombre": "Fuentepiñel",
+  "provincia": "segovia",
+  "cabecera": "Fuentepiñel",
+  "lat": 41.39998324,
+  "lon": -4.042436312,
+  "km": 291,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2136"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40088",
+  "nombre": "Fuenterrebollo",
+  "provincia": "segovia",
+  "cabecera": "Fuenterrebollo",
+  "lat": 41.29670495,
+  "lon": -3.9326596,
+  "km": 291,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40089",
+  "nombre": "Fuentesaúco de Fuentidueña",
+  "provincia": "segovia",
+  "cabecera": "Fuentesaúco de Fuentidueña",
+  "lat": 41.42444236,
+  "lon": -4.061883046,
+  "km": 288,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2423"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40091",
+  "nombre": "Fuentesoto",
+  "provincia": "segovia",
+  "cabecera": "Fuentesoto",
+  "lat": 41.45619221,
+  "lon": -3.917919448,
+  "km": 274,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-241"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40092",
+  "nombre": "Fuentidueña",
+  "provincia": "segovia",
+  "cabecera": "Fuentidueña",
+  "lat": 41.44208438,
+  "lon": -3.978863355,
+  "km": 280,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2426"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40093",
+  "nombre": "Gallegos",
+  "provincia": "segovia",
+  "cabecera": "Gallegos",
+  "lat": 41.07358196,
+  "lon": -3.786805979,
+  "km": 321,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-V-6111"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40094",
+  "nombre": "Garcillán",
+  "provincia": "segovia",
+  "cabecera": "Garcillán",
+  "lat": 40.97772884,
+  "lon": -4.265911769,
+  "km": 349,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-3122"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40095",
+  "nombre": "Gomezserracín",
+  "provincia": "segovia",
+  "cabecera": "Gomezserracín",
+  "lat": 41.28858529,
+  "lon": -4.326541587,
+  "km": 305,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "VA-223"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40097",
+  "nombre": "Grajera",
+  "provincia": "segovia",
+  "cabecera": "Grajera",
+  "lat": 41.37262796,
+  "lon": -3.612484245,
+  "km": 276,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-V-9111"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40099",
+  "nombre": "Honrubia de la Cuesta",
+  "provincia": "segovia",
+  "cabecera": "Honrubia de la Cuesta",
+  "lat": 41.51040587,
+  "lon": -3.704735889,
+  "km": 257,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SC-SG-15"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40100",
+  "nombre": "Hontalbilla",
+  "provincia": "segovia",
+  "cabecera": "Hontalbilla",
+  "lat": 41.34610581,
+  "lon": -4.122557369,
+  "km": 296,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2136"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40101",
+  "nombre": "Hontanares de Eresma",
+  "provincia": "segovia",
+  "cabecera": "Hontanares de Eresma",
+  "lat": 40.98254522,
+  "lon": -4.203880447,
+  "km": 340,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-3122"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40103",
+  "nombre": "Los Huertos",
+  "provincia": "segovia",
+  "cabecera": "Los Huertos",
+  "lat": 41.01025641,
+  "lon": -4.218850612,
+  "km": 339,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "A-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40104",
+  "nombre": "Ituero y Lama",
+  "provincia": "segovia",
+  "cabecera": "Ituero y Lama",
+  "lat": 40.80012203,
+  "lon": -4.378291593,
+  "km": 415,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-6",
+   "AP-6"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40105",
+  "nombre": "Juarros de Riomoros",
+  "provincia": "segovia",
+  "cabecera": "Juarros de Riomoros",
+  "lat": 40.94628345,
+  "lon": -4.308825248,
+  "km": 352,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-3122"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40106",
+  "nombre": "Juarros de Voltoya",
+  "provincia": "segovia",
+  "cabecera": "Juarros de Voltoya",
+  "lat": 41.03074042,
+  "lon": -4.519775923,
+  "km": 369,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-601",
+   "N-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40107",
+  "nombre": "Labajos",
+  "provincia": "segovia",
+  "cabecera": "Labajos",
+  "lat": 40.84317196,
+  "lon": -4.518889224,
+  "km": 396,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-6",
+   "N-6"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40108",
+  "nombre": "Laguna de Contreras",
+  "provincia": "segovia",
+  "cabecera": "Laguna de Contreras",
+  "lat": 41.49433327,
+  "lon": -4.027959151,
+  "km": 277,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "VA-241"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40109",
+  "nombre": "Languilla",
+  "provincia": "segovia",
+  "cabecera": "Languilla",
+  "lat": 41.44930324,
+  "lon": -3.423274312,
+  "km": 281,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-945",
+   "SG-945"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40110",
+  "nombre": "Lastras de Cuéllar",
+  "provincia": "segovia",
+  "cabecera": "Lastras de Cuéllar",
+  "lat": 41.29741125,
+  "lon": -4.107294137,
+  "km": 301,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2136"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40111",
+  "nombre": "Lastras del Pozo",
+  "provincia": "segovia",
+  "cabecera": "Lastras del Pozo",
+  "lat": 40.87912812,
+  "lon": -4.346149111,
+  "km": 360,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-3131"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40112",
+  "nombre": "La Lastrilla",
+  "provincia": "segovia",
+  "cabecera": "La Lastrilla",
+  "lat": 40.96853672,
+  "lon": -4.102970979,
+  "km": 350,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40113",
+  "nombre": "La Losa",
+  "provincia": "segovia",
+  "cabecera": "La Losa",
+  "lat": 40.85314521,
+  "lon": -4.16406292,
+  "km": 370,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-20"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40115",
+  "nombre": "Maderuelo",
+  "provincia": "segovia",
+  "cabecera": "Maderuelo",
+  "lat": 41.48662497,
+  "lon": -3.521547081,
+  "km": 272,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-945",
+   "SG-945"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40118",
+  "nombre": "Marazuela",
+  "provincia": "segovia",
+  "cabecera": "Marazuela",
+  "lat": 40.97900168,
+  "lon": -4.365725427,
+  "km": 358,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "CL-605"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40119",
+  "nombre": "Martín Miguel",
+  "provincia": "segovia",
+  "cabecera": "Martín Miguel",
+  "lat": 40.95069873,
+  "lon": -4.273007813,
+  "km": 349,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-3122"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40120",
+  "nombre": "Martín Muñoz de la Dehesa",
+  "provincia": "segovia",
+  "cabecera": "Martín Muñoz de la Dehesa",
+  "lat": 41.0650749,
+  "lon": -4.685144684,
+  "km": 370,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "BU-30",
+   "A-62",
+   "A-6"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40121",
+  "nombre": "Martín Muñoz de las Posadas",
+  "provincia": "segovia",
+  "cabecera": "Martín Muñoz de las Posadas",
+  "lat": 40.9956963,
+  "lon": -4.59621689,
+  "km": 361,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-601",
+   "N-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40122",
+  "nombre": "Marugán",
+  "provincia": "segovia",
+  "cabecera": "Marugán",
+  "lat": 40.89669634,
+  "lon": -4.384315835,
+  "km": 412,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-6",
+   "SG-P-3211"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40123",
+  "nombre": "Matabuena",
+  "provincia": "segovia",
+  "cabecera": "Matabuena",
+  "lat": 41.09593803,
+  "lon": -3.758722595,
+  "km": 316,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40124",
+  "nombre": "Mata de Cuéllar",
+  "provincia": "segovia",
+  "cabecera": "Mata de Cuéllar",
+  "lat": 41.39603102,
+  "lon": -4.46963549,
+  "km": 320,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "VA-30",
+   "A-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40125",
+  "nombre": "La Matilla",
+  "provincia": "segovia",
+  "cabecera": "La Matilla",
+  "lat": 41.19172899,
+  "lon": -3.795015049,
+  "km": 305,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-232",
+   "SG-P-2322"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40126",
+  "nombre": "Melque de Cercos",
+  "provincia": "segovia",
+  "cabecera": "Melque de Cercos",
+  "lat": 41.0511423,
+  "lon": -4.469503852,
+  "km": 374,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-601",
+   "N-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40127",
+  "nombre": "Membibre de la Hoz",
+  "provincia": "segovia",
+  "cabecera": "Membibre de la Hoz",
+  "lat": 41.44842907,
+  "lon": -4.096860963,
+  "km": 281,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "N-122"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40128",
+  "nombre": "Migueláñez",
+  "provincia": "segovia",
+  "cabecera": "Migueláñez",
+  "lat": 41.12177994,
+  "lon": -4.363899996,
+  "km": 334,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "A-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40129",
+  "nombre": "Montejo de Arévalo",
+  "provincia": "segovia",
+  "cabecera": "Montejo de Arévalo",
+  "lat": 41.14047356,
+  "lon": -4.664538533,
+  "km": 345,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-601",
+   "N-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40130",
+  "nombre": "Montejo de la Vega de la Serrezuela",
+  "provincia": "segovia",
+  "cabecera": "Montejo de la Vega de la Serrezuela",
+  "lat": 41.54866706,
+  "lon": -3.652257298,
+  "km": 257,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-Ia"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40131",
+  "nombre": "Monterrubio",
+  "provincia": "segovia",
+  "cabecera": "Monterrubio",
+  "lat": 40.84919819,
+  "lon": -4.350137803,
+  "km": 385,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-20"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40132",
+  "nombre": "Moral de Hornuez",
+  "provincia": "segovia",
+  "cabecera": "Moral de Hornuez",
+  "lat": 41.46414087,
+  "lon": -3.616367876,
+  "km": 272,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-V-2414"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40134",
+  "nombre": "Mozoncillo",
+  "provincia": "segovia",
+  "cabecera": "Mozoncillo",
+  "lat": 41.14662109,
+  "lon": -4.186532468,
+  "km": 330,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2201"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40135",
+  "nombre": "Muñopedro",
+  "provincia": "segovia",
+  "cabecera": "Muñopedro",
+  "lat": 40.88778679,
+  "lon": -4.472485587,
+  "km": 398,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-6",
+   "SG-322"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40136",
+  "nombre": "Muñoveros",
+  "provincia": "segovia",
+  "cabecera": "Muñoveros",
+  "lat": 41.17254606,
+  "lon": -3.951660694,
+  "km": 306,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2317"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40138",
+  "nombre": "Nava de la Asunción",
+  "provincia": "segovia",
+  "cabecera": "Nava de la Asunción",
+  "lat": 41.15615619,
+  "lon": -4.488465451,
+  "km": 354,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-601",
+   "N-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40139",
+  "nombre": "Navafría",
+  "provincia": "segovia",
+  "cabecera": "Navafría",
+  "lat": 41.05477605,
+  "lon": -3.824857606,
+  "km": 325,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-V-6112"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40140",
+  "nombre": "Navalilla",
+  "provincia": "segovia",
+  "cabecera": "Navalilla",
+  "lat": 41.34057184,
+  "lon": -3.93234723,
+  "km": 286,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40141",
+  "nombre": "Navalmanzano",
+  "provincia": "segovia",
+  "cabecera": "Navalmanzano",
+  "lat": 41.21471748,
+  "lon": -4.256564987,
+  "km": 314,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "A-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40142",
+  "nombre": "Navares de Ayuso",
+  "provincia": "segovia",
+  "cabecera": "Navares de Ayuso",
+  "lat": 41.37480338,
+  "lon": -3.708555706,
+  "km": 283,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-V-2332",
+   "SG-V-2331"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40143",
+  "nombre": "Navares de Enmedio",
+  "provincia": "segovia",
+  "cabecera": "Navares de Enmedio",
+  "lat": 41.38089915,
+  "lon": -3.722023623,
+  "km": 278,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-Ia",
+   "SG-V-2331"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40144",
+  "nombre": "Navares de las Cuevas",
+  "provincia": "segovia",
+  "cabecera": "Navares de las Cuevas",
+  "lat": 41.41366251,
+  "lon": -3.750359802,
+  "km": 273,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-Ia"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40145",
+  "nombre": "Navas de Oro",
+  "provincia": "segovia",
+  "cabecera": "Navas de Oro",
+  "lat": 41.19515334,
+  "lon": -4.438665423,
+  "km": 317,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "SG-342"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40146",
+  "nombre": "Navas de San Antonio",
+  "provincia": "segovia",
+  "cabecera": "Navas de San Antonio",
+  "lat": 40.76121227,
+  "lon": -4.329826907,
+  "km": 419,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-6",
+   "AP-6"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40148",
+  "nombre": "Nieva",
+  "provincia": "segovia",
+  "cabecera": "Nieva",
+  "lat": 41.08064603,
+  "lon": -4.425864093,
+  "km": 363,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-601",
+   "N-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40149",
+  "nombre": "Olombrada",
+  "provincia": "segovia",
+  "cabecera": "Olombrada",
+  "lat": 41.41547933,
+  "lon": -4.160713995,
+  "km": 285,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "VA-223"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40150",
+  "nombre": "Orejana",
+  "provincia": "segovia",
+  "cabecera": "El Arenal",
+  "lat": 41.16410518,
+  "lon": -3.779113139,
+  "km": 321,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-V-2515"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40151",
+  "nombre": "Ortigosa de Pestaño",
+  "provincia": "segovia",
+  "cabecera": "Ortigosa de Pestaño",
+  "lat": 41.0872978,
+  "lon": -4.394457106,
+  "km": 339,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "A-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40152",
+  "nombre": "Otero de Herreros",
+  "provincia": "segovia",
+  "cabecera": "Otero de Herreros",
+  "lat": 40.82004354,
+  "lon": -4.208957755,
+  "km": 375,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "AP-61"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40154",
+  "nombre": "Pajarejos",
+  "provincia": "segovia",
+  "cabecera": "Pajarejos",
+  "lat": 41.39070982,
+  "lon": -3.589648792,
+  "km": 279,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-V-9111",
+   "SG-V-9113"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40155",
+  "nombre": "Palazuelos de Eresma",
+  "provincia": "segovia",
+  "cabecera": "Palazuelos de Eresma",
+  "lat": 40.93095248,
+  "lon": -4.059633563,
+  "km": 353,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-P-6121"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40156",
+  "nombre": "Pedraza",
+  "provincia": "segovia",
+  "cabecera": "Pedraza",
+  "lat": 41.13053023,
+  "lon": -3.810986608,
+  "km": 320,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-V-2512"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40157",
+  "nombre": "Pelayos del Arroyo",
+  "provincia": "segovia",
+  "cabecera": "Pelayos del Arroyo",
+  "lat": 41.05131633,
+  "lon": -3.941089999,
+  "km": 336,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-V-2366"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40158",
+  "nombre": "Perosillo",
+  "provincia": "segovia",
+  "cabecera": "Perosillo",
+  "lat": 41.3922139,
+  "lon": -4.141150746,
+  "km": 288,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "VA-223"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40159",
+  "nombre": "Pinarejos",
+  "provincia": "segovia",
+  "cabecera": "Pinarejos",
+  "lat": 41.25978767,
+  "lon": -4.294175244,
+  "km": 306,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "VA-223"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40160",
+  "nombre": "Pinarnegrillo",
+  "provincia": "segovia",
+  "cabecera": "Pinarnegrillo",
+  "lat": 41.1910702,
+  "lon": -4.208490143,
+  "km": 320,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-211"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40161",
+  "nombre": "Carabias",
+  "provincia": "segovia",
+  "cabecera": "Carabias",
+  "lat": 41.44249009,
+  "lon": -3.676437934,
+  "km": 266,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-V-2414"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40162",
+  "nombre": "Prádena",
+  "provincia": "segovia",
+  "cabecera": "Prádena",
+  "lat": 41.1402932,
+  "lon": -3.688598803,
+  "km": 308,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-V-2346"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40163",
+  "nombre": "Puebla de Pedraza",
+  "provincia": "segovia",
+  "cabecera": "Puebla de Pedraza",
+  "lat": 41.20483239,
+  "lon": -3.913556408,
+  "km": 303,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-231"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40164",
+  "nombre": "Rapariegos",
+  "provincia": "segovia",
+  "cabecera": "Rapariegos",
+  "lat": 41.0946331,
+  "lon": -4.653260578,
+  "km": 350,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-601",
+   "N-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40165",
+  "nombre": "Rebollo",
+  "provincia": "segovia",
+  "cabecera": "Rebollo",
+  "lat": 41.19270214,
+  "lon": -3.856605339,
+  "km": 310,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-232",
+   "SG-V-2327"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40166",
+  "nombre": "Remondo",
+  "provincia": "segovia",
+  "cabecera": "Remondo",
+  "lat": 41.34104634,
+  "lon": -4.483627558,
+  "km": 324,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "VA-30",
+   "A-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40168",
+  "nombre": "Riaguas de San Bartolomé",
+  "provincia": "segovia",
+  "cabecera": "Riaguas de San Bartolomé",
+  "lat": 41.42572133,
+  "lon": -3.487914715,
+  "km": 285,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-V-9161",
+   "SG-V-9162"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40170",
+  "nombre": "Riaza",
+  "provincia": "segovia",
+  "cabecera": "Riaza",
+  "lat": 41.27965614,
+  "lon": -3.477325976,
+  "km": 303,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "N-110A"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40171",
+  "nombre": "Ribota",
+  "provincia": "segovia",
+  "cabecera": "Ribota",
+  "lat": 41.36478485,
+  "lon": -3.42843345,
+  "km": 315,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40172",
+  "nombre": "Riofrío de Riaza",
+  "provincia": "segovia",
+  "cabecera": "Riofrío de Riaza",
+  "lat": 41.24691587,
+  "lon": -3.449954422,
+  "km": 309,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-112"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40173",
+  "nombre": "Roda de Eresma",
+  "provincia": "segovia",
+  "cabecera": "Roda de Eresma",
+  "lat": 41.02822384,
+  "lon": -4.181044867,
+  "km": 336,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "A-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40174",
+  "nombre": "Sacramenia",
+  "provincia": "segovia",
+  "cabecera": "Sacramenia",
+  "lat": 41.49469946,
+  "lon": -3.963966195,
+  "km": 277,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-241"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40176",
+  "nombre": "Samboal",
+  "provincia": "segovia",
+  "cabecera": "Samboal",
+  "lat": 41.25957792,
+  "lon": -4.418001402,
+  "km": 309,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "VA-223"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40177",
+  "nombre": "San Cristóbal de Cuéllar",
+  "provincia": "segovia",
+  "cabecera": "San Cristóbal de Cuéllar",
+  "lat": 41.4051173,
+  "lon": -4.403900775,
+  "km": 337,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "VA-30",
+   "A-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40178",
+  "nombre": "San Cristóbal de la Vega",
+  "provincia": "segovia",
+  "cabecera": "San Cristóbal de la Vega",
+  "lat": 41.11104318,
+  "lon": -4.645701097,
+  "km": 348,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-601",
+   "N-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40179",
+  "nombre": "Sanchonuño",
+  "provincia": "segovia",
+  "cabecera": "Sanchonuño",
+  "lat": 41.32315995,
+  "lon": -4.306062682,
+  "km": 301,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "VA-223"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40180",
+  "nombre": "Sangarcía",
+  "provincia": "segovia",
+  "cabecera": "Sangarcía",
+  "lat": 40.94745549,
+  "lon": -4.414774382,
+  "km": 405,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-6",
+   "SG-P-3211"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40181",
+  "nombre": "Real Sitio de San Ildefonso",
+  "provincia": "segovia",
+  "cabecera": "San Ildefonso",
+  "lat": 40.90081636,
+  "lon": -4.005215407,
+  "km": 354,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-P-6121"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40182",
+  "nombre": "San Martín y Mudrián",
+  "provincia": "segovia",
+  "cabecera": "Mudrián",
+  "lat": 41.22317417,
+  "lon": -4.332386864,
+  "km": 313,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "VA-223"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40183",
+  "nombre": "San Miguel de Bernuy",
+  "provincia": "segovia",
+  "cabecera": "San Miguel de Bernuy",
+  "lat": 41.39964708,
+  "lon": -3.952065535,
+  "km": 279,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40184",
+  "nombre": "San Pedro de Gaíllos",
+  "provincia": "segovia",
+  "cabecera": "San Pedro de Gaíllos",
+  "lat": 41.22653825,
+  "lon": -3.80973096,
+  "km": 303,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-232",
+   "SG-V-2327"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40185",
+  "nombre": "Santa María la Real de Nieva",
+  "provincia": "segovia",
+  "cabecera": "Santa María la Real de Nieva",
+  "lat": 41.07048009,
+  "lon": -4.406510433,
+  "km": 375,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "N-601",
+   "CL-605"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40186",
+  "nombre": "Santa Marta del Cerro",
+  "provincia": "segovia",
+  "cabecera": "Santa Marta del Cerro",
+  "lat": 41.21856811,
+  "lon": -3.685426557,
+  "km": 302,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-1A",
+   "SG-205"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40188",
+  "nombre": "Santiuste de Pedraza",
+  "provincia": "segovia",
+  "cabecera": "La Mata",
+  "lat": 41.09024938,
+  "lon": -3.88587239,
+  "km": 332,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-V-2315"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40189",
+  "nombre": "Santiuste de San Juan Bautista",
+  "provincia": "segovia",
+  "cabecera": "Santiuste de San Juan Bautista",
+  "lat": 41.15701245,
+  "lon": -4.572234962,
+  "km": 346,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-601",
+   "N-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40190",
+  "nombre": "Santo Domingo de Pirón",
+  "provincia": "segovia",
+  "cabecera": "Santo Domingo de Pirón",
+  "lat": 41.04164085,
+  "lon": -3.990211191,
+  "km": 325,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2362"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40191",
+  "nombre": "Santo Tomé del Puerto",
+  "provincia": "segovia",
+  "cabecera": "Villarejo",
+  "lat": 41.19381537,
+  "lon": -3.57664946,
+  "km": 297,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-V-1122"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40192",
+  "nombre": "Sauquillo de Cabezas",
+  "provincia": "segovia",
+  "cabecera": "Sauquillo de Cabezas",
+  "lat": 41.19446153,
+  "lon": -4.067354864,
+  "km": 318,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-222"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40193",
+  "nombre": "Sebúlcor",
+  "provincia": "segovia",
+  "cabecera": "Sebúlcor",
+  "lat": 41.27121039,
+  "lon": -3.884275485,
+  "km": 299,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2323"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40194",
+  "nombre": "Segovia",
+  "provincia": "segovia",
+  "cabecera": "Segovia",
+  "lat": 40.95056392,
+  "lon": -4.1242287,
+  "km": 354,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-20"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40195",
+  "nombre": "Sepúlveda",
+  "provincia": "segovia",
+  "cabecera": "Sepúlveda",
+  "lat": 41.29701705,
+  "lon": -3.749045398,
+  "km": 290,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-232"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40196",
+  "nombre": "Sequera de Fresno",
+  "provincia": "segovia",
+  "cabecera": "Sequera de Fresno",
+  "lat": 41.36706439,
+  "lon": -3.546946506,
+  "km": 282,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-V-9111"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40198",
+  "nombre": "Sotillo",
+  "provincia": "segovia",
+  "cabecera": "Sotillo",
+  "lat": 41.25840147,
+  "lon": -3.637204693,
+  "km": 290,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-1a"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40199",
+  "nombre": "Sotosalbos",
+  "provincia": "segovia",
+  "cabecera": "Sotosalbos",
+  "lat": 41.03513692,
+  "lon": -3.942405772,
+  "km": 335,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40200",
+  "nombre": "Tabanera la Luenga",
+  "provincia": "segovia",
+  "cabecera": "Tabanera la Luenga",
+  "lat": 41.09639825,
+  "lon": -4.237777118,
+  "km": 327,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "A-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40201",
+  "nombre": "Tolocirio",
+  "provincia": "segovia",
+  "cabecera": "Tolocirio",
+  "lat": 41.13378284,
+  "lon": -4.650535575,
+  "km": 345,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-601",
+   "N-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40202",
+  "nombre": "Torreadrada",
+  "provincia": "segovia",
+  "cabecera": "Torreadrada",
+  "lat": 41.44435822,
+  "lon": -3.839968073,
+  "km": 270,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2412"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40203",
+  "nombre": "Torrecaballeros",
+  "provincia": "segovia",
+  "cabecera": "Torrecaballeros",
+  "lat": 40.99242082,
+  "lon": -4.024114294,
+  "km": 343,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40204",
+  "nombre": "Torrecilla del Pinar",
+  "provincia": "segovia",
+  "cabecera": "Torrecilla del Pinar",
+  "lat": 41.37430815,
+  "lon": -4.039206978,
+  "km": 288,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2136"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40205",
+  "nombre": "Torreiglesias",
+  "provincia": "segovia",
+  "cabecera": "Torreiglesias",
+  "lat": 41.10181018,
+  "lon": -4.032005258,
+  "km": 317,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-P-2222"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40206",
+  "nombre": "Torre Val de San Pedro",
+  "provincia": "segovia",
+  "cabecera": "Torre Val de San Pedro",
+  "lat": 41.0730814,
+  "lon": -3.870787442,
+  "km": 328,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40207",
+  "nombre": "Trescasas",
+  "provincia": "segovia",
+  "cabecera": "Trescasas",
+  "lat": 40.96419276,
+  "lon": -4.03585747,
+  "km": 346,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-P-6121"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40208",
+  "nombre": "Turégano",
+  "provincia": "segovia",
+  "cabecera": "Turégano",
+  "lat": 41.15641937,
+  "lon": -4.005628195,
+  "km": 310,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40210",
+  "nombre": "Urueñas",
+  "provincia": "segovia",
+  "cabecera": "Urueñas",
+  "lat": 41.35724654,
+  "lon": -3.77368943,
+  "km": 284,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-Ia",
+   "SG-V-2331"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40211",
+  "nombre": "Valdeprados",
+  "provincia": "segovia",
+  "cabecera": "Valdeprados",
+  "lat": 40.81742079,
+  "lon": -4.257055209,
+  "km": 376,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-20"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40212",
+  "nombre": "Valdevacas de Montejo",
+  "provincia": "segovia",
+  "cabecera": "Valdevacas de Montejo",
+  "lat": 41.52087352,
+  "lon": -3.634914333,
+  "km": 262,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-V-9322"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40213",
+  "nombre": "Valdevacas y Guijar",
+  "provincia": "segovia",
+  "cabecera": "El Guijar",
+  "lat": 41.14583725,
+  "lon": -3.911253032,
+  "km": 317,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-232",
+   "SG-V-2312"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40214",
+  "nombre": "Valseca",
+  "provincia": "segovia",
+  "cabecera": "Valseca",
+  "lat": 41.00012384,
+  "lon": -4.175163741,
+  "km": 337,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-3122"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40215",
+  "nombre": "Valtiendas",
+  "provincia": "segovia",
+  "cabecera": "Valtiendas",
+  "lat": 41.47847424,
+  "lon": -3.91710207,
+  "km": 272,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2473"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40216",
+  "nombre": "Valverde del Majano",
+  "provincia": "segovia",
+  "cabecera": "Valverde del Majano",
+  "lat": 40.95676735,
+  "lon": -4.23491708,
+  "km": 345,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-3122"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40218",
+  "nombre": "Valle de Tabladillo",
+  "provincia": "segovia",
+  "cabecera": "Valle de Tabladillo",
+  "lat": 41.36275803,
+  "lon": -3.839937665,
+  "km": 291,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2411"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40219",
+  "nombre": "Vallelado",
+  "provincia": "segovia",
+  "cabecera": "Vallelado",
+  "lat": 41.40469911,
+  "lon": -4.427265389,
+  "km": 324,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "VA-30",
+   "A-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40220",
+  "nombre": "Valleruela de Pedraza",
+  "provincia": "segovia",
+  "cabecera": "Valleruela de Pedraza",
+  "lat": 41.17840119,
+  "lon": -3.805926059,
+  "km": 308,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-232",
+   "SG-P-2322"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40221",
+  "nombre": "Valleruela de Sepúlveda",
+  "provincia": "segovia",
+  "cabecera": "Valleruela de Sepúlveda",
+  "lat": 41.18988917,
+  "lon": -3.773424208,
+  "km": 307,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-232",
+   "SG-P-2322"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40222",
+  "nombre": "Veganzones",
+  "provincia": "segovia",
+  "cabecera": "Veganzones",
+  "lat": 41.19292109,
+  "lon": -3.992934173,
+  "km": 306,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40223",
+  "nombre": "Vegas de Matute",
+  "provincia": "segovia",
+  "cabecera": "Vegas de Matute",
+  "lat": 40.79539461,
+  "lon": -4.27775939,
+  "km": 381,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "AP-61"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40224",
+  "nombre": "Ventosilla y Tejadilla",
+  "provincia": "segovia",
+  "cabecera": "Ventosilla",
+  "lat": 41.18148042,
+  "lon": -3.69441086,
+  "km": 311,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-V-2344"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40225",
+  "nombre": "Villacastín",
+  "provincia": "segovia",
+  "cabecera": "Villacastín",
+  "lat": 40.78051735,
+  "lon": -4.413708474,
+  "km": 410,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-6",
+   "AP-6"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40228",
+  "nombre": "Villaverde de Íscar",
+  "provincia": "segovia",
+  "cabecera": "Villaverde de Íscar",
+  "lat": 41.30749043,
+  "lon": -4.526303741,
+  "km": 326,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-601",
+   "VP-1202"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40229",
+  "nombre": "Villaverde de Montejo",
+  "provincia": "segovia",
+  "cabecera": "Villaverde de Montejo",
+  "lat": 41.5224456,
+  "lon": -3.654425369,
+  "km": 261,
+  "carreteras": [
+   "A-8",
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "SG-V-9321"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40230",
+  "nombre": "Villeguillo",
+  "provincia": "segovia",
+  "cabecera": "Villeguillo",
+  "lat": 41.25208509,
+  "lon": -4.578563998,
+  "km": 337,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-62",
+   "A-601",
+   "N-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40231",
+  "nombre": "Yanguas de Eresma",
+  "provincia": "segovia",
+  "cabecera": "Yanguas de Eresma",
+  "lat": 41.0716528,
+  "lon": -4.238660665,
+  "km": 333,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "BU-130",
+   "A-601"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40233",
+  "nombre": "Zarzuela del Monte",
+  "provincia": "segovia",
+  "cabecera": "Zarzuela del Monte",
+  "lat": 40.80908945,
+  "lon": -4.336546988,
+  "km": 381,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-20"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40234",
+  "nombre": "Zarzuela del Pinar",
+  "provincia": "segovia",
+  "cabecera": "Zarzuela del Pinar",
+  "lat": 41.25993525,
+  "lon": -4.184126574,
+  "km": 317,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-211"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40901",
+  "nombre": "Ortigosa del Monte",
+  "provincia": "segovia",
+  "cabecera": "Ortigosa del Monte",
+  "lat": 40.84255509,
+  "lon": -4.175573512,
+  "km": 373,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "AP-61"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40902",
+  "nombre": "Cozuelos de Fuentidueña",
+  "provincia": "segovia",
+  "cabecera": "Cozuelos de Fuentidueña",
+  "lat": 41.39171807,
+  "lon": -4.095615838,
+  "km": 297,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "SG-V-2136"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40903",
+  "nombre": "Marazoleja",
+  "provincia": "segovia",
+  "cabecera": "Marazoleja",
+  "lat": 40.96197093,
+  "lon": -4.338472879,
+  "km": 360,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "CL-603",
+   "CL-605"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40904",
+  "nombre": "Navas de Riofrío",
+  "provincia": "segovia",
+  "cabecera": "Navas de Riofrío",
+  "lat": 40.86842626,
+  "lon": -4.136139796,
+  "km": 365,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-20"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40905",
+  "nombre": "Cuevas de Provanco",
+  "provincia": "segovia",
+  "cabecera": "Cuevas de Provanco",
+  "lat": 41.54209901,
+  "lon": -3.962152718,
+  "km": 269,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-122",
+   "SG-V-2111"
+  ],
+  "metodo": "osrm"
+ },
+ {
+  "ine": "40906",
+  "nombre": "San Cristóbal de Segovia",
+  "provincia": "segovia",
+  "cabecera": "San Cristóbal de Segovia",
+  "lat": 40.95280442,
+  "lon": -4.078509229,
+  "km": 352,
+  "carreteras": [
+   "AP-68",
+   "AP-1",
+   "A-1",
+   "N-110",
+   "SG-20"
+  ],
+  "metodo": "osrm"
  }
 ]

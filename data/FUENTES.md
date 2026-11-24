@@ -15,3 +15,5 @@ Los nombres de entidades singulares y núcleos de población de cada ficha proce
 Ampliación de Palencia (191 municipios) y La Rioja (174): cabeceras y coordenadas del IGN, núcleos del Nomenclátor INE 2025, identificadores contrastados con los listados provinciales de AEMET. Los 365 itinerarios de Bilbao a sus cabeceras se calcularon con OSRM, perfil de coche. Se conservan distancia y hasta cinco vías principales por municipio en municipios.json.
 
 Los perfiles de superficie y población se extraen por código municipal del [repertorio de municipios del IGN](https://www.ign.es/resources/ane/Informacion_Geografica_Destacada/IGN_INFOGEO_MUNICIPIOS.xlsx), revisión de 20/10/2025, CC BY 4.0 ign.es. La fecha identifica la edición del repertorio, no el año del censo.
+
+Segovia: 209 municipios contrastados con el diccionario municipal del INE (1/1/2026), núcleos del Nomenclátor 2025 y vías del callejero electoral INE (1/1/2026). Población, superficie, cabecera y coordenadas proceden del mismo repertorio IGN de octubre de 2025. Previsión por identificador municipal AEMET y rutas de ida desde Bilbao calculadas con OSRM sobre OpenStreetMap.
