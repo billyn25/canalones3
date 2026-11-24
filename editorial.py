@@ -22,6 +22,11 @@ SERVICIOS = {
         "title": "Limpieza de tejados y limahoyas",
         "intro": "Las dos vertientes de un tejado conducen el agua hacia una franja de encuentro llamada limahoya. Cuando se llena de hojas, una pequeña parte de la cubierta puede concentrar buena parte del problema.",
         "body": """
+<section id="musgo"><h2>Limpieza de musgo y líquenes en las tejas</h2>
+<p>¿Ves manchas adheridas a las tejas, montones de musgo en los canales o plantas junto a una ventana de tejado? Para pedir presupuesto, indica en qué parte aparecen y si afectan a una vertiente o a varias. Una foto general tomada desde el suelo o desde una ventana ayuda a situar la zona.</p>
+<p>En el <a href="/trabajos/reparacion-limpieza-tejado-llanes/">tejado de Llanes</a> se ven helechos junto a una ventana de cubierta. En <a href="/zonas/gipuzkoa/idiazabal/#trabajo">Idiazabal</a> se aprecia vegetación entre las tejas. Estos detalles ayudan a concretar si la limpieza debe incluir también los remates, la limahoya o la salida hacia el canalón.</p>
+<h3>¿Qué incluye un presupuesto de tratamiento antimusgo?</h3>
+<p>Pide que se detalle la superficie de limpieza y cómo se recogerán los restos. Si el presupuesto propone aplicar un producto después, conviene identificarlo, indicar para qué material está previsto y desglosar su coste. Así puedes valorar por separado la retirada del musgo y el tratamiento posterior.</p></section>
 <section><h2>Delimitar la zona que necesita limpieza</h2>
 <p>Un árbol sobre un faldón, un canalón interior entre dos edificios o un patio bajo una cubierta alta requieren planteamientos distintos. Identificar dónde se acumulan los restos permite valorar si basta intervenir en el recorrido de evacuación o si conviene incluir otros paños.</p>
 <p>La propuesta debe tener en cuenta el tipo y el estado de la cobertura. Las tejas sueltas o deterioradas y las uniones antiguas pueden condicionar el método de trabajo. La visita sirve también para precisar qué zonas se pueden alcanzar y revisar.</p></section>
