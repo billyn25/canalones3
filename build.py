@@ -105,7 +105,20 @@ import comillas
 import idiazabal
 import llanes
 page(llanes.RUTA,llanes.TITULO,'Trabajo de Alero Norte en Llanes (Asturias). Cinco fotografías de la cubierta de teja curva, las ventanas de tejado y el encuentro con la cumbrera.',llanes.reportaje()+perfil('33036','Llanes','Llanes'),[('/galeria/','Trabajos')])
-page('/galeria/','Trabajos reales realizados por Alero Norte','Fotografías de nuestros trabajos de limpieza y reparación en distintos pueblos de nuestra zona de cobertura. Desde Bilbao atendemos Bizkaia, Álava, Gipuzkoa, Cantabria, Burgos, León, Palencia y La Rioja.',aranda.tarjeta()+'<section class="obra"><h2>Reparación y limpieza en Burgos</h2><a class="obra-tarjeta" href="/zonas/burgos/#trabajo"><img loading="lazy" src="/assets/obras/burgos/fragmentos-small.webp" alt="Tejas partidas junto a la cumbrera"><span>Ver las cuatro fotos del trabajo</span></a></section>'+comillas.tarjeta()+idiazabal.tarjeta()+llanes.tarjeta()+tarjeta_salvatierra()+album())
+trabajos_galeria = [
+    ("Aranda de Duero · Burgos", "Estado de las tejas y vegetación entre las hileras", "aranda-de-duero/hileras", "Hileras de teja curva con restos vegetales", "/zonas/burgos/aranda-de-duero/#trabajo", "Ver 6 fotos"),
+    ("Burgos", "Reparación y limpieza de tejado", "burgos/fragmentos", "Tejas partidas junto a la cumbrera", "/zonas/burgos/#trabajo", "Ver 4 fotos"),
+    ("Comillas · Cantabria", "Las tejas y el canalón de una cubierta", "comillas/faldon", "Faldón de teja curva junto al canalón", "/zonas/cantabria/comillas/#trabajo", "Ver 7 fotos"),
+    ("Idiazabal · Gipuzkoa", "Limpieza de tejas y reparación de goteras", "idiazabal/chimenea", "Fragmentos de teja junto a la chimenea", "/zonas/gipuzkoa/idiazabal/#trabajo", "Ver 6 fotos"),
+    ("Llanes · Asturias", "Reparación y limpieza de tejado", "llanes/helechos", "Helechos junto a una ventana del tejado", "/trabajos/reparacion-limpieza-tejado-llanes/", "Ver 5 fotos"),
+    ("Agurain/Salvatierra · Álava", "Limpieza de tejado y canalones", "salvatierra/helechos", "Helechos entre la cubierta y el muro", "/zonas/alava/agurain-salvatierra/#trabajo", "Ver 8 fotos y el vídeo"),
+]
+mosaico = '<div class="mosaico-trabajos">' + ''.join(
+    f'<article><a href="{url}"><img loading="lazy" src="/assets/obras/{foto}-small.webp" alt="{alt}">'
+    f'<div><p>{lugar}</p><h2>{titulo}</h2><span>{enlace}</span></div></a></article>'
+    for lugar, titulo, foto, alt, url, enlace in trabajos_galeria
+) + '</div>'
+page('/galeria/','Trabajos reales realizados por Alero Norte','Fotografías de nuestros trabajos de limpieza y reparación en distintos pueblos de nuestra zona de cobertura. Desde Bilbao atendemos Bizkaia, Álava, Gipuzkoa, Cantabria, Burgos, León, Palencia y La Rioja.',mosaico+album())
 page(RUTA_LEON,TITULO_LEON,'Cuatro fotografías de un trabajo en la provincia de León: las tejas, el alero, el tramo lateral y la salida del canalón.',trabajo_leon(),[('/zonas/leon/','León')])
 page('/preparar-consulta/','Preparar una consulta','Anota dónde está el inmueble y qué ocurre cuando llueve.',form())
 def listing(items, alfabeto=False):
