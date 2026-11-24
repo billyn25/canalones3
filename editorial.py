@@ -60,6 +60,20 @@ SERVICIOS = {
 <section><h2>Cómo describirlo al pedir una visita</h2>
 <p>Una vista general permite situar la bajante y una segunda imagen puede señalar el empalme afectado. Si el agua sale por encima del borde a lo largo de varios metros, consulta también la guía sobre <a href="/guias/canalon-rebosa-o-gotea/">reboses y goteos de canalón</a>.</p></section>""",
     },
+    "impermeabilizacion-de-cubiertas": {
+        "title": "Impermeabilización de cubiertas",
+        "intro": "Si aparece una humedad bajo una terraza o una cubierta, cuéntanos cuándo se manifiesta y qué espacio hay encima. Esa información ayuda a preparar la visita y a delimitar la zona que hay que revisar.",
+        "body": """
+<section><h2>¿Dónde entra el agua?</h2><p>Una mancha en el techo puede aparecer a cierta distancia de la entrada de agua. Revisamos los encuentros con paredes y chimeneas, los desagües y el estado de la impermeabilización existente para valorar si basta una intervención localizada o conviene tratar una superficie mayor.</p></section>
+<section><h2>Qué debe recoger el presupuesto</h2><p>El presupuesto debe identificar la superficie afectada, la preparación del soporte, el sistema propuesto y el tratamiento de juntas, bordes y desagües. Si hay que levantar un acabado o reponerlo después, conviene detallar ambas partidas.</p><p>Al solicitar la visita, indica si la cubierta es transitable y cómo se accede. Una fotografía de la humedad desde el interior ayuda a situar el aviso.</p></section>""",
+    },
+    "reparacion-de-tejados-de-pizarra": {
+        "title": "Reparación de tejados de pizarra",
+        "intro": "Una placa rota, una hilera desplazada o una gotera junto a la chimenea requieren revisar puntos distintos de la cubierta. Indica qué has observado y en qué lado del edificio ocurre.",
+        "body": """
+<section><h2>Placas, fijaciones y remates</h2><p>En la visita revisamos las piezas afectadas, sus fijaciones y el encuentro con los remates. Para sustituir placas valoramos el formato, el espesor y el solape de la pizarra existente. Si hay varias hileras desplazadas, también interesa revisar el estado del soporte.</p></section>
+<section><h2>Cómo preparar la visita</h2><p>Para una vivienda, indica el municipio, la altura y la fachada afectada. En una comunidad, añade el portal y qué vivienda ha detectado la humedad. Sirve una foto tomada desde la calle o desde el interior.</p><p>Al comparar el presupuesto, comprueba qué piezas se sustituyen, si se incluyen los remates y qué medios de acceso se han previsto.</p></section>""",
+    },
     "reparacion-de-tejados": {
         "title": "Reparación de tejados, tejas y remates",
         "intro": "Una pieza desplazada tras el viento y una filtración recurrente junto a una chimenea piden revisiones distintas. La propuesta de reparación debe situar el defecto sobre la cubierta y explicar qué parte se va a intervenir.",
