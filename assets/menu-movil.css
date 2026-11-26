@@ -12,10 +12,19 @@
 @media screen and (max-width:680px){
   .mast .contactos{display:none}
   .mast .contacto-unico{display:block;position:fixed;z-index:20;inset:auto 0 0;background:white;border-top:1px solid #bcc9c1;padding:.5rem 1rem calc(.5rem + env(safe-area-inset-bottom))}
-  .contacto-unico summary{list-style:none;cursor:pointer;text-align:center;background:#713449;color:white;font-weight:700;padding:.7rem;border-radius:.4rem}
+  .contacto-unico summary{display:flex;align-items:center;justify-content:center;gap:.6rem;min-height:46px;cursor:pointer;list-style:none;background:#713449;color:white;font-weight:700;border-radius:.8rem}
   .contacto-unico summary::-webkit-details-marker{display:none}
-  .contacto-unico p{background:#edf6ef;border-left:4px solid #235940;color:#173c2b;padding:.75rem;margin:.65rem 0;line-height:1.4}
-  .contacto-unico .opciones{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
-  .contacto-unico .wa{background:#235940;color:white}
-  .contacto-unico .llamada{padding:.65rem}
+  .contacto-unico .cerrar{display:none}
+  .contacto-unico summary::after{content:"";width:.45rem;height:.45rem;border:solid currentColor;border-width:2px 2px 0 0;transform:rotate(-45deg)}
+  .mast .contacto-unico[open]{border-radius:1.25rem 1.25rem 0 0;border:1px solid #dccfc9;box-shadow:0 -8px 32px #36272b25;max-height:80dvh;overflow:auto}
+  .contacto-unico[open] summary{justify-content:space-between;background:white;color:#342a2d;font-size:1.1rem}
+  .contacto-unico[open] summary::after{display:none}
+  .contacto-unico[open] .cerrar{display:inline-flex;align-items:center;gap:.35rem;border-radius:2rem;background:#f5f0ed;padding:.35rem .75rem;font-size:.9rem}
+  .contacto-unico p{margin:.3rem 0 .85rem;color:#355146;font-size:.98rem;line-height:1.45}
+  .contacto-unico p strong{display:block;color:#184a34;font-size:1.1rem}
+  .contacto-unico .opciones{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:.5rem}
+  .mast .contacto-unico .opciones a{display:grid;place-items:center;text-align:center;min-height:48px;border-radius:.7rem;padding:.4rem;font-weight:700;text-decoration:none}
+  .contacto-unico .wa{background:#235940;color:white;border:1px solid #235940}
+  .contacto-unico .llamada{background:#fffaf6;color:#523040;border:1px solid #c8b8bc}
+  .contacto-unico :focus-visible{outline:3px solid #935524;outline-offset:2px}
 }
