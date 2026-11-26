@@ -1,5 +1,6 @@
 """Artículos originales de Alero Norte, ordenados para la portada del blog."""
 from html import escape
+from cuaderno import LECTURAS
 
 ARTICULOS = [
     {
@@ -66,7 +67,7 @@ def publicar_blog(page, groups, provincias):
     base = '/blog/'
     estilo = '<link rel="stylesheet" href="/assets/blog.css">'
     tarjetas = []
-    for articulo in ARTICULOS:
+    for articulo in LECTURAS + ARTICULOS:
         ruta = base + articulo['slug'] + '/'
         titulo = escape(articulo['title'])
         foto = '/assets/obras/' + articulo['img']
