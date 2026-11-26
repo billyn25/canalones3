@@ -8,7 +8,7 @@ def pie(whatsapp, servicios, provincias):
         return f'<nav aria-label="{titulo} del pie"><h2>{titulo}</h2><ul>{items}</ul></nav>'
     nav=columna('Servicios', [('/servicios/'+k+'/',v['title']) for k,v in servicios.items()])
     zonas=columna('Zonas de trabajo',[('/zonas/'+k+'/',v) for k,v in provincias.items()])
-    obras=columna('Trabajos y guías',[('/zonas/bizkaia/ugao-miraballes/#trabajo','Limpieza integral en Ugao-Miraballes'),('/zonas/bizkaia/lekeitio/#trabajo','Tejado y canalones en Lekeitio'),('/guias/','Guías para viviendas y comunidades')])
+    obras=columna('Trabajos y guías',[('/zonas/bizkaia/ugao-miraballes/#trabajo','Limpieza integral en Ugao-Miraballes'),('/zonas/bizkaia/lekeitio/#trabajo','Tejado y canalones en Lekeitio'),('/guias/','Guías para viviendas y comunidades'),('/blog/','Blog de tejados y canalones')])
     return f'''<footer class="site-footer pie-profesional"><div class="wrap"><div class="pie-contacto"><div><h2>Consulta sobre tu cubierta</h2><p>Indícanos el pueblo y dónde aparece el agua. Por WhatsApp puedes adjuntar una foto del punto afectado.</p></div><div><a class="numero" href="tel:+{TELEFONO}">{TELEFONO_VISIBLE}</a><a class="pie-wa" href="{escape(whatsapp)}">Escribir por WhatsApp</a></div></div><div class="pie-directorio"><div><a class="pie-marca" href="/">Alero Norte</a><p>Limpieza y reparación de canalones y tejados. Desplazamientos desde Bilbao.</p><address>{DIRECCION}</address></div>{nav}{zonas}{obras}</div><nav class="pie-legal" aria-label="Información legal"><a href="/aviso-legal/">Aviso legal</a> · <a href="/privacidad/">Privacidad</a> · <a href="/cookies/">Cookies</a></nav></div></footer>'''
 
 def proceso():

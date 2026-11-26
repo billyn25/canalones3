@@ -1,0 +1,9 @@
+.indice-blog { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr)); gap:2rem; margin-block:2.5rem; }
+.indice-blog article { min-width:0; }
+.indice-blog img { width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:.5rem; }
+.content .indice-blog h2 { font-size:clamp(1.45rem,2vw,1.85rem); margin:.8rem 0 .5rem; }
+.lectura-blog { max-width:68ch; margin-block:2rem 4rem; }
+.lectura-blog figure { margin:1.5rem 0 2rem; }
+.lectura-blog img { display:block; max-width:100%; max-height:27rem; border-radius:.5rem; }
+.lectura-blog figcaption,.firma-blog { font-size:.95rem; color:var(--muted); }
+.lectura-blog figcaption { margin-top:.5rem; }
