@@ -266,21 +266,26 @@ for k,title in provs.items():
         limpieza = ('<p>Retiramos las hojas y el sedimento de los tramos acordados y revisamos la embocadura de la bajante. '
                     'Si el agua sigue rebosando, comprobamos dónde se retiene antes de proponer una reparación.</p><p>'+direccion_aviso+'</p>')
         enlaces_locales=[
-            ('Limpieza de canalones', 'Ver la retirada de hojas y la revisión de las salidas', '/servicios/limpieza-de-canalones/'),
+            ('Limpieza de canalones en '+n, 'Ver la retirada de hojas y la revisión de las salidas', '/servicios/limpieza-de-canalones/'),
             ('Limpieza de tejados en '+n, 'Consultar la limpieza de faldones y limahoyas', '/servicios/limpieza-de-tejados/'),
-            ('Reparación de tejados', 'Consultar la reparación de tejas y remates', '/servicios/reparacion-de-tejados/'),
+            ('Reparación de tejados en '+n, 'Consultar la reparación de tejas y remates', '/servicios/reparacion-de-tejados/'),
             ('Impermeabilización de cubiertas', 'Consultar la revisión de juntas, encuentros y desagües', '/servicios/impermeabilizacion-de-cubiertas/'),
             ('Reparación de tejados de pizarra', 'Consultar la sustitución de placas y la revisión de fijaciones', '/servicios/reparacion-de-tejados-de-pizarra/'),
             ('Arreglo de goteras en '+n, 'Ver cómo se localiza y repara una filtración', '/servicios/reparacion-de-goteras/'),
             ('Reparación de canalones y bajantes en '+n, 'Consultar reparaciones de juntas, soportes y tramos', '/servicios/reparacion-de-canalones-y-bajantes/'),
         ]
         consulta_gotera = '/preparar-consulta/?'+urlencode({'municipio': n+', '+title})+'#gotera'
+        detalles_servicio = {
+            '/servicios/limpieza-de-canalones/': limpieza,
+            '/servicios/limpieza-de-tejados/': '<p>Si ves musgo entre las tejas o restos en la unión de dos pendientes, indica en qué lado del edificio se acumulan. Podemos valorar la limpieza de ese faldón y la recogida de los restos que lleguen al alero.</p>',
+            '/servicios/reparacion-de-tejados/': '<p>Una teja desplazada, un remate suelto y una mancha interior requieren comprobaciones distintas. Al pedir la visita, señala qué has visto y desde dónde. Si hay una filtración, indica cuándo aparece.</p>',
+        }
         bloques = []
         for encabezado, etiqueta, url in enlaces_locales:
             accion = '<p>'+link(consulta_gotera, 'Pedir visita por una gotera')+'</p>' if url == '/servicios/reparacion-de-goteras/' else ''
-            bloques.append('<section><h2>'+escape(encabezado)+'</h2>'+(limpieza if url == '/servicios/limpieza-de-canalones/' else '')+'<p>'+link(url, etiqueta)+'</p>'+accion+'</section>')
+            bloques.append('<section><h2>'+escape(encabezado)+'</h2>'+detalles_servicio.get(url, '')+'<p>'+link(url, etiqueta)+'</p>'+accion+'</section>')
         servicios_locales = '<div class="servicios-locales">'+''.join(bloques)+'</div>'
-        body=referencia_obra(r)+perfil(r["ine"],n,r.get("cabecera") or n)+desplazamiento+servicios_locales+widget(r)+'<h2>Municipios próximos</h2>'+proximity(r,rows)
+        body=referencia_obra(r)+servicios_locales+perfil(r["ine"],n,r.get("cabecera") or n)+desplazamiento+widget(r)+'<h2>Municipios próximos</h2>'+proximity(r,rows)
         if k=='bizkaia' and slug(n) in CASOS:
             body='<div id="trabajo">'+galeria(slug(n))+'</div>'+body
             notas = {
