@@ -7,3 +7,10 @@
 .lectura-blog img { display:block; max-width:100%; max-height:27rem; border-radius:.5rem; }
 .lectura-blog figcaption,.firma-blog { font-size:.95rem; color:var(--muted); }
 .lectura-blog figcaption { margin-top:.5rem; }
+
+.pueblos-blog { margin-block: 2.5rem; }
+.grupos-pueblos { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr)); gap:1.5rem; }
+.grupos-pueblos h3 { margin:0 0 .4rem; }
+.grupos-pueblos div > a { display:block; padding:.4rem 0; }
+.lectura-blog table { border-collapse:collapse; width:100%; }
+.lectura-blog :is(th,td) { text-align:left; padding:.65rem; border-bottom:1px solid #cdbfb6; }

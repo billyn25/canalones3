@@ -34,7 +34,7 @@ def cards(items): return '<div class="grid">'+''.join(f'<a class="card" href="{e
 paths=[]
 vias_locales = json.loads((root/'data/vias-locales.json').read_text())
 
-def page(path,title,desc,body,parents=(),extra='',direcciones=None,municipio='',seo_title=None):
+def page(path,title,desc,body,parents=(),extra='',direcciones=None,municipio='',seo_title=None,tras_presupuesto=''):
     target=out/path.strip('/')/'index.html'
     target.parent.mkdir(parents=True,exist_ok=True)
     if path in paths:
@@ -56,6 +56,8 @@ def page(path,title,desc,body,parents=(),extra='',direcciones=None,municipio='',
     whatsapp = 'https://wa.me/'+TELEFONO+'?'+urlencode({'text':mensaje})
     if path not in ('/comunidades/', '/preparar-consulta/', '/aviso-legal/', '/privacidad/', '/cookies/', '/distancias/'):
         main+=presupuesto(municipio, direcciones)+'<script defer src="/assets/presupuesto.js"></script>'
+    if tras_presupuesto:
+        main += '<div class="wrap content">'+tras_presupuesto+'</div>'
     if seo_title is None:
         seo_title = f'{title} · Alero Norte'
     target.write_text(f'''<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(seo_title)}</title><meta name="description" content="{escape(desc,quote=True)}">{canonical}{schema}<link rel="icon" type="image/svg+xml" href="/assets/alero-norte-icono.svg"><link rel="stylesheet" href="/assets/style.css?v=alero-2"><link rel="stylesheet" href="/assets/interiores.css?v=granate-1"><link rel="stylesheet" href="/assets/galeria.css">{extra}</head><body><a class="skip" href="#principal">Saltar al contenido</a><header class="site-header"><div class="wrap mast"><a class="brand" href="/">Alero Norte</a><nav aria-label="Principal"><a href="/servicios/">Servicios</a><a href="/zonas/">Zonas</a><a href="/guias/">Guías</a><a href="/galeria/">Trabajos</a><a href="/blog/">Blog</a></nav><div class="contactos"><a class="button" href="tel:+{TELEFONO}" aria-label="Llamar al {TELEFONO_VISIBLE}">Llamar</a><a class="button wa" href="{escape(whatsapp)}">WhatsApp</a></div></div></header><main id="principal">{main}</main>{pie(whatsapp,SERVICIOS,provs)}<script defer src="/assets/galeria.js"></script></body></html>''')
@@ -306,7 +308,7 @@ for k,title in provs.items():
         caso=CASOS.get(slug(n)) if k=='bizkaia' else None
         descripcion=(caso[1]+' en '+n+'. Fotografías del trabajo y contacto para una visita.') if caso else introduccion_municipal(r)
         page(r['path'],'Limpieza de canalones, limpieza y reparación de tejados en '+n,descripcion,body,[('/zonas/','Zonas'),(parent,title)],'<link rel="stylesheet" href="/assets/weather.css"><script defer src="/assets/weather.js"></script>', direcciones=vias_locales.get(r['ine'], {}), municipio=n, seo_title='Limpieza de tejados y canalones en '+n)
-publicar_blog(page)
+publicar_blog(page, groups, provs)
 if base:
     tree=ET.Element('urlset',xmlns='http://www.sitemaps.org/schemas/sitemap/0.9')
     for p in paths: ET.SubElement(ET.SubElement(tree,'url'),'loc').text=base+p
