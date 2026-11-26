@@ -122,7 +122,7 @@ mosaico = '<div class="mosaico-trabajos">' + ''.join(
     f'<div><p>{lugar}</p><h2>{titulo}</h2><span>{enlace}</span></div></a></article>'
     for lugar, titulo, foto, alt, url, enlace in trabajos_galeria
 ) + '</div>'
-page('/galeria/','Trabajos reales realizados por Alero Norte','Fotografías de nuestros trabajos de limpieza y reparación en distintos pueblos de nuestra zona de cobertura. Desde Bilbao atendemos Bizkaia, Álava, Gipuzkoa, Cantabria, Burgos, León, Palencia, La Rioja y Segovia.',mosaico+album())
+page('/galeria/','Trabajos reales realizados por Alero Norte','Fotografías de nuestros trabajos de limpieza y reparación en distintos pueblos de nuestra zona de cobertura. Desde Bilbao atendemos Bizkaia, Álava, Gipuzkoa, Cantabria, Burgos, León, Palencia, La Rioja y Segovia.','<section><h2>Limpieza de tejado en Muskiz</h2><p>'+link('/zonas/bizkaia/muskiz/#limpieza-muskiz','Ver la fotografía del tejado con musgo')+'</p></section>'+mosaico+album())
 page(RUTA_LEON,TITULO_LEON,'Cuatro fotografías de un trabajo en la provincia de León: las tejas, el alero, el tramo lateral y la salida del canalón.',trabajo_leon(),[('/zonas/leon/','León')])
 page('/preparar-consulta/','Preparar una consulta','Anota dónde está el inmueble y qué ocurre cuando llueve.',form())
 def listing(items, alfabeto=False):
@@ -142,7 +142,18 @@ def separacion_km(origin, other):
 
 obras_municipales = [r for r in rows if r['provincia'] == 'bizkaia' and slug(r['nombre']) in CASOS]
 
+muskiz = next(r for r in rows if r['path'] == '/zonas/bizkaia/muskiz/')
+vecinos_muskiz = {r['path'] for r in sorted(
+    (r for r in rows if r != muskiz and r['provincia'] == 'bizkaia'),
+    key=lambda r: separacion_km(muskiz, r)
+)[:4]}
+foto_muskiz = '<section id="limpieza-muskiz"><h2>Limpieza de tejado en Muskiz</h2><figure><img src="/assets/obras/muskiz/musgo.webp" width="675" height="1200" style="max-width:100%;width:auto;height:auto;max-height:32rem" loading="lazy" alt="Musgo verde entre las hileras de tejas junto a una chimenea en Muskiz"><figcaption>Detalle del tejado que limpiamos en Muskiz. El musgo se concentraba en los huecos entre las tejas.</figcaption></figure></section>'
+
 def referencia_obra(r):
+    if r == muskiz:
+        return foto_muskiz
+    if r['path'] in vecinos_muskiz:
+        return '<aside><h2>Un trabajo cerca de '+escape(r['nombre'])+'</h2><p>'+link(muskiz['path']+'#limpieza-muskiz', 'Ver la limpieza de un tejado con musgo en Muskiz')+'</p></aside>'
     if r["path"] == aranda.RUTA:
         return aranda.reportaje()
     if r['path'] == comillas.RUTA:
