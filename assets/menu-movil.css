@@ -7,3 +7,15 @@
   .menu-movil summary::-webkit-details-marker{display:none}
   .mast .menu-movil nav{position:absolute;z-index:20;right:0;top:100%;width:min(16rem,85vw);grid-template-columns:1fr;padding:.5rem;border:1px solid #d9c8c5;border-radius:.4rem;background:white}
 }
+
+.contacto-unico{display:none}
+@media screen and (max-width:680px){
+  .mast .contactos{display:none}
+  .mast .contacto-unico{display:block;position:fixed;z-index:20;inset:auto 0 0;background:white;border-top:1px solid #bcc9c1;padding:.5rem 1rem calc(.5rem + env(safe-area-inset-bottom))}
+  .contacto-unico summary{list-style:none;cursor:pointer;text-align:center;background:#713449;color:white;font-weight:700;padding:.7rem;border-radius:.4rem}
+  .contacto-unico summary::-webkit-details-marker{display:none}
+  .contacto-unico p{background:#edf6ef;border-left:4px solid #235940;color:#173c2b;padding:.75rem;margin:.65rem 0;line-height:1.4}
+  .contacto-unico .opciones{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+  .contacto-unico .wa{background:#235940;color:white}
+  .contacto-unico .llamada{padding:.65rem}
+}
