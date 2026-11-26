@@ -53,7 +53,8 @@ def destacados(incluir_leon=False):
         tarjetas+=f'<a class="obra-tarjeta" href="/zonas/bizkaia/{slug}/#trabajo"><img loading="lazy" src="/assets/obras/{nombre}-small.webp" alt="{pie}"><div><small>{lugar}</small><strong>{titulo}</strong><span>Ver el trabajo</span></div></a>'
     titulo='Trabajos en Bizkaia'
     if incluir_leon:
-        tarjetas+=tarjeta_leon()
+        muskiz = '<a class="obra-tarjeta" href="/zonas/bizkaia/muskiz/#limpieza-muskiz"><img loading="lazy" src="/assets/obras/muskiz/musgo.webp" alt="Musgo entre las hileras de tejas de una vivienda en Muskiz"><div><small>Muskiz · Bizkaia</small><strong>Limpieza de un tejado con musgo</strong><span>Ver el trabajo en Muskiz</span></div></a>'
+        tarjetas = muskiz + tarjetas + tarjeta_leon()
         titulo='Trabajos de canalones y cubiertas'
     return '<section class="wrap archivo-obras"><h2>'+titulo+'</h2><div class="fotos-obra">'+tarjetas+'</div><p><a href="/galeria/">Abrir la galería de fotografías</a></p></section>'
 
