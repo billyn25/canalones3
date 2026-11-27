@@ -10,6 +10,12 @@ exports.handler = async event => {
   const codigo = event.queryStringParameters?.codigo;
   if (!/^\d{5}$/.test(codigo) || !municipios[codigo]) return {statusCode: 404, body: ''};
   const base = 'https://www.aemet.es';
+  if (event.queryStringParameters?.vista === 'diaria') {
+    try {
+      const xml = await texto(base + '/xml/municipios/localidad_' + codigo + '.xml', 'iso-8859-1');
+      return {statusCode:200, headers:{'Content-Type':'application/xml; charset=utf-8','Cache-Control':'public, max-age=900'}, body:xml};
+    } catch { return {statusCode:503, body:''}; }
+  }
   const [xml, pagina] = await Promise.allSettled([
     texto(base + '/xml/municipios_h/localidad_h_' + codigo + '.xml', 'iso-8859-1'),
     texto(base + '/es/eltiempo/prediccion/municipios/' + municipios[codigo], 'iso-8859-1')
