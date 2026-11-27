@@ -43,3 +43,31 @@ for (const panel of document.querySelectorAll('[data-codigo]')) {
     } finally { busy = false; }
   });
 }
+
+async function cargarDias(panel) {
+  try {
+    const res = await fetch('/.netlify/functions/tiempo?vista=diaria&codigo=' + panel.dataset.diaria);
+    if (!res.ok) throw Error();
+    const doc = new DOMParser().parseFromString(await res.text(), 'application/xml');
+    const hoy = new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Madrid'}).format(new Date());
+    const dias = [...doc.querySelectorAll('prediccion > dia')].filter(d => d.getAttribute('fecha') >= hoy).slice(0,3);
+    if (!dias.length) throw Error();
+    for (const d of dias) {
+      const card = document.createElement('article');
+      const line = (tag, value) => { const el=document.createElement(tag); el.textContent=value; card.append(el); };
+      line('h3',new Intl.DateTimeFormat('es-ES',{weekday:'long',day:'numeric',month:'short',timeZone:'UTC'}).format(new Date(d.getAttribute('fecha')+'T12:00:00Z')));
+      const val = s => d.querySelector(s)?.textContent.trim() || '—';
+      line('p','Mín. '+val('temperatura > minima')+' °C · Máx. '+val('temperatura > maxima')+' °C');
+      const cielos = [...d.querySelectorAll('estado_cielo')].filter(e=>e.getAttribute('descripcion'));
+      const partes = cielos.some(e=>e.getAttribute('periodo')==='00-24') ? cielos.filter(e=>e.getAttribute('periodo')==='00-24') : cielos.filter(e=>!cielos.some(o=>o!==e && o.getAttribute('periodo') && e.getAttribute('periodo') && o.getAttribute('periodo').slice(0,2)>=e.getAttribute('periodo').slice(0,2) && o.getAttribute('periodo').slice(-2)<=e.getAttribute('periodo').slice(-2)));
+      for(const e of partes){
+        const periodo=e.getAttribute('periodo');
+        const attr=periodo?'[periodo="'+periodo+'"]':':not([periodo])';
+        line('strong',(periodo && periodo!=='00-24'?periodo+' h · ':'')+e.getAttribute('descripcion'));
+        line('p','Lluvia: '+val('prob_precipitacion'+attr)+' % · Viento: '+val('viento'+attr+' velocidad')+' km/h');
+      }
+      panel.append(card);
+    }
+  } catch { panel.textContent='Previsión diaria no disponible. Puedes consultarla en el enlace de AEMET.'; }
+}
+document.querySelectorAll('[data-diaria]').forEach(cargarDias);
